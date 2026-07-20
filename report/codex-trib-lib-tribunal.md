@@ -172,10 +172,13 @@ The judges' 100/100, 64/100, and 74/100 scores should not be averaged into a fal
 | False brutal rotation claim | Fixed: exact nine-person and explicit-panel behavior documented | README plus 12-view brutal test |
 | Invalid/stale persona references | Fixed: canonical live URLs plus boundary validation | GitHub API checks and unit test |
 | Disclaimer dropped | Fixed: optional validated runtime field | Unit test |
-| Markdown target injection | Fixed: Markdown-only HTML escaping | Raw dict versus Markdown unit test |
+| Markdown target/backend injection | Fixed: raw HTML and multiline backend fields are neutralized in Markdown while JSON stays lossless | Raw dict versus Markdown unit test |
 | Unbounded rounds/target | Fixed: 32 rounds and 10,000 characters | Boundary tests |
 | Opaque local score | Fixed: four structural checks, optional URL provenance, 50-point ceiling | Evidence text and score tests |
 | Debate overclaim | Fixed: post-hoc synthesis marker | JSON/Markdown contract test |
+| Brutal synthesis drops later views | Fixed: every collected view contributes one persona lens | 12-view brutal synthesis test |
+| Score-only runtime crown | Fixed: every view must score at least 80 and declare no evidence gaps | Gap and dissent crown regression test |
+| Generic Security-Auditor provenance | Fixed: evidence/abuse review roles route to the critique rationale | Critique provenance regression test |
 | No standard package | Fixed: PEP 517 metadata, console entry point, bundled JSON | Isolated virtual-environment install/E2E |
 | Report, matrix, public delivery absent | Fixed by final gated artifacts and public push | Report/CSV gates and pinned blob request |
 
@@ -253,7 +256,7 @@ Ship this repository now for its bounded offline/library/skill scope. Do not mar
 
 1. **Contracts:** dependency-free Python API and CLI; four modes; bounded Nx/hardness; isolated judge requests; strict backend result validation; honest local provenance.
 2. **Personas and skill:** nine JSON personas, validated live GitHub references, runtime disclaimer preservation, direct-criticism boundaries, and a gated Codex `SKILL.md`.
-3. **Safety and operator UX:** Markdown target escaping, clean CLI errors/help, per-run capacity semantics, explicit post-hoc synthesis, and standard packaging.
+3. **Safety and operator UX:** Markdown target/backend-field escaping, gap-free unanimous runtime crowns, clean CLI errors/help, complete Nx post-hoc synthesis, per-run capacity semantics, and standard packaging.
 4. **Research and tribunal:** public 330-source NotebookLM corpus, five cross-queries, manual answer audit, three failed Grok paths recorded, three independent `agy` verdicts retained.
 5. **Comparison and delivery:** live GitHub metadata, 100-point matrix, deterministic gates, installed-package E2E, public repository, and SHA-pinned report verification.
 
@@ -293,6 +296,7 @@ flowchart TD
 
 - `local-rules` checks structure only. Its 40/100 score without a notebook reference and 50/100 score with one are transparent readiness markers, never target-quality judgments.
 - A custom backend may send all calls to one model. Unique personas, separate requests, and different prompt lenses do not establish statistical or cross-family independence.
+- A custom backend's empty evidence-gap list is an assertion, not independently verified truth. Markdown hardening neutralizes rendering structure but cannot make backend prose safe instructions for another agent.
 - Synthesis is post-hoc. Judges do not respond to sibling arguments through the current `JudgeRequest` contract.
 - NotebookLM URL validation checks only HTTPS host/path syntax. Live research proof comes from the external notebook and retained ledger, not the runtime.
 - The NotebookLM corpus has duplicate/mixed-quality sources, and some answers returned prose source names without populated citation arrays. Manual corrections therefore take priority over model wording.
