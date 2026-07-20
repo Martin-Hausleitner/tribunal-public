@@ -1,0 +1,77 @@
+{
+  "snapshot_utc": "2026-07-20T15:53:55Z",
+  "source": "GitHub REST API repositories endpoint queried with authenticated gh CLI",
+  "stars_are_adoption_only": true,
+  "repositories": [
+    {
+      "github_url": "https://github.com/Martin-Hausleitner/tribunal-public",
+      "stars": 0,
+      "github_api_spdx": "NOASSERTION",
+      "reported_license": "MIT from the local LICENSE included in the release commit",
+      "archived": false
+    },
+    {
+      "github_url": "https://github.com/promptfoo/promptfoo",
+      "stars": 23438,
+      "github_api_spdx": "MIT",
+      "reported_license": "MIT",
+      "archived": false
+    },
+    {
+      "github_url": "https://github.com/microsoft/autogen",
+      "stars": 59845,
+      "github_api_spdx": "CC-BY-4.0",
+      "reported_license": "CC-BY-4.0; component-level use needs separate review",
+      "archived": false
+    },
+    {
+      "github_url": "https://github.com/confident-ai/deepeval",
+      "stars": 16968,
+      "github_api_spdx": "Apache-2.0",
+      "reported_license": "Apache-2.0",
+      "archived": false
+    },
+    {
+      "github_url": "https://github.com/vibrantlabsai/ragas",
+      "stars": 14918,
+      "github_api_spdx": "Apache-2.0",
+      "reported_license": "Apache-2.0",
+      "archived": false
+    },
+    {
+      "github_url": "https://github.com/openai/evals",
+      "stars": 18953,
+      "github_api_spdx": "NOASSERTION",
+      "reported_license": "MIT code with separately licensed datasets",
+      "archived": false
+    },
+    {
+      "github_url": "https://github.com/langfuse/langfuse",
+      "stars": 31497,
+      "github_api_spdx": "NOASSERTION",
+      "reported_license": "MIT outside the enterprise directories declared by the repository",
+      "archived": false
+    },
+    {
+      "github_url": "https://github.com/stanfordnlp/dspy",
+      "stars": 36252,
+      "github_api_spdx": "MIT",
+      "reported_license": "MIT",
+      "archived": false
+    },
+    {
+      "github_url": "https://github.com/Arize-ai/phoenix",
+      "stars": 10641,
+      "github_api_spdx": "NOASSERTION",
+      "reported_license": "Elastic License 2.0; source-available, not OSI open source",
+      "archived": false
+    },
+    {
+      "github_url": "https://github.com/EleutherAI/lm-evaluation-harness",
+      "stars": 13340,
+      "github_api_spdx": "MIT",
+      "reported_license": "MIT",
+      "archived": false
+    }
+  ]
+}
