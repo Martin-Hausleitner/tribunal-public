@@ -4,6 +4,7 @@ import argparse
 import html
 import json
 import os
+import re
 import sys
 from dataclasses import asdict, dataclass
 from enum import Enum
@@ -16,6 +17,22 @@ ROOT = Path(__file__).resolve().parent
 DEFAULT_PERSONA_DIR = ROOT / "personas"
 MAX_ROUNDS = 32
 MAX_TARGET_LENGTH = 10_000
+
+
+def _markdown_text(value: object) -> str:
+    normalized = " ".join(str(value).split())
+    escaped = html.escape(normalized, quote=False)
+    for marker in ("\\", "`", "*", "_", "[", "]"):
+        escaped = escaped.replace(marker, f"\\{marker}")
+    return escaped
+
+
+def _markdown_code(value: object) -> str:
+    normalized = " ".join(str(value).split())
+    longest_run = max((len(match.group(0)) for match in re.finditer(r"`+", normalized)), default=0)
+    delimiter = "`" * (longest_run + 1)
+    padding = " " if normalized.startswith("`") or normalized.endswith("`") else ""
+    return f"{delimiter}{padding}{normalized}{padding}{delimiter}"
 
 
 class TribunalType(str, Enum):
@@ -135,15 +152,16 @@ class VerdictReport:
         return json.dumps(self.to_dict(), indent=2, ensure_ascii=False)
 
     def to_markdown(self) -> str:
-        safe_target = html.escape(self.target, quote=False)
+        safe_target = _markdown_text(self.target)
         lines = [
             f"# Tribunal Verdict: {safe_target}",
             "",
-            f"- Mode: `{self.mode}`",
-            f"- Rounds: `{self.rounds}` effective (`{self.requested_rounds}` requested)",
-            f"- Hardness: `{self.hardness}`",
-            f"- NotebookLM: `{self.notebooklm_url or 'not supplied; evidence gaps must stay visible'}`",
-            f"- Final score: `{self.final_score}/100`",
+            f"- Mode: {_markdown_code(self.mode)}",
+            f"- Rounds: {_markdown_code(self.rounds)} effective "
+            f"({_markdown_code(self.requested_rounds)} requested)",
+            f"- Hardness: {_markdown_code(self.hardness)}",
+            f"- NotebookLM: {_markdown_code(self.notebooklm_url or 'not supplied; evidence gaps must stay visible')}",
+            f"- Final score: {_markdown_code(f'{self.final_score}/100')}",
             f"- Crown: {self.crown}",
             "",
             "## Judge Views",
@@ -151,36 +169,40 @@ class VerdictReport:
         for view in self.judge_views:
             lines.extend(
                 [
-                    f"### R{view.round_index} J{view.judge_index}: {view.persona} (`{view.persona_slug}`)",
-                    f"- Backend: `{view.backend}`",
-                    f"- Engine: `{view.engine}` from `{view.engine_source}` "
-                    f"(capacity before: `{view.engine_capacity_before if view.engine_capacity_before is not None else 'unlimited local'}`)",
-                    f"- Skills: {', '.join(view.routed_skills)}",
-                    f"- Score: `{view.score}`",
-                    f"- Verdict: {view.verdict}",
+                    f"### R{view.round_index} J{view.judge_index}: "
+                    f"{_markdown_text(view.persona)} ({_markdown_code(view.persona_slug)})",
+                    f"- Backend: {_markdown_code(view.backend)}",
+                    f"- Engine: {_markdown_code(view.engine)} from {_markdown_code(view.engine_source)} "
+                    f"(capacity before: {_markdown_code(view.engine_capacity_before if view.engine_capacity_before is not None else 'unlimited local')})",
+                    f"- Skills: {', '.join(_markdown_code(item) for item in view.routed_skills)}",
+                    f"- Score: {_markdown_code(view.score)}",
+                    f"- Verdict: {_markdown_text(view.verdict)}",
                     "- Findings:",
-                    *[f"  - {item}" for item in view.findings],
+                    *[f"  - {_markdown_text(item)}" for item in view.findings],
                     "- Evidence:",
-                    *[f"  - {item}" for item in view.evidence],
+                    *[f"  - {_markdown_text(item)}" for item in view.evidence],
                     "- Evidence gaps:",
-                    *[f"  - {item}" for item in view.evidence_gaps],
+                    *(
+                        [f"  - {_markdown_text(item)}" for item in view.evidence_gaps]
+                        or ["  - None declared by the backend."]
+                    ),
                     "",
                 ]
             )
         lines.extend(
             [
                 "## Post-hoc Synthesis",
-                f"- Kind: `{self.debate.kind}`",
+                f"- Kind: {_markdown_code(self.debate.kind)}",
                 "- This is a synthesis after isolated judgments, not an interactive agent debate.",
                 "- Recurring failures:",
-                *[f"  - {item}" for item in self.debate.recurring_failures],
+                *[f"  - {_markdown_text(item)}" for item in self.debate.recurring_failures],
                 "- Disagreements:",
-                *[f"  - {item}" for item in self.debate.disagreements],
+                *[f"  - {_markdown_text(item)}" for item in self.debate.disagreements],
                 "- Strongest points:",
-                *[f"  - {item}" for item in self.debate.strongest_points],
+                *[f"  - {_markdown_text(item)}" for item in self.debate.strongest_points],
                 "",
                 "## Final Verdict",
-                self.final_verdict,
+                _markdown_text(self.final_verdict),
             ]
         )
         return "\n".join(lines)
@@ -512,7 +534,7 @@ def validate_backend_result(result: BackendResult, backend_name: str) -> Backend
         raise ValueError(f"backend {backend_name!r} score must be an integer from 0 through 100")
     if not isinstance(result.verdict, str) or not result.verdict.strip():
         raise ValueError(f"backend {backend_name!r} verdict must be a non-empty string")
-    for field in ("findings", "evidence", "evidence_gaps"):
+    for field in ("findings", "evidence"):
         value = getattr(result, field)
         if (
             not isinstance(value, list)
@@ -522,6 +544,12 @@ def validate_backend_result(result: BackendResult, backend_name: str) -> Backend
             raise ValueError(
                 f"backend {backend_name!r} {field} must be a non-empty list of strings"
             )
+    if not isinstance(result.evidence_gaps, list) or any(
+        not isinstance(item, str) or not item.strip() for item in result.evidence_gaps
+    ):
+        raise ValueError(
+            f"backend {backend_name!r} evidence_gaps must be a list of non-empty strings"
+        )
     return result
 
 
@@ -604,11 +632,15 @@ class TribunalOrchestrator:
 
         debate = self._debate(views)
         final_score = round(sum(view.score for view in views) / len(views))
-        crown = (
-            "👑"
-            if self.tribunal_type == TribunalType.COMPARISON and final_score >= 80
-            else ("✅" if final_score >= 80 else "⚠️")
+        crown_ready = (
+            self.tribunal_type == TribunalType.COMPARISON
+            and final_score >= 80
+            and all(view.score >= 80 and not view.evidence_gaps for view in views)
         )
+        if self.tribunal_type == TribunalType.COMPARISON:
+            crown = "👑" if crown_ready else "⚠️"
+        else:
+            crown = "✅" if final_score >= 80 else "⚠️"
         verdict = (
             f"{crown} Tribunal score {final_score}/100 from backend `{self.backend.name}`. "
             f"{len(views)} judge views across {self.rounds} independent round(s). "
@@ -689,7 +721,11 @@ class TribunalOrchestrator:
         ):
             return "Knowledge mode needs fact-checking, primary-source review, and citation skepticism."
         if self.tribunal_type == TribunalType.CRITIQUE and (
-            "architect" in role or "audit" in role or "karpathy" in skills
+            "architect" in role
+            or "audit" in role
+            or "evidence" in role
+            or "abuse" in role
+            or "karpathy" in skills
         ):
             return "Critique mode needs architectural teardown, evidence integrity, and hard technical skepticism."
         if self.tribunal_type == TribunalType.COMPARISON:
@@ -707,7 +743,7 @@ class TribunalOrchestrator:
         disagreements = [
             f"Judge scores span {min(scores)}-{max(scores)} across persona-specific lenses."
         ]
-        persona_lenses = [f"{view.persona_slug}: {view.findings[0]}" for view in views[:3]]
+        persona_lenses = [f"{view.persona_slug}: {view.findings[0]}" for view in views]
         disagreements.extend(persona_lenses)
         strongest: list[str] = []
         for view in sorted(views, key=lambda item: item.score, reverse=True):

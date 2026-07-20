@@ -6,6 +6,7 @@
 - [x] 1.4 Make three unique persona evaluations per round produce persona-specific findings and defer synthesis until all views exist.
 - [x] 1.5 Preserve stable JSON and Markdown output with final numeric score and all new provenance fields.
 - [x] 1.6 Make per-run capacity reusable, bound rounds/targets, escape Markdown targets, and render clean CLI input failures.
+- [x] 1.7 Escape backend-authored Markdown fields, require gap-free consensus for comparison crowns, synthesize every Nx view, and preserve critique-route provenance.
 
 ## 2. Personas, Skill, and Documentation
 

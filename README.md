@@ -56,7 +56,9 @@ flowchart TD
 
 ## Backends And Engine Capacity
 
-Every persona is evaluated through a separate `JudgeBackend.evaluate(JudgeRequest)` call. Backends return a validated `BackendResult` with a score, verdict, findings, evidence, and unresolved gaps. The bundled backend is named `local-rules`; its output explicitly says that it reviewed structure rather than target semantics.
+Every persona is evaluated through a separate `JudgeBackend.evaluate(JudgeRequest)` call. Backends return a validated `BackendResult` with a score, verdict, findings, evidence, and unresolved gaps. `evidence_gaps` may be empty only when that backend declares no unresolved proof. The bundled backend is named `local-rules`; its output explicitly says that it reviewed structure rather than target semantics.
+
+Comparison output receives `👑` only when every judge scores at least 80 and every judge returns an empty evidence-gap list. An 80-plus average with one lower judge or any unresolved gap remains `⚠️`. This is an assertion made by the injected backend, not independent proof that its evidence is true.
 
 Without configuration the engine manager records only `local-rules` from `builtin-local`, with no third-party quota claim. Optional integer values are judge-slot capacities, not tokens or provider promises. They can be supplied through:
 
@@ -132,12 +134,15 @@ print(report.to_markdown())
 
 All isolated judge views are collected before the report creates its post-hoc synthesis. The current backend contract does not implement an interactive conversation among judges.
 
+Markdown serialization HTML-escapes and collapses line breaks in backend-authored text while JSON preserves the original values. Treat a custom backend as untrusted code and its natural-language output as untrusted input: rendering hardening is not a prompt-injection defense for downstream agents.
+
 ## Anti-Fake Rules
 
 - A claim without source evidence remains an evidence gap.
 - A NotebookLM URL must be real; placeholders are invalid.
 - A syntactically valid NotebookLM URL is a reference, not proof that its content was queried.
 - The local-rules score measures review setup only and must not be presented as a substantive target verdict.
+- A runtime comparison crown requires every view to score at least 80 with no declared evidence gaps.
 - Comparison CSVs must use bare GitHub URLs, numeric star counts, emoji capability cells, differentiated scores, and exactly one `👑`.
 - UI/UX passes require visual or interaction evidence outside the local CLI.
 - A green verdict is invalid unless the repeatable gate can be run again.

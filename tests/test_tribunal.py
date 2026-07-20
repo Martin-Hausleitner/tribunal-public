@@ -20,8 +20,9 @@ from tribunal import (
 class RecordingBackend:
     name = "recording-live-backend"
 
-    def __init__(self, score: int = 81):
+    def __init__(self, score: int = 81, evidence_gaps: list[str] | None = None):
         self.score = score
+        self.evidence_gaps = list(evidence_gaps or [])
         self.requests: list[JudgeRequest] = []
 
     def evaluate(self, request: JudgeRequest) -> BackendResult:
@@ -31,7 +32,34 @@ class RecordingBackend:
             score=self.score,
             findings=[f"finding from {request.persona.slug}"],
             evidence=[f"evidence for R{request.round_index}J{request.judge_index}"],
-            evidence_gaps=[f"gap from {request.persona.slug}"],
+            evidence_gaps=list(self.evidence_gaps),
+        )
+
+
+class MixedScoreBackend:
+    name = "mixed-score-live-backend"
+
+    def evaluate(self, request: JudgeRequest) -> BackendResult:
+        score = 70 if request.judge_index == 1 else 85
+        return BackendResult(
+            verdict=f"{request.persona.slug} verdict",
+            score=score,
+            findings=[f"finding from {request.persona.slug}"],
+            evidence=[f"evidence for R{request.round_index}J{request.judge_index}"],
+            evidence_gaps=[],
+        )
+
+
+class MarkupBackend:
+    name = "markup-live-backend"
+
+    def evaluate(self, request: JudgeRequest) -> BackendResult:
+        return BackendResult(
+            verdict="<script>verdict</script>\nsecond line",
+            score=90,
+            findings=["<b>finding</b>"],
+            evidence=["<img src=x onerror=alert(1)>"],
+            evidence_gaps=[],
         )
 
 
@@ -81,6 +109,18 @@ class TribunalContractTests(unittest.TestCase):
         self.assertTrue(all(view.backend == backend.name for view in report.judge_views))
         self.assertEqual(report.final_score, 81)
         self.assertEqual(report.crown, "👑")
+
+    def test_comparison_crown_requires_unanimous_gap_free_views(self) -> None:
+        gapped = TribunalOrchestrator(
+            TribunalType.COMPARISON,
+            backend=RecordingBackend(score=95, evidence_gaps=["unresolved proof"]),
+        ).judge("gapped comparison")
+        mixed = TribunalOrchestrator(
+            TribunalType.COMPARISON,
+            backend=MixedScoreBackend(),
+        ).judge("mixed comparison")
+        self.assertEqual((gapped.final_score, gapped.crown), (95, "⚠️"))
+        self.assertEqual((mixed.final_score, mixed.crown), (80, "⚠️"))
 
     def test_ui_first_panel_contains_only_ui_ux_personas(self) -> None:
         report = TribunalOrchestrator(TribunalType.UI_UX).judge("operator dashboard")
@@ -198,6 +238,36 @@ class TribunalContractTests(unittest.TestCase):
         self.assertEqual(payload["debate"]["kind"], "post-hoc-synthesis")
         self.assertIn("## Post-hoc Synthesis", markdown)
         self.assertIn("not an interactive agent debate", markdown)
+
+    def test_backend_markdown_is_escaped_without_mutating_json(self) -> None:
+        report = TribunalOrchestrator(
+            TribunalType.COMPARISON,
+            backend=MarkupBackend(),
+        ).judge("markup target")
+        markdown = report.to_markdown()
+        payload = report.to_dict()
+        self.assertNotIn("<script>", markdown)
+        self.assertNotIn("<b>", markdown)
+        self.assertNotIn("<img", markdown)
+        self.assertIn("&lt;script&gt;verdict&lt;/script&gt; second line", markdown)
+        self.assertEqual(payload["judge_views"][0]["verdict"], "<script>verdict</script>\nsecond line")
+
+    def test_brutal_synthesis_and_critique_provenance_cover_every_view(self) -> None:
+        report = TribunalOrchestrator(
+            TribunalType.CRITIQUE,
+            hardness=HardnessLevel.BRUTAL,
+        ).judge("hardening target")
+        self.assertEqual(len(report.judge_views), 12)
+        self.assertEqual(len(report.debate.disagreements), 13)
+        security_view = next(
+            view for view in report.judge_views if view.persona_slug == "security-auditor"
+        )
+        self.assertTrue(
+            any(
+                "Critique mode needs architectural teardown" in item
+                for item in security_view.evidence
+            )
+        )
 
     def test_persona_disclaimer_and_repository_urls_survive_loading(self) -> None:
         orchestrator = TribunalOrchestrator(TribunalType.CRITIQUE)

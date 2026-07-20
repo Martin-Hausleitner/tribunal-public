@@ -43,7 +43,7 @@ Use personas from `personas/` when available:
 - A claim without a source is `❌` or an explicit blocker, not a pass.
 - A weak but partially supported area is `⚠️`.
 - A verified capability can be `✅`.
-- A comparison has exactly one `👑`; no ties with multiple crowns.
+- A comparison has exactly one `👑`; no ties with multiple crowns. Runtime output may award it only when every view scores at least 80 and declares no unresolved evidence gap.
 - CSV cells must use bare GitHub URLs, numeric stars, emoji capability cells, and differentiated scores.
 - UI/UX claims require visual or interaction evidence; code inspection alone is insufficient.
 

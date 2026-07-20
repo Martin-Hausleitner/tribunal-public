@@ -57,8 +57,19 @@ Verdict reports SHALL serialize to UTF-8-safe JSON-compatible dictionaries, JSON
 - **WHEN** a caller parses `to_json()` and reads `to_markdown()` for the same report
 - **THEN** both representations expose the same mode, round counts, judge identities, provenance, and final score
 
+### Requirement: Hardened synthesis and recommendation markers
+Markdown rendering SHALL neutralize raw HTML and line-structure injection from backend-authored fields. Post-hoc synthesis SHALL include a persona lens for every collected view. A comparison SHALL receive `👑` only when every view scores at least 80 and declares no unresolved evidence gaps; a high average with dissent or gaps MUST remain `⚠️`.
+
+#### Scenario: Backend supplies markup and an unresolved gap
+- **WHEN** a comparison backend returns raw HTML in its verdict or evidence and at least one view retains an evidence gap
+- **THEN** Markdown renders the markup as text and the report does not award a crown
+
+#### Scenario: Brutal synthesis covers all views
+- **WHEN** brutal hardness produces twelve judge views
+- **THEN** post-hoc synthesis records a persona lens for all twelve views
+
 ### Requirement: Bounded reusable public surface
-The orchestrator SHALL bound requested rounds and target length, remain reusable across repeated `judge()` calls, HTML-escape the target in Markdown only, and render expected CLI input/configuration failures without a Python traceback.
+The orchestrator SHALL bound requested rounds and target length, remain reusable across repeated `judge()` calls, escape untrusted text in Markdown while preserving original JSON values, and render expected CLI input/configuration failures without a Python traceback.
 
 #### Scenario: Reuse explicit capacity
 - **WHEN** a caller invokes `judge()` twice on one orchestrator whose explicit capacity fits each individual run
