@@ -248,14 +248,15 @@ tribunal \
   --mode comparison \
   --rounds 2 \
   --hardness hard \
+  --personas systems-architect,knowledge-analyst,andrej-karpathy,ux-specialist,ux-researcher,ux-operator-flow \
   --target "Decide whether Codex Tribunal should remain the narrow review contract while promptfoo supplies adversarial CI and Microsoft Agent Framework supplies production multi-agent runtime; require dated OSS evidence, explicit category mismatches, and no crown when semantic proof is missing." \
-  --notebooklm-url <canonical-notebook-url> \
+  --notebooklm-url https://notebooklm.google.com/notebook/80cffd38-0185-4f4d-ae00-bbc67c4bc515 \
   --json
 ```
 
 Observed: exit `0`; requested/effective rounds `2/2`; hardness `hard`; six coordinates from `R1J1` through `R2J3`; six unique personas; backend `local-rules`; engine source `builtin-local`; two explicit evidence gaps per view; `debate.kind=post-hoc-synthesis`; final `50/100`; marker `⚠️`; no runtime winner marker. The Karpathy-inspired disclaimer was present in JSON and Markdown. The same command worked from outside the repository after PEP 517 installation. An invalid NotebookLM reference exited `2` with concise stderr and no traceback. Full proof: [`evidence/live-audit-e2e.md`](evidence/live-audit-e2e.md).
 
-This brief-live closure repeated the repository CLI, all three primary modes, comparison case, expected failure, isolated PEP 517 sdist/wheel build, exact-wheel install, installed console script, installed Python API, JSON serialization, and Markdown disclaimer outside the repository. Every surface reproduced the bounded contract; hashes, commands, observations, and two excluded test-driver mistakes are retained in [`evidence/brief-live-e2e.md`](evidence/brief-live-e2e.md). Historical final-revalidation evidence remains in [`evidence/final-revalidation-e2e.md`](evidence/final-revalidation-e2e.md).
+This brief-live closure repeated the repository CLI, all three primary modes, comparison case, expected failure, two isolated PEP 517 sdist/wheel builds, exact-wheel install, installed console script, installed Python API, JSON serialization, and Markdown disclaimer outside the repository. The independently verified wheel SHA-256 is `3133ca32a0ffdd3245146bda78ba864a2235475e7482e36e1723a31709e60b7f`. Every surface reproduced the bounded contract; both build hashes, commands, observations, the non-blocking setuptools license-metadata warning, and two excluded initial test-driver mistakes are retained in [`evidence/brief-live-e2e.md`](evidence/brief-live-e2e.md). Historical final-revalidation evidence remains in [`evidence/final-revalidation-e2e.md`](evidence/final-revalidation-e2e.md).
 
 ### Recommended next increments
 
@@ -348,34 +349,25 @@ Evidence index:
 
 - Baseline and tool/authentication record: [`evidence/live-audit-baseline.md`](evidence/live-audit-baseline.md)
 - Final revalidation baseline: [`evidence/final-revalidation-baseline.md`](evidence/final-revalidation-baseline.md)
-- Brief-live baseline and guard heartbeats: [`evidence/brief-live-baseline.md`](evidence/brief-live-baseline.md)
 - NotebookLM live IDR: [`evidence/notebooklm-live-audit.md`](evidence/notebooklm-live-audit.md)
 - NotebookLM revalidation and contradiction control: [`evidence/notebooklm-revalidation.md`](evidence/notebooklm-revalidation.md)
 - Final NotebookLM inventory and cross-query audit: [`evidence/final-notebooklm-revalidation.md`](evidence/final-notebooklm-revalidation.md)
-- Brief-live NotebookLM inventory, four queries, and false-blocker controls: [`evidence/brief-live-notebooklm.md`](evidence/brief-live-notebooklm.md)
 - Frozen blind judge packet: [`evidence/live-audit-judge-packet.md`](evidence/live-audit-judge-packet.md)
 - Frozen revalidation packet: [`evidence/revalidation-judge-packet.md`](evidence/revalidation-judge-packet.md)
 - Final frozen judge packet: [`evidence/final-revalidation-judge-packet.md`](evidence/final-revalidation-judge-packet.md)
-- Brief-live conclusion-free judge packet: [`evidence/brief-live-judge-packet.md`](evidence/brief-live-judge-packet.md)
 - Grok failures, fallback provenance, and discarded attempts: [`evidence/live-audit-grok-attempts.md`](evidence/live-audit-grok-attempts.md)
 - Revalidation Grok/agy attempts: [`evidence/revalidation-external-attempts.md`](evidence/revalidation-external-attempts.md)
 - Final Grok/agy attempts and exclusions: [`evidence/final-revalidation-external-attempts.md`](evidence/final-revalidation-external-attempts.md)
-- Brief-live Grok/agy attempts and exclusions: [`evidence/brief-live-external-attempts.md`](evidence/brief-live-external-attempts.md)
 - Knowledge verdict: [`evidence/live-audit-judge-knowledge.md`](evidence/live-audit-judge-knowledge.md)
 - Additional revalidation knowledge verdict: [`evidence/revalidation-judge-knowledge.md`](evidence/revalidation-judge-knowledge.md)
 - Final knowledge verdict: [`evidence/final-revalidation-judge-knowledge.md`](evidence/final-revalidation-judge-knowledge.md)
-- Brief-live knowledge verdict: [`evidence/brief-live-judge-knowledge.md`](evidence/brief-live-judge-knowledge.md)
 - Final harsh-critique verdict: [`evidence/final-revalidation-judge-critique.md`](evidence/final-revalidation-judge-critique.md)
 - Final UX verdict: [`evidence/final-revalidation-judge-ux.md`](evidence/final-revalidation-judge-ux.md)
-- Brief-live harsh-critique verdict: [`evidence/brief-live-judge-critique.md`](evidence/brief-live-judge-critique.md)
-- Brief-live UX verdict: [`evidence/brief-live-judge-ux.md`](evidence/brief-live-judge-ux.md)
 - Harsh-critique verdict: [`evidence/live-audit-judge-critique.md`](evidence/live-audit-judge-critique.md)
 - UX verdict: [`evidence/live-audit-judge-ux.md`](evidence/live-audit-judge-ux.md)
 - Frozen synthesis and finding disposition: [`evidence/live-audit-synthesis.md`](evidence/live-audit-synthesis.md)
 - Final synthesis and finding disposition: [`evidence/final-revalidation-synthesis.md`](evidence/final-revalidation-synthesis.md)
-- Brief-live synthesis and finding disposition: [`evidence/brief-live-synthesis.md`](evidence/brief-live-synthesis.md)
 - GitHub metadata: [`evidence/github-snapshot.json`](evidence/github-snapshot.json)
-- Brief-live OSS metadata and rubric audit: [`evidence/brief-live-oss.md`](evidence/brief-live-oss.md)
 - Machine-readable matrix: [`codex-trib-lib-matrix.csv`](codex-trib-lib-matrix.csv)
 - Public CLI/package proof: [`evidence/live-audit-e2e.md`](evidence/live-audit-e2e.md)
 - Fresh CLI/API/installed-package proof: [`evidence/revalidation-e2e.md`](evidence/revalidation-e2e.md)

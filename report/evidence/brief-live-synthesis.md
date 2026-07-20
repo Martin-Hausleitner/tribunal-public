@@ -1,6 +1,6 @@
 # Brief live synthesis and finding disposition
 
-Frozen after accepted verdicts at `2026-07-20T21:06:39Z`.
+Verdicts frozen at `2026-07-20T21:06:39Z`; release-condition disposition updated after independent E2E verification at `2026-07-20T21:23:10Z`.
 
 ## Accepted role set
 
@@ -32,14 +32,14 @@ The role scores assess different surfaces and use only two provider families. Th
 |---|---|
 | NotebookLM syntax, missing backend, missing validator, missing persona data, and Pydantic blockers | Rejected by direct compile/import/symbol/wheel controls |
 | NotebookLM `549` total source count | Rejected; direct final JSON is `560 total / 549 processed / 11 failed` |
-| Matrix `85/100` versus runtime `40/50` | Both valid but different instruments; public report makes the distinction explicit |
+| Matrix `85/100` versus runtime `50/100` with canonical provenance (`40/100` without it) | Both valid but different instruments; public report makes the distinction explicit |
 | Custom backend can self-declare score and empty gaps | Accepted trust-boundary limitation; no runtime can independently make third-party evidence true |
 | Per-run capacity is not durable quota/billing enforcement | Accepted, already documented, retained as an integration boundary |
 | `UI/UX ✅` is a visual pass | Rejected; it means native fit/mode support, not browser or accessibility proof; report clarifies |
-| Fresh installed CLI/API path missing at judge freeze | Accepted as a release condition; closure requires exact-wheel E2E outside the repository |
+| Fresh installed CLI/API path missing at judge freeze | Satisfied after freeze by two PEP 517 builds plus exact verification-wheel console/API runs outside the repository; SHA-256 and observations are in `brief-live-e2e.md` |
 | Markdown flattens backend newlines while JSON is lossless | Accepted representation trade-off, already documented |
 | Primary OSS license qualifications | Accepted from live root README/license endpoints; repository observations are not legal advice |
 
 ## Bounded verdict
 
-Codex Tribunal may ship for the offline orchestration, reusable skill, persona-library, and extension-boundary scope only after the exact-wheel console/API E2E and all deterministic gates pass. Keep the matrix crown use-case-specific; do not turn it into a semantic, visual, provider-independence, or production-readiness claim. Compose promptfoo, Microsoft Agent Framework, Langfuse or another specialized OSS component rather than rebuilding their mature surfaces.
+The exact-wheel console/API E2E condition is satisfied, and the full deterministic release-gate set passed after the final evidence update. Codex Tribunal is cleared for publication only for the offline orchestration, reusable skill, persona-library, and extension-boundary scope. Keep the matrix crown use-case-specific; do not turn it into a semantic, visual, provider-independence, or production-readiness claim. Compose promptfoo, Microsoft Agent Framework, Langfuse or another specialized OSS component rather than rebuilding their mature surfaces.

@@ -1,6 +1,7 @@
 # Brief-live source, build, wheel, console, and API E2E
 
-- Recorded UTC: `2026-07-20T21:18:30Z`
+- Initial closure run UTC: `2026-07-20T21:18:30Z`
+- Independent verification completed UTC: `2026-07-20T21:23:10Z`
 - Python: `3.12.3`
 - Package: `codex-tribunal 1.0.0`
 - Canonical NotebookLM provenance: https://notebooklm.google.com/notebook/80cffd38-0185-4f4d-ae00-bbc67c4bc515
@@ -9,7 +10,7 @@ No model result or backend result was mocked. Every run used the repository's re
 
 ## Source-tree comparison case
 
-The source CLI evaluated the real OSS-first recommendation with `--mode comparison --rounds 2 --hardness hard --json`.
+The source CLI evaluated the real OSS-first recommendation with `--mode comparison --rounds 2 --hardness hard --json` and an explicit six-persona order so the two panels are stable and auditable.
 
 Observed exit `0` and:
 
@@ -43,27 +44,34 @@ tribunal: error: NotebookLM URL must match https://notebooklm.google.com/noteboo
 
 ## Clean PEP 517 artifacts
 
-`python -m build` produced a clean sdist and wheel in `/tmp/tribunal-brief-e2e.E6msm3/dist`:
+An initial `python -m build` produced a clean sdist and wheel in `/tmp/tribunal-brief-e2e.E6msm3/dist`:
 
 | Artifact | SHA-256 |
 |---|---|
 | `codex_tribunal-1.0.0.tar.gz` | `c40d3f707073deb10faa21c2e3e2fbe6a15470adbb171303b6cad134fc434cc6` |
 | `codex_tribunal-1.0.0-py3-none-any.whl` | `7b3f4b8b337691ec37168e5ba48a545116a1107cdcf389426286c501bfd436d4` |
 
-The exact wheel was installed with `--no-deps` into a new virtual environment. The wheel contained `personas/__init__.py` and all nine persona JSON files. Installation reported `Successfully installed codex-tribunal-1.0.0`.
+To rule out accidental reuse, an independent second PEP 517 build ran from the current source at `2026-07-20T21:20Z` and wrote only to `/tmp/tribunal-brief-e2e-verify.ovqkOv/dist`:
 
-The first orchestration helper found the built files but rejected `rtk find`'s normalized `./wheel` display because it expected an absolute path. The artifacts were already valid and were reused; no second build was hidden. Likewise, the first API driver passed literal `\n` sequences to `python -c` and was excluded after a driver `SyntaxError`. The materially different single-line driver below succeeded.
+| Verification artifact | SHA-256 |
+|---|---|
+| `codex_tribunal-1.0.0.tar.gz` | `96626833b56a1ffb899bd8228955f3cb1389df125890733942c471b2d3d58907` |
+| `codex_tribunal-1.0.0-py3-none-any.whl` | `3133ca32a0ffdd3245146bda78ba864a2235475e7482e36e1723a31709e60b7f` |
+
+The hash difference between builds is expected from archive/build metadata timestamps; both were built from the same source state. `unzip -l` on the exact verification wheel reported 17 files including `tribunal.py`, `personas/__init__.py`, and all nine persona JSON files. The exact verification wheel was installed with `--no-deps` into a newly created virtual environment and reported `Successfully installed codex-tribunal-1.0.0`. Both builds emitted only the known non-blocking setuptools warning that the table-form `project.license` metadata and license classifier should migrate to an SPDX expression before the 2027 deadline.
+
+During the initial run, one orchestration helper rejected `rtk find`'s normalized `./wheel` display because it expected an absolute path, and one API driver passed literal `\n` sequences to `python -c`. These were test-driver errors, not package failures, and were excluded. The independent verification build and single-line API driver succeeded without either error.
 
 ## Installed console outside the repository
 
-From `/tmp/tribunal-brief-e2e.E6msm3`, the installed `venv/bin/tribunal` comparison command exited `0` and reproduced the source observation exactly: six views, the same six personas, `local-rules`, `builtin-local`, two gaps per view, `50/100`, `⚠️`, and the serialized Karpathy-inspired disclaimer.
+From `/tmp/tribunal-brief-e2e-verify.ovqkOv`, the verification environment's installed `venv/bin/tribunal` comparison command exited `0` and reproduced the explicit source observation exactly: six views, the same six personas in the same order, `local-rules`, `builtin-local`, two gaps per view, `post-hoc-synthesis`, `50/100`, `⚠️`, and the serialized Karpathy-inspired disclaimer.
 
 ## Installed Python API outside the repository
 
 The installed API loaded from:
 
 ```text
-/tmp/tribunal-brief-e2e.E6msm3/venv/lib/python3.12/site-packages/tribunal.py
+/tmp/tribunal-brief-e2e-verify.ovqkOv/venv/lib/python3.12/site-packages/tribunal.py
 ```
 
 An explicit three-person critique panel returned three views, `50/100`, `⚠️`, two gaps per view, and `debate.kind=post-hoc-synthesis`. Programmatic assertions observed the synthetic disclaimer in both `to_dict()`/JSON and `to_markdown()`.
