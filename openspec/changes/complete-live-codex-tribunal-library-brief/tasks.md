@@ -52,6 +52,6 @@
 
 - [x] 7.1 Run unit tests, compile checks, package build, skill validation, CSV gate, and report/evidence checks
 - [x] 7.2 Strictly validate the completed OpenSpec change and inspect the intended diff for secrets or unrelated edits
-- [ ] 7.3 Stage the intended artifacts with force-add where required and create one completion commit
-- [ ] 7.4 Push the current branch and verify the remote full SHA equals the local full SHA
-- [ ] 7.5 Retrieve the immutable SHA-pinned public report blob and verify its requested contents
+- [x] 7.3 Stage the intended artifacts with force-add where required and create one completion commit
+- [x] 7.4 Push the current branch and verify the remote full SHA equals the local full SHA
+- [x] 7.5 Retrieve the immutable SHA-pinned public report blob and verify its requested contents
