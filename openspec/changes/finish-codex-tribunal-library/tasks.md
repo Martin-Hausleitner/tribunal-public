@@ -44,5 +44,5 @@
 ## 7. Public Delivery
 
 - [x] 7.1 Add ignore/release hygiene, inspect the complete tracked diff for secrets and unrelated changes, and reconcile every OpenSpec task.
-- [ ] 7.2 Commit the complete release, create or configure the public GitHub remote, and push the branch.
-- [ ] 7.3 Verify the pushed commit and report blob over GitHub and record the successful blob URL for handoff.
+- [x] 7.2 Commit the complete release, create or configure the public GitHub remote, and push the branch.
+- [x] 7.3 Verify the pushed commit and report blob over GitHub and record the successful blob URL for handoff.
