@@ -11,18 +11,18 @@ Declared use case: a reusable, hard-critical review layer for knowledge/correctn
 IDR: ja
 
 - Canonical NotebookLM notebook: https://notebooklm.google.com/notebook/80cffd38-0185-4f4d-ae00-bbc67c4bc515
-- Verified again at `2026-07-20T19:19:06Z` through the authenticated `nlm 0.8.9` CLI.
+- Verified again at `2026-07-20T19:57:53Z` through the authenticated `nlm 0.8.9` CLI.
 - Notebook title: `Tribunal IDR 2026-07-04`.
 - Public-link sharing was enabled and the notebook identity was verified by ID, not inferred from a pasted URL.
-- Corpus after the audit additions: `336` sources. Of these, `331` were processed and five failed. Every newly added project artifact and every targeted primary source was processed; the five failures were duplicated or secondary Medium articles and were excluded from decision evidence.
-- The initial audit ran four cross-source queries after the six current release/OpenSpec artifacts finished processing. This revalidation ran three additional role-aligned queries followed by a fourth contradiction/source-attribution control instead of accepting generated synthesis at face value.
+- Corpus after the final additions: `535` sources. Of these, `524` were processed and `11` failed. Twelve uniquely titled current HEAD snapshots and all targeted primary OSS/research sources were processed; the failures were duplicate or secondary web pages and were excluded from decision evidence.
+- The final revalidation ran three role-aligned cross-source queries followed by a fourth contradiction/source-attribution control. Direct CLI inventory and primary/executable project evidence overruled generated prose whenever it reused stale counts, scores, unrelated repositories, or study-specific metrics.
 
-The complete initial ledger is retained in [`evidence/notebooklm-live-audit.md`](evidence/notebooklm-live-audit.md). The new questions, returned grounding counts, contradictions, and manual corrections are retained separately in [`evidence/notebooklm-revalidation.md`](evidence/notebooklm-revalidation.md).
+The complete initial ledger is retained in [`evidence/notebooklm-live-audit.md`](evidence/notebooklm-live-audit.md). The final live inventory, four new questions, returned grounding counts, contradictions, and manual corrections are retained in [`evidence/final-notebooklm-revalidation.md`](evidence/final-notebooklm-revalidation.md).
 
 ## Method
 
-1. **OpenSpec-first contract.** The audit was specified before closure work in [`../openspec/changes/live-audit-codex-tribunal-library/`](../openspec/changes/live-audit-codex-tribunal-library/): proposal, design, capability scenarios, and 38 checkable tasks.
-2. **Canonical live research.** One authenticated NotebookLM notebook was inventoried, six current project artifacts were added, processing was awaited, and both the initial and revalidation query sets were recorded with manual contradiction control.
+1. **OpenSpec-first contract.** The final pass was specified before live work in [`../openspec/changes/revalidate-live-codex-tribunal-library/`](../openspec/changes/revalidate-live-codex-tribunal-library/): proposal, design, capability scenarios, and 38 checkable tasks. Earlier completed changes remain historical inputs.
+2. **Canonical live research.** One authenticated NotebookLM notebook was inventoried, twelve current HEAD snapshots were added and processed after a stale-source preflight, and three role queries plus one contradiction/source-attribution control were repeated against that pinned source set.
 3. **OSS before custom work.** Eleven viable repositories were compared. Canonical GitHub metadata, license signals, activity, README feature claims, and star counts were read live. Stars are dated adoption context and contribute zero rubric points.
 4. **Blind adversarial judgments.** Three role-specific prompts were sent in separate fresh sessions with no sibling verdict or draft synthesis. The common evidence packet was conclusion-free. Synthesis began only after accepted outputs were frozen.
 5. **Surgical remediation.** Confirmed issues were fixed: persona disclaimers now survive runtime serialization, routed skill labels are documented as host declarations rather than executed proof, and the report gate is joined to the authoritative CSV snapshot/URL/score/crown data.
@@ -47,13 +47,13 @@ The processed corpus included the targeted authoritative/project sources for:
 - OpenAI Evals: https://github.com/openai/evals
 - lm-evaluation-harness: https://github.com/EleutherAI/lm-evaluation-harness
 - multi-agent-debate research, Nielsen Norman Group usability heuristics, and W3C WCAG 2.2;
-- the current Tribunal README, skill, runtime, report, evidence baseline, and live-audit OpenSpec artifacts.
+- the current Tribunal README, skill, runtime, report, evidence baselines, and both live-audit and final-revalidation OpenSpec artifacts.
 
 Microsoft Agent Framework, https://github.com/microsoft/agent-framework, was added to the live OSS candidate matrix because AutoGen's current README places AutoGen in maintenance mode and recommends Agent Framework for new work.
 
 ### Live metadata evidence
 
-GitHub metadata was refreshed concurrently from the authenticated REST endpoint and timestamped only after all eleven calls completed: `2026-07-20T19:15:00Z`. The machine-readable record is [`evidence/github-snapshot.json`](evidence/github-snapshot.json); the scoring record is [`codex-trib-lib-matrix.csv`](codex-trib-lib-matrix.csv). Repository-level license labels are qualified where a top-level SPDX value is incomplete: OpenAI Evals has dataset-specific exceptions, Langfuse excludes declared enterprise directories from MIT, and Phoenix uses Elastic License 2.0 and is source-available rather than OSI open source.
+GitHub metadata was refreshed concurrently from the authenticated REST endpoint and timestamped only after all eleven calls completed: `2026-07-20T19:48:22Z`. The machine-readable record is [`evidence/github-snapshot.json`](evidence/github-snapshot.json); the scoring record is [`codex-trib-lib-matrix.csv`](codex-trib-lib-matrix.csv). Direct license-file checks reconfirmed AutoGen's CC-BY-4.0 repository license and maintenance-mode migration notice, OpenAI Evals' dataset exceptions, Langfuse's enterprise-directory exclusions, and Phoenix's Elastic License 2.0 hosted-service restriction.
 
 ### Evidence-quality rule
 
@@ -63,10 +63,10 @@ Primary documentation and executable project behavior outrank generated characte
 
 | Query | Returned grounding metadata | Decision-relevant result | Manual correction/control |
 |---|---:|---|---|
-| Correctness and independence | 22 source IDs, 62 citation mappings | Deterministic checks can validate orchestration structure, not factual truth. Unique personas and separate calls provide payload isolation, not statistical or provider-family independence. | Rejected stale claims that the current project promises interactive debate or autonomous self-correction. The docs and JSON explicitly say post-hoc synthesis. |
-| Hostile risks and mitigations | 15 source IDs, 27 citation mappings | Future live-backend risks include correlated judges, fabricated tool execution, prompt/style sensitivity, injection, stale traces, cost leakage, and weak recovery. Deterministic pre-gates and external execution proof are useful controls. | Rejected claims that cryptographic chains, post-quantum certificates, durable state, or cross-family routing are presented as implemented; current artifacts explicitly list them as absent. |
-| CLI UX and feasibility | 18 source IDs, 38 citation mappings | Packaging, dependency-free operation, explicit modes, input bounds, JSON/Markdown, persona discovery, and visible gaps support practical CLI use. No browser/TUI, visual accessibility proof, live provider, dynamic quotas, or durable checkpoints exist. | Re-ran the previously superseded CLI-error claim. Current expected failures are concise exit-2 errors. Corrected the claim that brutal mode has twelve distinct personas: nine bundled personas repeat after round three. |
-| Contradiction/source attribution | 12 source IDs, 33 citation mappings | Recovered the critical boundaries: concise input failures, post-hoc synthesis, persona isolation weaker than family independence, bounded persona rotation, and absent production controls. | The query itself again misread explicit non-capabilities as implemented claims. This self-contradiction is why the report uses conservative wording and executable evidence. |
+| Correctness and independence | 12 source IDs, 44 citation mappings | Deterministic checks validate orchestration structure, not factual truth. URL provenance, packaging, persona validation, and post-hoc synthesis are real; semantic, visual, family-diversity, and durable-trace claims are absent. | Rejected historical external-attempt facts, non-local correlation values, and explicit non-goals portrayed as current defects. |
+| Hostile risks and mitigations | 13 source IDs, 39 citation mappings | Future live-backend risks include common-mode judges, fabricated tool execution, prompt/style sensitivity, injection, stale evidence, weak recovery, and untrusted budgets. | Current code escapes the report target; documented persona repetition is a limitation rather than a defect; current docs already reject family-independence claims. |
+| CLI UX and feasibility | 18 source IDs, 58 citation mappings | Concise errors, mode/hardness behavior, packaging, JSON/Markdown semantics, persona validation, OSS composition, and visible gaps support CLI use. No browser/TUI, visual accessibility proof, live quotas, or executed-skill proof exists. | Rejected stale corpus counts, historical judge scores, and literature observations presented as local runtime measurements. |
+| Contradiction/source attribution | 7 source IDs, 20 citation mappings | Confirmed disclosed rotation, no sibling-output reuse, no statistical/provider-family claim, and the explicit non-capability boundary. | The control preferred stale ledger counts over fresh JSON and repeated a false target-escaping claim. Direct evidence remains authoritative: `535` total, `524` processed, `11` failed. |
 
 IDR conclusion: the research supports Tribunal as an honest structural contract and extension point. It does not support a broader green claim. A production live backend must independently prove provider/model routing, actual source/tool use, trusted budgets, durable traces, retrieval safety, and any visual interaction assertions.
 
@@ -74,76 +74,72 @@ IDR conclusion: the research supports Tribunal as an honest structural contract 
 
 **Engine:** brief-approved `agy` fallback / `Gemini 3.1 Pro (High)`
 
-**Run:** fresh isolated read-only plan session
+**Run:** fresh isolated read-only plan session against the final conclusion-free packet
 
-**Score:** `100/100`
+**Score:** `88/100`
 
-**Recommendation:** Ship
+**Recommendation:** Ship with conditions
 
-The judge verified four important implementation/documentation alignments: persona rotation math, per-run stateless capacity planning, the explicit post-hoc-synthesis boundary, and the `local-rules` semantic ceiling. It found the API, README, skill, tests, persona directory, NotebookLM ledger, and OpenSpec artifacts mutually consistent for the bounded structural scope.
+The judge found the structural/semantic boundary, bounded local score, syntactic-only NotebookLM provenance, post-hoc synthesis label, and Karpathy-inspired identity controls internally consistent. It awarded full evidence-provenance and persona/skill-extensibility points while deducting for bring-your-own semantic judgment, absent durable tracing, and lack of provider-family enforcement.
 
-Its explicit gaps remain material: the local backend cannot determine factuality or target quality; separate calls do not enforce distinct model families; and the package is not a durable observability system. The perfect score is preserved as the judge's independent output, not adopted as consensus. The judge missed the detached-Markdown persona-disclaimer gap and the report/CSV relational weakness later found by the hostile judge.
+Its conditions are already the controlling release boundaries: keep structural-only disclaimers, reject generated project metrics/capabilities without primary or executable support, and preserve the persona disclaimer in every serialized surface.
 
-Raw accepted verdict: [`evidence/live-audit-judge-knowledge.md`](evidence/live-audit-judge-knowledge.md).
+Accepted verdict: [`evidence/final-revalidation-judge-knowledge.md`](evidence/final-revalidation-judge-knowledge.md).
 
 ## Tribunal verdict 2: Harsh critique and risks
 
-**Engine:** brief-approved `agy` fallback / `Claude Sonnet 4.6 (Thinking)`
+**Engine:** brief-approved `agy` fallback / `Gemini 3.5 Flash (High)`
 
-**Run:** fresh isolated read-only plan session; accepted replacement for a summary-only attempt
+**Run:** fresh isolated read-only plan session against the final conclusion-free packet
 
-**Score:** `65/100`
+**Score:** `64/100`
 
-**Recommendation:** Ship with conditions
+**Recommendation:** Block
 
-The hostile judge correctly emphasized that the external panel was weaker than three-family independence, that its own snapshot was in flight, that the retained CLI proof uses the structural backend, and that a custom backend can self-assert a high score and empty gaps. It also identified two actionable publication risks: a detached Markdown verdict omitted the Karpathy-inspired non-impersonation disclaimer, and the report crown gate was not relationally bound to the CSV winner/score/snapshot.
+The hostile judge forced five claims through adversarial review: the apparent mismatch between the `85/100` comparative matrix and the runtime `40/50` structural score; finite-only external capacity inputs; exact repetition of requested three-person panels; missing live-judge bias controls; and unclaimed zipapp/PEX resource portability.
 
-Those two defects are fixed and tested. The skill/runtime boundary now also states that routed names are labels for a host workflow; the dependency-free core does not discover or execute installed Codex skills.
+The first three are bounded by the published contracts rather than runtime fixes. The matrix and runtime are different declared instruments; external capacities are finite non-negative judge slots while only the local default is unlimited; and explicit panels are documented to repeat every round. Reducing the matrix to the local runtime ceiling or injecting a mock backend would itself falsify evidence.
 
-Some findings were rejected or bounded after evidence checks:
+Two findings remain useful pressure:
 
-- `https://github.com/dip/cmdk` is reachable and unarchived; GitHub's canonical resolution disproved the proposed replacement.
-- Whitespace normalization protects Markdown from arbitrary backend-authored structure while JSON remains lossless. A future safe structured renderer needs its own contract; blindly retaining backend Markdown would reopen injection risk.
-- Per-run capacity is an explicit planner input, not durable quota enforcement.
-- Strongest-point selection is post-hoc synthesis and is not represented as consensus.
+- High-stakes live use needs position/style perturbation, calibration, real provider/model provenance, and diversity policy outside this core.
+- Standard wheel/sdist/filesystem installation is proven; zipapp/PEX resource compatibility is not claimed or tested.
 
-Raw accepted verdict: [`evidence/live-audit-judge-critique.md`](evidence/live-audit-judge-critique.md).
+Accepted verdict: [`evidence/final-revalidation-judge-critique.md`](evidence/final-revalidation-judge-critique.md).
 
 ## Tribunal verdict 3: UX and implementability
 
-**Engine:** brief-approved `agy` fallback / `Gemini 3.5 Flash (High)`
+**Engine:** brief-approved `agy` fallback / `Gemini 3.5 Flash (Low)`
 
-**Run:** fresh isolated read-only plan session
+**Run:** fresh isolated read-only plan session against the final conclusion-free packet
 
-**Score:** `89/100`
+**Score:** `96/100`
 
-**Recommendation:** Ship with conditions
+**Recommendation:** Ship
 
-The UX judge found the CLI/API mode mapping, provenance output, packaging, deterministic behavior, and integration surface practical. Its main concerns were Markdown flattening, a generic top-level `personas` package, repeated explicit panels, CLI/API capacity-option asymmetry, declared-but-not-runtime-validated skill labels, and arbitrary future backend exceptions.
+The UX judge found the CLI/API type contract, dependency-free packaging, validated personas, stable output, visible evidence gaps, and integration cost strong. It correctly refused to treat a textual `ui_ux` mode as viewport, accessibility, TUI, or human-task proof.
 
-The release addresses the materially misleading point: skill names are now explicitly advisory/declarative and must be validated and invoked by the host. Other suggestions are bounded rather than expanded into this evidence audit:
+Its requested operator affordances were checked against current behavior:
 
-- Markdown normalization is a deliberate untrusted-output safety choice; raw JSON is the lossless surface.
-- Explicit panel repetition is documented exactly and is deterministic operator intent, not hidden diversity.
-- Renaming the public package layout is disproportionate without an observed collision and would broaden compatibility scope.
-- A dependency-free library cannot generically classify every exception from an injected backend; live adapters own provider-specific operational errors.
-- No GUI exists, so visual polish, contrast, responsive layout, micro-interactions, cognitive load, and task-success quality remain unclaimed.
+- Local UI/UX views already state that code cannot establish visual polish, cognitive load, or task completion.
+- README documents nine-person repetition, explicit-panel repetition, structural slot capacity, and safe Markdown versus lossless JSON.
+- A top-level reuse warning could improve ergonomics but no promised current behavior failed.
 
-Raw accepted verdict: [`evidence/live-audit-judge-ux.md`](evidence/live-audit-judge-ux.md).
+Accepted verdict: [`evidence/final-revalidation-judge-ux.md`](evidence/final-revalidation-judge-ux.md).
 
 ## Debate and synthesis
 
 ### Required Grok path and truthful fallback
 
-At `2026-07-20T18:11:42Z`, three separate fresh no-memory commands were started for the required perspectives with the form:
+Three separate fresh commands were started for the final perspectives with the required form:
 
 ```text
 grok --single <role-specific prompt> -m grok-4.5 --effort high
 ```
 
-All three failed before a model answer with `HTTP 402 Payment Required: Grok Build usage balance exhausted`. No Grok prose is presented as a verdict. The brief-approved `agy` fallback then produced the three accepted outputs in separate sessions. The accepted set uses two provider families because the knowledge and UX judges are both Gemini-family models. It proves session/payload separation, not statistical or three-family independence. A generic GPT-OSS clarification and a summary-only Claude Opus attempt were retained as discarded attempts, never counted as judges. Full provenance: [`evidence/live-audit-grok-attempts.md`](evidence/live-audit-grok-attempts.md).
+All three failed before a model answer with `HTTP 402 Payment Required: Grok Build usage balance exhausted`. No Grok prose is presented as a verdict. The first approved fallback attempts used Gemini 3.1 Pro for knowledge, Claude Sonnet 4.6 for criticism, and GPT-OSS 120B for UX. Knowledge completed; Claude and GPT-OSS hit individual quota before answer generation and were excluded. Fresh Gemini 3.5 Flash High/Low sessions then completed the missing critique and UX roles.
 
-The revalidation repeated all three isolated Grok commands against a newly frozen, conclusion-free packet; all three again exited before model output with HTTP 402. A fresh Gemini knowledge judge completed at `100/100` with the same bounded Ship recommendation. Fresh Claude critique and GPT-OSS UX fallback sessions hit their individual hourly quotas before returning answers, so they are not counted or substituted with generated text. The original complete critique and UX verdicts remain the accepted role outputs. Revalidation commands and dispositions are retained in [`evidence/revalidation-external-attempts.md`](evidence/revalidation-external-attempts.md), with the successful additional view in [`evidence/revalidation-judge-knowledge.md`](evidence/revalidation-judge-knowledge.md).
+The accepted set proves separate session/process and conclusion-free input isolation, not provider-family diversity or statistical independence: all three final accepted judges are Gemini-family models. Complete attempt provenance and exclusions are retained in [`evidence/final-revalidation-external-attempts.md`](evidence/final-revalidation-external-attempts.md).
 
 ### Agreements
 
@@ -151,18 +147,18 @@ The revalidation repeated all three isolated Grok commands against a newly froze
 - `local-rules` is not semantic fact-checking, visual inspection, NotebookLM retrieval, live quota discovery, or model-family enforcement.
 - Unique persona routes and separate requests are useful blind initial isolation but insufficient evidence of independent errors.
 - JSON provenance, explicit gaps, input bounds, deterministic tests, and PEP 517 packaging are strong.
-- Live deployments need external provider/model identity, executable evidence, trusted budgets, and durable/visual surfaces appropriate to their claims.
+- Live deployments need external provider/model identity, executable evidence, trusted budgets, bias calibration, and durable/visual surfaces appropriate to their claims.
 
 ### Material disagreements
 
-- The knowledge judge found no required fixes; the risk judge found detached-identity and cross-artifact-gate defects. Reproducible defects overruled the perfect-score conclusion.
-- The risk judge blocked the incomplete in-flight audit snapshot. That was correct at its timestamp; closure requires the later E2E, report, gates, commit, push, and blob checks.
-- The UX judge rated Markdown flattening high severity; synthesis treats the readability cost as real but prioritizes safe rendering and lossless JSON until a structured renderer is designed.
-- The UX judge treated repeated explicit panels as silent waste; synthesis retains documented deterministic repetition and places live diversity/budget policy outside the core.
+- The risk judge equated the `85/100` comparative product-fit matrix with the runtime's `40/50` local structural score. The report now makes their distinct rubrics explicit; both are mechanically gated, and neither substitutes for semantic proof.
+- The risk judge treated finite-only external slots and explicit-panel repetition as defects. Both match current documentation and tests, so no runtime change is justified.
+- The UX judge requested clearer warnings for visual non-proof and persona reuse. Those warnings already exist in local findings and documentation; a more prominent summary remains an optional ergonomics improvement.
+- All judges acknowledged that live provider diversity, calibration, persistent traces, and visual proof are missing; synthesis treats those as integration gates before broader use.
 
 ### Synthesized verdict
 
-Scores `100/100`, `65/100`, and `89/100` are not averaged into a fictional consensus because the roles assessed different risk surfaces. The strictest reproducible findings control remediation. After the confirmed fixes and all release gates, Codex Tribunal is fit to ship as an auditable offline orchestration contract and reusable skill. Production semantic judgment remains an integration, not a capability of the bundled backend.
+Scores `88/100`, `64/100`, and `96/100` are not averaged into a fictional consensus because the roles assessed different risk surfaces and share one provider family. No fresh judge reproduced a defect in the declared CLI/API/wheel/skill contract. The Block verdict still controls report clarity: the two score instruments and provider-family limit are now explicit. After the release gates, Codex Tribunal is fit to ship as an auditable offline orchestration contract and reusable skill; production semantic judgment remains an integration. Full disposition: [`evidence/final-revalidation-synthesis.md`](evidence/final-revalidation-synthesis.md).
 
 ## 100-point rubric
 
@@ -176,6 +172,8 @@ Scores `100/100`, `65/100`, and `89/100` are not averaged into a fictional conse
 | Integration | 10 | Small dependency/security surface and clear embedding contract | Missing integrations are not automatically a benefit |
 
 Every component is an integer bounded by its weight; all six components sum to the total. Stars add zero points. A deterministic-gate failure, fabricated provenance, hidden category mismatch, or winning score below 70 vetoes the winner marker.
+
+This comparative score is not the runtime `local-rules` score. The matrix rates repository fit for the declared six-dimension use case using external research and executable evidence; `local-rules` rates only one invocation's structural setup and is deliberately capped at `40/50`. Neither score is semantic truth, and a runtime `⚠️` does not become a runtime crown because the separate OSS matrix crowns the strongest bounded product fit.
 
 ### Score breakdown
 
@@ -195,18 +193,18 @@ Every component is an integer bounded by its weight; all six components sum to t
 
 ## OSS feature matrix
 
-Snapshot completed UTC: `2026-07-20T19:15:00Z`. Capability cells mean verified/native (`✅`), partial/composable (`⚠️`), or absent for this use case (`❌`). Scores and unformatted star values are duplicated here for human review; the CSV is authoritative and mechanically gated.
+Snapshot completed UTC: `2026-07-20T19:48:22Z`. Capability cells mean verified/native (`✅`), partial/composable (`⚠️`), or absent for this use case (`❌`). Scores and unformatted star values are duplicated here for human review; the CSV is authoritative and mechanically gated.
 
 | Rank | Tool | GitHub repository | Stars | License qualification | Knowledge | Critique | UI/UX | Independent judges | Evidence | Persona/skill | Repeatability | Score | Result |
 |---:|---|---|---:|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|---:|:---:|
 | 1 | Codex Tribunal | https://github.com/Martin-Hausleitner/tribunal-public | 0 | MIT | ✅ | ✅ | ✅ | ⚠️ | ✅ | ✅ | ⚠️ | 85/100 | 👑 |
-| 2 | promptfoo | https://github.com/promptfoo/promptfoo | 23,441 | MIT | ✅ | ✅ | ⚠️ | ❌ | ✅ | ⚠️ | ✅ | 78/100 |  |
-| 3 | Microsoft Agent Framework | https://github.com/microsoft/agent-framework | 12,247 | MIT | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ✅ | ✅ | 72/100 |  |
+| 2 | promptfoo | https://github.com/promptfoo/promptfoo | 23,442 | MIT | ✅ | ✅ | ⚠️ | ❌ | ✅ | ⚠️ | ✅ | 78/100 |  |
+| 3 | Microsoft Agent Framework | https://github.com/microsoft/agent-framework | 12,248 | MIT | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ✅ | ✅ | 72/100 |  |
 | 4 | DeepEval | https://github.com/confident-ai/deepeval | 16,979 | Apache-2.0 | ✅ | ⚠️ | ❌ | ❌ | ✅ | ⚠️ | ✅ | 68/100 |  |
-| 5 | AutoGen | https://github.com/microsoft/autogen | 59,848 | CC-BY-4.0; maintenance mode; component-specific review | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ✅ | ⚠️ | 64/100 |  |
+| 5 | AutoGen | https://github.com/microsoft/autogen | 59,849 | CC-BY-4.0; maintenance mode; component-specific review | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ✅ | ⚠️ | 64/100 |  |
 | 6 | Ragas | https://github.com/vibrantlabsai/ragas | 14,918 | Apache-2.0 | ✅ | ⚠️ | ❌ | ❌ | ✅ | ⚠️ | ✅ | 61/100 |  |
 | 7 | OpenAI Evals | https://github.com/openai/evals | 18,955 | MIT code; dataset licenses vary | ✅ | ⚠️ | ❌ | ❌ | ✅ | ⚠️ | ✅ | 59/100 |  |
-| 8 | Langfuse | https://github.com/langfuse/langfuse | 31,505 | MIT except declared enterprise directories | ⚠️ | ⚠️ | ❌ | ❌ | ✅ | ⚠️ | ✅ | 58/100 |  |
+| 8 | Langfuse | https://github.com/langfuse/langfuse | 31,508 | MIT except declared enterprise directories | ⚠️ | ⚠️ | ❌ | ❌ | ✅ | ⚠️ | ✅ | 58/100 |  |
 | 9 | DSPy | https://github.com/stanfordnlp/dspy | 36,256 | MIT | ⚠️ | ⚠️ | ❌ | ❌ | ⚠️ | ✅ | ✅ | 57/100 |  |
 | 10 | Phoenix | https://github.com/Arize-ai/phoenix | 10,642 | Elastic-2.0; source-available, not OSI open source | ⚠️ | ⚠️ | ❌ | ❌ | ✅ | ⚠️ | ✅ | 56/100 |  |
 | 11 | lm-evaluation-harness | https://github.com/EleutherAI/lm-evaluation-harness | 13,341 | MIT | ✅ | ❌ | ❌ | ❌ | ✅ | ⚠️ | ✅ | 53/100 |  |
@@ -255,7 +253,7 @@ tribunal \
 
 Observed: exit `0`; requested/effective rounds `2/2`; hardness `hard`; six coordinates from `R1J1` through `R2J3`; six unique personas; backend `local-rules`; engine source `builtin-local`; two explicit evidence gaps per view; `debate.kind=post-hoc-synthesis`; final `50/100`; marker `⚠️`; no runtime winner marker. The Karpathy-inspired disclaimer was present in JSON and Markdown. The same command worked from outside the repository after PEP 517 installation. An invalid NotebookLM reference exited `2` with concise stderr and no traceback. Full proof: [`evidence/live-audit-e2e.md`](evidence/live-audit-e2e.md).
 
-The revalidation repeated the repository CLI, all three primary modes, comparison demo, expected failure, clean PEP 517 install, installed console script, and installed Python API. Every surface reproduced the bounded contract; the fresh machine-checked log is [`evidence/revalidation-e2e.md`](evidence/revalidation-e2e.md).
+The final revalidation repeated the repository CLI, all three primary modes, comparison demo, expected failure, isolated PEP 517 sdist/wheel build, exact-wheel install, installed console script, and installed Python API. Every surface reproduced the bounded contract; the wheel hash, observations, and non-blocking setuptools license-metadata warning are retained in [`evidence/final-revalidation-e2e.md`](evidence/final-revalidation-e2e.md).
 
 ### Recommended next increments
 
@@ -270,20 +268,21 @@ flowchart TD
     A[Target and declared Tribunal type] --> B[Validate target, rounds, personas, provenance]
     B --> C[Select three distinct persona routes per round]
     C --> D[Create blind immutable judge requests]
-    D --> E1[Judge call 1]
-    D --> E2[Judge call 2]
-    D --> E3[Judge call 3]
-    P[Trusted provider, diversity, and budget policy] --> E1
-    P --> E2
-    P --> E3
-    N[Primary corpus and executable observations] --> E1
-    N --> E2
-    N --> E3
+    D --> E[JudgeBackend boundary]
+    L[Bundled local-rules structural backend] --> E
+    P[Optional evidence-capable live backend and trusted policy] -. configured replacement .-> E
+    E --> E1[Separate judge call 1]
+    E --> E2[Separate judge call 2]
+    E --> E3[Separate judge call 3]
     E1 --> F[Collect findings, evidence, gaps, provenance]
     E2 --> F
     E3 --> F
     F --> G[Post-hoc disagreement synthesis]
-    G --> H[Deterministic anti-fake and report gates]
+    N[Authenticated NotebookLM IDR ledger] --> R[Evidence-bound release report]
+    O[GitHub snapshot and scored CSV] --> R
+    Q[CLI, build, wheel, and API observations] --> H[Deterministic anti-fake and report gates]
+    G --> R
+    R --> H
     H --> I{All scoped proof passes?}
     I -- No --> J[Block or warn with unresolved gaps]
     I -- Yes --> K[Publish bounded verdict and immutable evidence]
@@ -294,9 +293,9 @@ flowchart TD
 - The bundled `local-rules` backend checks structure only. Its `40/100` result without a notebook reference and `50/100` with one are transparent readiness markers, not target-quality scores.
 - NotebookLM URL validation checks syntax only. Live corpus/query proof is external and retained in the IDR ledger; the runtime does not fetch notebook content.
 - A custom backend can send every request to one model and can self-declare empty gaps. The library records claims and provenance but cannot independently make them true.
-- The accepted external verdict set used the authorized fallback and only two provider families. Two judges are Gemini-family models. No statistical independence or bias calibration is claimed.
+- The final accepted external verdict set used the authorized fallback and one provider family. All three are Gemini-family models in separate sessions. No provider-family diversity, statistical independence, or bias calibration is claimed.
 - Grok 4.5 was installed and authenticated but all three required high-effort calls failed before model output with HTTP 402. No Grok verdict was fabricated.
-- The fresh revalidation reproduced all three Grok 402 failures. Only its additional knowledge fallback completed; the fresh critique and UX fallback calls were quota-blocked and are explicitly excluded from the accepted verdict set.
+- The final revalidation reproduced all three Grok 402 failures. Claude critique and GPT-OSS UX fallbacks were quota-blocked before answer; fresh Gemini 3.5 sessions completed those roles and the quota failures remain excluded.
 - Synthesis is post-hoc. Judges do not inspect or answer sibling arguments through the current `JudgeRequest` contract.
 - Arbitrary backend Markdown is normalized for safe rendering; JSON is the lossless surface. A safe structured-rendering contract remains future work.
 - No TUI/web UI exists. CLI proof cannot establish visual polish, responsive layout, contrast, interaction quality, or end-user task success.
@@ -318,6 +317,8 @@ python scripts/skill_gate.py skill/SKILL.md
 python scripts/csv_gate.py report/codex-trib-lib-matrix.csv
 python scripts/report_gate.py report/codex-trib-lib-tribunal.md
 openspec validate live-audit-codex-tribunal-library --strict
+openspec validate revalidate-live-codex-tribunal-library --strict
+python -m build
 python examples/phase1_core_modes.py
 python examples/e2e_demo.py
 ```
@@ -334,20 +335,29 @@ cd /tmp
 Evidence index:
 
 - Baseline and tool/authentication record: [`evidence/live-audit-baseline.md`](evidence/live-audit-baseline.md)
+- Final revalidation baseline: [`evidence/final-revalidation-baseline.md`](evidence/final-revalidation-baseline.md)
 - NotebookLM live IDR: [`evidence/notebooklm-live-audit.md`](evidence/notebooklm-live-audit.md)
 - NotebookLM revalidation and contradiction control: [`evidence/notebooklm-revalidation.md`](evidence/notebooklm-revalidation.md)
+- Final NotebookLM inventory and cross-query audit: [`evidence/final-notebooklm-revalidation.md`](evidence/final-notebooklm-revalidation.md)
 - Frozen blind judge packet: [`evidence/live-audit-judge-packet.md`](evidence/live-audit-judge-packet.md)
 - Frozen revalidation packet: [`evidence/revalidation-judge-packet.md`](evidence/revalidation-judge-packet.md)
+- Final frozen judge packet: [`evidence/final-revalidation-judge-packet.md`](evidence/final-revalidation-judge-packet.md)
 - Grok failures, fallback provenance, and discarded attempts: [`evidence/live-audit-grok-attempts.md`](evidence/live-audit-grok-attempts.md)
 - Revalidation Grok/agy attempts: [`evidence/revalidation-external-attempts.md`](evidence/revalidation-external-attempts.md)
+- Final Grok/agy attempts and exclusions: [`evidence/final-revalidation-external-attempts.md`](evidence/final-revalidation-external-attempts.md)
 - Knowledge verdict: [`evidence/live-audit-judge-knowledge.md`](evidence/live-audit-judge-knowledge.md)
 - Additional revalidation knowledge verdict: [`evidence/revalidation-judge-knowledge.md`](evidence/revalidation-judge-knowledge.md)
+- Final knowledge verdict: [`evidence/final-revalidation-judge-knowledge.md`](evidence/final-revalidation-judge-knowledge.md)
+- Final harsh-critique verdict: [`evidence/final-revalidation-judge-critique.md`](evidence/final-revalidation-judge-critique.md)
+- Final UX verdict: [`evidence/final-revalidation-judge-ux.md`](evidence/final-revalidation-judge-ux.md)
 - Harsh-critique verdict: [`evidence/live-audit-judge-critique.md`](evidence/live-audit-judge-critique.md)
 - UX verdict: [`evidence/live-audit-judge-ux.md`](evidence/live-audit-judge-ux.md)
 - Frozen synthesis and finding disposition: [`evidence/live-audit-synthesis.md`](evidence/live-audit-synthesis.md)
+- Final synthesis and finding disposition: [`evidence/final-revalidation-synthesis.md`](evidence/final-revalidation-synthesis.md)
 - GitHub metadata: [`evidence/github-snapshot.json`](evidence/github-snapshot.json)
 - Machine-readable matrix: [`codex-trib-lib-matrix.csv`](codex-trib-lib-matrix.csv)
 - Public CLI/package proof: [`evidence/live-audit-e2e.md`](evidence/live-audit-e2e.md)
 - Fresh CLI/API/installed-package proof: [`evidence/revalidation-e2e.md`](evidence/revalidation-e2e.md)
+- Final source/build/wheel/CLI/API proof: [`evidence/final-revalidation-e2e.md`](evidence/final-revalidation-e2e.md)
 
 The release is complete only when these exact artifacts pass the gates, are committed together, the branch push contains that commit, and the final report is retrievable at a SHA-pinned public GitHub blob URL.
