@@ -152,7 +152,7 @@ The accepted set proves separate fresh sessions, role prompts, conclusion-free p
 
 ### Synthesized verdict
 
-Scores `95/100`, `57/100`, and `85/100` are not averaged because the roles assessed different surfaces and share one model family. The hostile verdict controls defect reproduction, not the final decision automatically. Its canonical-URL finding and the final related `<id>` gap were repaired and retested; the other proposed blockers are unsupported surfaces, documented boundaries, future breaking-migration risks, or an unreproduced renderer claim. Subject to deterministic gates and immutable publication, Codex Tribunal is fit to ship as an auditable offline orchestration contract and reusable skill; production semantic judgment remains an integration. Full finding disposition: [`evidence/verification-synthesis.md`](evidence/verification-synthesis.md).
+Scores `95/100`, `57/100`, and `85/100` are not averaged because the roles assessed different surfaces and share one model family. The hostile verdict controls defect reproduction, not the final decision automatically. Its canonical-URL finding and the final related `<id>` gap were repaired and retested; the other proposed blockers are unsupported surfaces, documented boundaries, future breaking-migration risks, or an unreproduced renderer claim. Deterministic release gates passed; subject to immutable publication, Codex Tribunal is fit to ship as an auditable offline orchestration contract and reusable skill, while production semantic judgment remains an integration. Full finding disposition: [`evidence/verification-synthesis.md`](evidence/verification-synthesis.md).
 
 ## 100-point rubric
 
@@ -353,6 +353,7 @@ Evidence index:
 - Post-hoc synthesis and finding disposition: [`evidence/verification-synthesis.md`](evidence/verification-synthesis.md)
 - Direct generated-claim and validator controls: [`evidence/verification-direct-controls.md`](evidence/verification-direct-controls.md)
 - Source/build/wheel/console/API proof: [`evidence/verification-e2e.md`](evidence/verification-e2e.md)
+- Immutable publication closure: [`evidence/verification-publication.md`](evidence/verification-publication.md)
 - GitHub metadata: [`evidence/github-snapshot.json`](evidence/github-snapshot.json)
 - Machine-readable matrix: [`codex-trib-lib-matrix.csv`](codex-trib-lib-matrix.csv)
 

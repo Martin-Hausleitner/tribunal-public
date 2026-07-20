@@ -439,12 +439,25 @@ def validate_notebooklm_url(value: str) -> str:
         raise ValueError("NotebookLM URL must be a non-empty string")
     parsed = urlparse(value.strip())
     path_parts = [part for part in parsed.path.split("/") if part]
+    notebook_id = path_parts[1] if len(path_parts) == 2 else ""
     if (
         parsed.scheme != "https"
         or parsed.hostname != "notebooklm.google.com"
         or len(path_parts) != 2
         or path_parts[0] != "notebook"
-        or not path_parts[1]
+        or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]*", notebook_id)
+        or notebook_id.casefold()
+        in {
+            "id",
+            "notebook-id",
+            "notebook_id",
+            "your-notebook-id",
+            "your_notebook_id",
+            "placeholder",
+        }
+        or parsed.params
+        or parsed.query
+        or parsed.fragment
     ):
         raise ValueError(
             "NotebookLM URL must match https://notebooklm.google.com/notebook/<id>"

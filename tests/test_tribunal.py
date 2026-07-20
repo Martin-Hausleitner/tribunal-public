@@ -165,6 +165,10 @@ class TribunalContractTests(unittest.TestCase):
             "https://example.com/notebook/id",
             "https://notebooklm.google.com/other/id",
             "https://notebooklm.google.com/notebook",
+            "https://notebooklm.google.com/notebook/<id>",
+            "https://notebooklm.google.com/notebook/your-notebook-id",
+            "https://notebooklm.google.com/notebook/id?unexpected=1",
+            "https://notebooklm.google.com/notebook/id#fragment",
         )
         for url in invalid:
             with self.subTest(url=url), self.assertRaisesRegex(ValueError, "NotebookLM URL"):
