@@ -47,3 +47,7 @@ Starting SHA-256 anchors:
 ## Planning gate
 
 `openspec validate complete-live-codex-tribunal-library-brief --strict` exited `0`: `Change 'complete-live-codex-tribunal-library-brief' is valid`. Proposal, design, capability scenarios, and the apply checklist were therefore complete before live evidence collection began.
+
+## 30-minute guard heartbeat
+
+At `2026-07-20T21:06:53Z` both configured host paths were attempted. The Mac path `/Users/mh/.codex/codex-weekly-guard.sh` is not present on the VCVM host and returned `127`; no Mac state is inferred. The VCVM guard returned exit `0`: `session_used=9`, `session_left=91`, `session_reset=0s`, `weekly_used=55`, `weekly_left=45`, `weekly_reset=578169s`, `fast=not_seen`, status `LIMIT_GUARD`. The run remains priority-only for expensive Codex/OMX team bursts and continues only the already in-scope `agy` fallback/repository validation work. No fast mode was observed.

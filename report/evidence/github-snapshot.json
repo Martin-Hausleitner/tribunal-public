@@ -1,5 +1,5 @@
 {
-  "snapshot_utc": "2026-07-20T20:51:06Z",
+  "snapshot_utc": "2026-07-20T21:07:01Z",
   "source": "Live GitHub REST repository, README, and license endpoints queried with authenticated gh CLI",
   "stars_are_adoption_only": true,
   "rubric_points_from_stars": 0,
@@ -11,13 +11,13 @@
       "reported_license": "MIT",
       "license_url": "https://github.com/Martin-Hausleitner/tribunal-public/blob/master/LICENSE",
       "readme_url": "https://github.com/Martin-Hausleitner/tribunal-public/blob/master/README.md",
-      "pushed_at": "2026-07-20T20:36:06Z",
+      "pushed_at": "2026-07-20T21:00:07Z",
       "archived": false,
       "feature_basis": "Three explicit review modes, isolated per-persona backend calls, evidence gaps, persona/skill routing, stable CLI/API output, and an explicitly structural local backend."
     },
     {
       "github_url": "https://github.com/promptfoo/promptfoo",
-      "stars": 23442,
+      "stars": 23443,
       "github_api_spdx": "MIT",
       "reported_license": "MIT",
       "license_url": "https://github.com/promptfoo/promptfoo/blob/main/LICENSE",
@@ -28,12 +28,12 @@
     },
     {
       "github_url": "https://github.com/microsoft/agent-framework",
-      "stars": 12250,
+      "stars": 12251,
       "github_api_spdx": "MIT",
       "reported_license": "MIT",
       "license_url": "https://github.com/microsoft/agent-framework/blob/main/LICENSE",
       "readme_url": "https://github.com/microsoft/agent-framework/blob/main/README.md",
-      "pushed_at": "2026-07-20T20:34:52Z",
+      "pushed_at": "2026-07-20T20:55:39Z",
       "archived": false,
       "feature_basis": "README documents production-grade multi-agent workflows, multiple providers, checkpointing, human-in-the-loop, OpenTelemetry observability, DevUI, and Python/.NET support."
     },
@@ -83,18 +83,18 @@
     },
     {
       "github_url": "https://github.com/langfuse/langfuse",
-      "stars": 31509,
+      "stars": 31510,
       "github_api_spdx": "NOASSERTION",
       "reported_license": "MIT outside the enterprise directories declared by the repository",
       "license_url": "https://github.com/langfuse/langfuse/blob/main/LICENSE",
       "readme_url": "https://github.com/langfuse/langfuse/blob/main/README.md",
-      "pushed_at": "2026-07-20T17:16:51Z",
+      "pushed_at": "2026-07-20T20:55:18Z",
       "archived": false,
       "feature_basis": "README documents OpenTelemetry tracing, evaluations, datasets, debugging, experiments, and self-hosting; top-level license excludes named enterprise directories."
     },
     {
       "github_url": "https://github.com/stanfordnlp/dspy",
-      "stars": 36258,
+      "stars": 36259,
       "github_api_spdx": "MIT",
       "reported_license": "MIT",
       "license_url": "https://github.com/stanfordnlp/dspy/blob/main/LICENSE",
@@ -110,7 +110,7 @@
       "reported_license": "Elastic License 2.0; source-available, not OSI open source",
       "license_url": "https://github.com/Arize-ai/phoenix/blob/main/LICENSE",
       "readme_url": "https://github.com/Arize-ai/phoenix/blob/main/README.md",
-      "pushed_at": "2026-07-20T20:43:47Z",
+      "pushed_at": "2026-07-20T21:06:46Z",
       "archived": false,
       "feature_basis": "README documents OpenTelemetry tracing, evaluations, datasets, experiments, prompt playground, and agent debugging; ELv2 restricts hosted-service use."
     },
