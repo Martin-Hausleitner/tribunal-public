@@ -1,5 +1,5 @@
 {
-  "snapshot_utc": "2026-07-20T21:07:01Z",
+  "snapshot_utc": "2026-07-20T22:08:10Z",
   "source": "Live GitHub REST repository, README, and license endpoints queried with authenticated gh CLI",
   "stars_are_adoption_only": true,
   "rubric_points_from_stars": 0,
@@ -11,35 +11,35 @@
       "reported_license": "MIT",
       "license_url": "https://github.com/Martin-Hausleitner/tribunal-public/blob/master/LICENSE",
       "readme_url": "https://github.com/Martin-Hausleitner/tribunal-public/blob/master/README.md",
-      "pushed_at": "2026-07-20T21:00:07Z",
+      "pushed_at": "2026-07-20T22:00:11Z",
       "archived": false,
       "feature_basis": "Three explicit review modes, isolated per-persona backend calls, evidence gaps, persona/skill routing, stable CLI/API output, and an explicitly structural local backend."
     },
     {
       "github_url": "https://github.com/promptfoo/promptfoo",
-      "stars": 23443,
+      "stars": 23446,
       "github_api_spdx": "MIT",
       "reported_license": "MIT",
       "license_url": "https://github.com/promptfoo/promptfoo/blob/main/LICENSE",
       "readme_url": "https://github.com/promptfoo/promptfoo/blob/main/README.md",
-      "pushed_at": "2026-07-20T18:15:45Z",
+      "pushed_at": "2026-07-20T22:07:36Z",
       "archived": false,
       "feature_basis": "README documents CLI/library evaluation, automated evals, red teaming, vulnerability scanning, and CI/CD checks."
     },
     {
       "github_url": "https://github.com/microsoft/agent-framework",
-      "stars": 12251,
+      "stars": 12252,
       "github_api_spdx": "MIT",
       "reported_license": "MIT",
       "license_url": "https://github.com/microsoft/agent-framework/blob/main/LICENSE",
       "readme_url": "https://github.com/microsoft/agent-framework/blob/main/README.md",
-      "pushed_at": "2026-07-20T20:55:39Z",
+      "pushed_at": "2026-07-20T21:57:35Z",
       "archived": false,
       "feature_basis": "README documents production-grade multi-agent workflows, multiple providers, checkpointing, human-in-the-loop, OpenTelemetry observability, DevUI, and Python/.NET support."
     },
     {
       "github_url": "https://github.com/confident-ai/deepeval",
-      "stars": 16981,
+      "stars": 16982,
       "github_api_spdx": "Apache-2.0",
       "reported_license": "Apache-2.0",
       "license_url": "https://github.com/confident-ai/deepeval/blob/main/LICENSE.md",
@@ -83,7 +83,7 @@
     },
     {
       "github_url": "https://github.com/langfuse/langfuse",
-      "stars": 31510,
+      "stars": 31512,
       "github_api_spdx": "NOASSERTION",
       "reported_license": "MIT outside the enterprise directories declared by the repository",
       "license_url": "https://github.com/langfuse/langfuse/blob/main/LICENSE",
@@ -94,7 +94,7 @@
     },
     {
       "github_url": "https://github.com/stanfordnlp/dspy",
-      "stars": 36259,
+      "stars": 36261,
       "github_api_spdx": "MIT",
       "reported_license": "MIT",
       "license_url": "https://github.com/stanfordnlp/dspy/blob/main/LICENSE",
@@ -110,7 +110,7 @@
       "reported_license": "Elastic License 2.0; source-available, not OSI open source",
       "license_url": "https://github.com/Arize-ai/phoenix/blob/main/LICENSE",
       "readme_url": "https://github.com/Arize-ai/phoenix/blob/main/README.md",
-      "pushed_at": "2026-07-20T21:06:46Z",
+      "pushed_at": "2026-07-20T21:23:56Z",
       "archived": false,
       "feature_basis": "README documents OpenTelemetry tracing, evaluations, datasets, experiments, prompt playground, and agent debugging; ELv2 restricts hosted-service use."
     },

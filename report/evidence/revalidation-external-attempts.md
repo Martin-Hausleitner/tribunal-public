@@ -1,41 +1,37 @@
-# External judge revalidation attempt ledger
+# External judge attempts: live brief revalidation
 
-Recorded UTC: `2026-07-20T19:19:06Z`
+Collection date: `2026-07-20`
 
-## Fresh frozen input
+Common conclusion-free packet: [revalidation-judge-packet.md](revalidation-judge-packet.md)
 
-All attempts received the conclusion-free packet [`revalidation-judge-packet.md`](revalidation-judge-packet.md). It pins commit `8816e035d7320955eea745e84832bafcca381ed8`, excludes the final report and every prior or sibling judge output, and includes only verified runtime boundaries, fresh NotebookLM metadata, fresh GitHub metadata, and the common rubric.
+## Mandated Grok path
 
-## Required Grok path
+Three separate read-only commands were issued with the required provider/model/effort shape:
 
-Three separate no-memory, no-subagent, plan/read-only commands were invoked for knowledge/correctness, hostile criticism/risk, and CLI UX/feasibility. Each used the required form:
+- knowledge/correctness: `grok --single <role prompt> -m grok-4.5 --effort high`
+- harsh criticism/risk: `grok --single <role prompt> -m grok-4.5 --effort high`
+- UI/UX/implementability: `grok --single <role prompt> -m grok-4.5 --effort high`
 
-```text
-grok --single <role-specific prompt> -m grok-4.5 --effort high
-```
+Each exited `1` before model output with HTTP `402 Payment Required`: `Grok Build usage balance exhausted`. No Grok prose exists and none is represented as a verdict.
 
-Each process exited `1` before returning any model answer:
+## Authorized agy fallback sequence
 
-```text
-API error (status 402 Payment Required): Grok Build usage balance exhausted
-```
-
-No Grok prose exists and none is presented as a verdict.
-
-## Brief-approved agy fallback
-
-Three fresh isolated `agy` plan sessions were then requested with different available model families.
-
-| Perspective | Requested model | Process result | Disposition |
+| Role | Model | Result | Disposition |
 |---|---|---|---|
-| Knowledge/correctness | Gemini 3.1 Pro (High) | Exit `0`; complete seven-part verdict; `100/100`; `Ship` | Retained as an additional revalidation view |
-| Hostile criticism/risk | Claude Sonnet 4.6 (Thinking) | Exit `1`; individual hourly quota reached before an answer | Not a verdict |
-| CLI UX/feasibility | GPT-OSS 120B (Medium) | Exit `1`; individual hourly quota reached before an answer | Not a verdict |
+| Knowledge/correctness | Gemini 3.1 Pro (High) | Complete eight-field verdict, 95/100, SHIP WITH CONDITIONS | Accepted |
+| Criticism/risk first fallback | Claude Sonnet 4.6 (Thinking) | Individual quota reached before answer; reset reported by CLI | Excluded |
+| UI/UX first fallback | GPT-OSS 120B (Medium) | Individual quota reached before answer; reset reported by CLI | Excluded |
+| Criticism/risk retry | Gemini 3.5 Flash (High) | Complete eight-field verdict, 70/100, SHIP WITH CONDITIONS | Accepted |
+| UI/UX retry | Gemini 3.5 Flash (Low) | Only procedural work narration; no score, recommendation, findings, gaps, or final verdict | Excluded |
+| UI/UX final retry | Gemini 3.5 Flash (Medium) | Complete eight-field verdict, 94/100, SHIP WITH CONDITIONS | Accepted |
 
-The successful knowledge output is retained verbatim in [`revalidation-judge-knowledge.md`](revalidation-judge-knowledge.md). Its perfect score is an external opinion, not the synthesized release score; it also records unresolved provenance, prompt-injection, and backend-trust gaps.
+All accepted runs used a fresh command/session, read-only plan mode, the common packet, and a role-specific prompt that forbade sibling verdicts. All accepted runs are Gemini-family models. This proves process/prompt isolation only; it does not prove provider-family diversity, statistical independence, provider-memory isolation, or absence of correlated bias.
 
-The two quota failures are not replaced with invented text. The already accepted critique and UX verdicts remain the complete independent opinions for those roles because they were produced earlier the same day in separate, blinded sessions and are preserved in `live-audit-judge-critique.md` and `live-audit-judge-ux.md`. The final synthesis continues to use their stricter reproducible findings.
+## Validation and synthesis boundary
 
-## Independence limit
+Each accepted output contains the assigned role, engine/model identity, numeric score, recommendation, ordered findings, direct evidence or commands, reproduced-defect separation, unresolved gaps, and independence limits. Judge claims remain opinions until current primary or executable controls reproduce them. In particular:
 
-The run proves separate process and prompt execution. It does not prove provider-memory isolation, three-family statistical independence, or that any model-reported evidence gap list is complete. The current accepted three-role set spans two provider families; the additional successful revalidation view is Gemini-family and does not change that fact.
+- the three-person panel restriction with a concise exit-2 error is an intended contract, not a crash;
+- orchestrator provenance strings in evidence are an intentional trace surface, not target evidence supplied by the backend;
+- `UI/UX ✅` in the comparison matrix means native fit for routing and evidence-gap handling, not proof of a rendered or accessible interface;
+- packaging namespace/deprecation warnings, Markdown newline flattening, synchronous live-backend latency, persona discovery, and lack of bundled live providers remain bounded risks or improvement candidates and are checked against current E2E/build output before synthesis.
