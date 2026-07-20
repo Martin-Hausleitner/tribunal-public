@@ -13,22 +13,22 @@ The single crown below is a narrow, project-authored fit assessment backed by th
 IDR: ja
 
 - Canonical NotebookLM notebook: https://notebooklm.google.com/notebook/80cffd38-0185-4f4d-ae00-bbc67c4bc515
-- Authenticated identity, title `Tribunal IDR 2026-07-04`, and public-link sharing were reverified with `nlm 0.8.9`; closing inventory was recorded at `2026-07-20T22:18:25Z`.
+- Authenticated identity, title `Tribunal IDR 2026-07-04`, and public-link sharing were reverified with `nlm 0.8.9`; the verification ledger was recorded at `2026-07-20T22:14:42Z`.
 - Direct baseline inventory was `640` total, `598` processed, and `42` failed. The shared notebook changed during collection; the closing direct inventory was `669` total, `600` processed, and `69` failed.
-- Twelve local-file uploads, twelve text submissions, and one public SHA-pinned URL path were attempted for fresh current sources. File uploads were rejected; text submissions later appeared as 24 empty/duplicate failed records; and the HTTP-reachable URL was rejected by NotebookLM. No fresh failed record is represented as processed grounding.
-- Four cross-topic queries ran against 29 already processed primary, research-control, and same-day project sources. Knowledge returned 22 source IDs and 58 citation mappings. Critique, UX, and contradiction control returned complete prose but zero formal source/citation metadata and are treated as ungrounded model characterization.
-- The contradiction control rejected nine overclaims and supported only the package-metadata claim. Current executable controls overruled a repeated false assertion that `LocalRulesBackend.evaluate` was missing.
+- Four current planning files were offered as fresh sources. Proposal and design were processed; the nested spec/task uploads returned `INVALID_ARGUMENT`, a materially different inline bundle later failed, and a direct-control upload was rejected. Failed records were excluded from every query.
+- A default-conversation knowledge attempt returned `0` selected sources and `0` mappings and was excluded. Four accepted cross-topic queries then used separate fresh conversation IDs and explicit processed-source selections: knowledge `17/72`, critique `6/22`, UX `11/40`, and contradiction control `6/23` returned source IDs/citation mappings.
+- NotebookLM repeatedly invented syntax, import, regex, delimiter, and missing-method defects from normalized passages. Exact source, compiler, import, rendering, CLI, build, and installed-wheel controls overruled them. The contradiction control accepted those executable facts as external evidence rather than pretending they were notebook citations.
 
-The authoritative source IDs, ingestion failures, four query contracts, grounding counts, control labels, and manual corrections are retained in [`evidence/revalidation-notebooklm.md`](evidence/revalidation-notebooklm.md). Historical IDR ledgers remain reference material, not current proof.
+The authoritative source IDs, ingestion failures, rejected attempt, four query contracts, grounding counts, control labels, and manual corrections are retained in [`evidence/verification-notebooklm.md`](evidence/verification-notebooklm.md). Historical IDR ledgers remain reference material, not current proof.
 
 ## Method
 
-1. **OpenSpec-first contract.** This run was specified before external calls in [`../openspec/changes/revalidate-trib-codex-trib-lib-brief/`](../openspec/changes/revalidate-trib-codex-trib-lib-brief/): proposal, design, capability scenarios, and 35 checkable tasks. Earlier completed changes remain historical inputs.
-2. **Canonical live research.** The authenticated notebook and public link were verified, source state was inventoried twice, three source-ingestion approaches were attempted and truthfully failed, and four queries ran against 29 selected processed sources.
+1. **OpenSpec-first contract.** This run was specified and strictly validated before fresh synthesis in [`../openspec/changes/verify-complete-codex-tribunal-library-brief/`](../openspec/changes/verify-complete-codex-tribunal-library-brief/): proposal, design, capability scenarios, and 53 checkable tasks. Earlier completed changes remain historical inputs.
+2. **Canonical live research.** The authenticated notebook and public link were verified, mutable source state was inventoried, two fresh current planning sources reached processed status, failures were excluded, and four accepted queries used explicit selected sources plus fresh conversation IDs.
 3. **OSS before custom work.** Eleven viable repositories were refreshed in one primary GitHub REST batch. Stars, licenses, archive/disabled state, activity, canonical URLs, README status, and the six score components were checked; stars provide zero points.
-4. **Blind adversarial judgments.** Three mandated Grok sessions were attempted first. After all returned 402 before output, authorized `agy` fallbacks used separate fresh role sessions and a conclusion-free common packet. Synthesis started only after outputs were frozen.
+4. **Blind adversarial judgments.** The weekly guard was above its 50% threshold, so no expensive Codex/OMX burst was started. The brief-authorized `agy` alternative used three accepted fresh role sessions and one conclusion-free common packet. Synthesis started only after outputs were frozen.
 5. **Adversarial controls.** Generated claims were reconciled against exact code, unit/compile/build gates, a malformed-input case, source CLI modes, an exact-wheel install, the installed console, and the installed Python API.
-6. **Scoped implementation.** The first current build exposed setuptools license-metadata deprecations. The package moved to PEP-639/SPDX metadata and a `setuptools>=77` build floor; the clean rebuild removed the warnings without changing runtime dependencies.
+6. **Scoped implementation.** The hostile judge reproduced that canonical NotebookLM URLs still accepted query strings and fragments. Final E2E additionally reproduced acceptance of the literal `<id>` documentation token. The validator and regression test now reject both defect classes while retaining real UUID/slug forms.
 7. **Fail-closed publication.** Unit, compile, build, skill, CSV, report, OpenSpec, evidence-link, diff, remote-SHA, and immutable-blob checks gate release.
 
 NotebookLM synthesis, external judge opinion, GitHub primary metadata, and executable package behavior are separate evidence classes. None substitutes for another.
@@ -50,11 +50,11 @@ The selected processed set included canonical repository sources for:
 - OpenAI Evals: https://github.com/openai/evals
 - lm-evaluation-harness: https://github.com/EleutherAI/lm-evaluation-harness
 
-The 29-source query set also contained NN/g usability heuristics; Agent-as-a-Judge, position-bias, sycophancy, and auditability research; nine same-day Tribunal project snapshots; four brief OpenSpec snapshots; and one executable contradiction-control snapshot. The project snapshots bind to earlier same-day commit `2c27f51`, so current executable behavior outranks any stale difference.
+Role-specific selected sets also contained Nielsen Norman Group usability heuristics, W3C WCAG 2.2 Quick Reference, multi-agent-debate research, an ACL position-bias study, current Tribunal project snapshots, and the two processed current-pass OpenSpec sources. The project sources bind to starting HEAD `9f1dc36`; current executable behavior and the final committed diff outrank any later difference.
 
 ### Live metadata evidence
 
-GitHub metadata was refreshed concurrently and timestamped only after all eleven primary REST calls completed: `2026-07-20T22:17:14Z`. The machine-readable record is [`evidence/github-snapshot.json`](evidence/github-snapshot.json), the score record is [`codex-trib-lib-matrix.csv`](codex-trib-lib-matrix.csv), and current batch/license/rubric evidence is in [`evidence/revalidation-oss.md`](evidence/revalidation-oss.md). Root-license reads reconfirmed AutoGen's CC-BY-4.0 and maintenance notice, OpenAI Evals' dataset exceptions, Langfuse's enterprise-directory exclusions, and Phoenix's Elastic License 2.0 hosted-service restriction.
+GitHub metadata was refreshed concurrently and timestamped only after all eleven primary REST calls completed: `2026-07-20T22:17:14Z`. The machine-readable record is [`evidence/github-snapshot.json`](evidence/github-snapshot.json), the score record is [`codex-trib-lib-matrix.csv`](codex-trib-lib-matrix.csv), and current batch/license/rubric evidence is in [`evidence/verification-oss.md`](evidence/verification-oss.md). Root-license reads reconfirmed AutoGen's CC-BY-4.0 and maintenance notice, OpenAI Evals' dataset exceptions, Langfuse's enterprise-directory exclusions, and Phoenix's Elastic License 2.0 hosted-service restriction.
 
 ### Evidence-quality rule
 
@@ -64,12 +64,12 @@ Primary documentation and current executable behavior outrank generated characte
 
 | Query | Returned grounding metadata | Decision-relevant result | Manual correction/control |
 |---|---:|---|---|
-| Knowledge/correctness | 22 source IDs, 58 citation mappings | Supports the thin structural contract, persona disclaimer, package metadata, explicit local-backend limits, and OSS composition. | Historical provider facts and study metrics remain source descriptions, not current measurements. |
-| Harsh criticism/risk | 0 source IDs, 0 mappings | Raises common-mode, injection/sycophancy, backend-trust, provider-provenance, durable budget/trace, license, and identity risks. | Filename-style brackets did not become formal grounding; prose is advisory only. |
-| CLI UX/feasibility | 0 source IDs, 0 mappings | Identifies discoverability, bounded input/errors, serialization/provenance, workflow friction, persona disclosure, and external visual proof needs. | Rejected the invented missing-`evaluate` blocker through current source and installed execution. |
-| Contradiction/source attribution | 0 source IDs, 0 mappings | Rejected semantic local-rules, automatic independence, URL-equals-query, visual pass, real-person authorship, crown/runtime equivalence, durable quota, identical Markdown/JSON, and snapshot-only install proof; supported package declarations. | Formal grounding was empty; compile/build/wheel/CLI/API observations are authoritative. |
+| Knowledge/correctness | 17 source IDs, 72 citation mappings | Supports separate backend requests, deterministic persona/round routing, bounds, structural-only scoring, strict markers, and OSS composition. | Excluded normalized-source syntax claims, a `strict state machine` overstatement, and paper metrics misapplied as local results. |
+| Harsh criticism/risk | 6 source IDs, 22 citation mappings | Retains common-mode, provider provenance, injection/bias calibration, persistent budgets, and unclaimed zipapp/PEX behavior as deployment pressure. | Excluded invented unterminated-string, collapsed-import, empty-regex, and empty-delimiter defects after exact controls. |
+| CLI UX/feasibility | 11 source IDs, 40 citation mappings | Supports four discoverable modes, bounds, help/errors, serialization, disclosure, conventional packaging, and compose-over-build guidance. | Excluded invented syntax/missing-method blockers and a nonexistent Studio artifact; visual criteria were not treated as passed tests. |
+| Contradiction/source attribution | 6 source IDs, 23 citation mappings | Correctly reclassified the repeated code blockers as normalization artifacts and separated structural scoring, retrieval, visual proof, independence, quotas, and identity. | Executable facts were explicitly labeled external controls; source provenance does not make generated interpretation authoritative. |
 
-All four responses shared one NotebookLM conversation ID, so this pass claims cross-topic querying, not isolated conversations.
+The rejected default-conversation answer had no selected grounding. Each accepted query used its own fresh conversation UUID, so no accepted query reused the default thread.
 
 IDR conclusion: the corpus supports Tribunal as an honest structural contract and extension point. It does not support native semantic verification, visual accessibility testing, provider-family independence, durable quota/trace enforcement, or production calibration.
 
@@ -77,87 +77,82 @@ IDR conclusion: the corpus supports Tribunal as an honest structural contract an
 
 **Engine:** brief-approved `agy` fallback / `Gemini 3.1 Pro (High)`
 
-**Run:** fresh isolated read-only plan session against the revalidation conclusion-free packet
+**Run:** fresh isolated read-only plan session against packet SHA-256 `f5ad6478b25e1078e93b0250bc70630984100b608dc92211fc9f9bf423ba1d6d`
 
 **Score:** `95/100`
 
-**Recommendation:** Ship with conditions
+**Recommendation:** Ship
 
-The judge found no current core defect. It directly supported the structural/semantic boundary, dependency-free runtime, bounded CLI, package entry point/data declarations, persona disclaimer, and syntactic-only NotebookLM provenance. Its controlling conditions are to keep `local-rules` visibly non-semantic, use real live backends for substantive review, preserve the identity disclaimer, and keep visual UX outside a terminal-only proof.
+The judge emphasized that lossy NotebookLM source normalization produced confident false code blockers and that executable/source controls must win. It confirmed the local `50/100` ceiling, the non-semantic boundary, and the Karpathy disclaimer. Its remaining gaps are mutable shared-corpus state, no semantic/visual retrieval in `local-rules`, and no statistical/provider-family independence.
 
-Accepted verdict: [`evidence/revalidation-judge-knowledge.md`](evidence/revalidation-judge-knowledge.md).
+Accepted verdict: [`evidence/verification-judge-knowledge.md`](evidence/verification-judge-knowledge.md).
 
 ## Tribunal verdict 2: Harsh critique and risks
 
 **Engine:** brief-approved `agy` fallback / `Gemini 3.5 Flash (High)`
 
-**Run:** fresh restricted-project read-only plan session against the common packet
+**Run:** fresh isolated read-only plan session against the same frozen packet
 
-**Score:** `70/100`
+**Score:** `57/100`
 
-**Recommendation:** Ship with conditions
+**Recommendation:** Block
 
-The hostile judge stressed the self-authored external matrix, UI/UX capability semantics, sequential live-backend latency, syntactic NotebookLM scoring, backend self-declaration, missing family enforcement, synthetic-persona downstream risk, and absence of bundled semantic adapters.
+The hostile judge raised a generic top-level `personas` namespace, unclaimed zipapp/PEX resource behavior, Markdown metadata/whitespace handling, custom-backend self-declaration, persona repetition, and one concrete canonical-URL defect. It reported `18` passing tests, successful build/wheel inspection, and gate observations while still recommending a block.
 
-Synthesis accepts those as boundaries or production risks, with three corrections:
+Direct disposition preserves the hostile verdict while separating current defects from boundaries:
 
-- `UI/UX ✅` means native review-mode/persona/gap-contract fit, not browser rendering or accessibility success.
-- A one-person `--personas` request returning concise exit 2 is an intended three-judge contract, not a crash.
-- Routing/engine/hardness strings appended to the evidence array are explicit orchestrator provenance, not backend-authored target evidence.
+- Query strings and fragments were reproducibly accepted by the NotebookLM validator and are now rejected. Final E2E found and fixed the related `<id>` acceptance gap.
+- The namespace risk is retained for a planned breaking migration; zipapp/PEX is not a claimed distribution surface.
+- The `_markdown_code` XSS claim was not reproduced with a conforming code-span renderer; multiline Markdown normalization is documented and JSON remains lossless.
+- Custom backend truthfulness and repeated personas remain explicit trust/independence boundaries.
 
-Accepted verdict: [`evidence/revalidation-judge-critique.md`](evidence/revalidation-judge-critique.md).
+Accepted verdict: [`evidence/verification-judge-critique.md`](evidence/verification-judge-critique.md).
 
 ## Tribunal verdict 3: UX and implementability
 
 **Engine:** brief-approved `agy` fallback / `Gemini 3.5 Flash (Medium)`
 
-**Run:** final fresh restricted-project read-only plan retry after the first UX fallback was quota-blocked and a second returned no verdict
+**Run:** fresh isolated read-only plan session after a quota-blocked GPT-OSS attempt and one excluded incomplete Gemini Low answer
 
-**Score:** `94/100`
+**Score:** `85/100`
 
-**Recommendation:** Ship with conditions
+**Recommendation:** Ship
 
-The UX judge reproduced current setuptools license-metadata deprecations, flagged the generic top-level `personas` namespace, documented Markdown newline flattening, persona discovery friction, and the lack of bundled live adapters. This pass fixed the actionable non-breaking packaging warning with PEP-639/SPDX metadata and verified a warning-free rebuild. Markdown flattening is an intentional documented safe-rendering choice, persona listing/adapters are optional, and renaming the top-level persona package requires an explicit breaking migration.
+The UX judge observed all help flags, concise status-2/no-traceback errors, the console entry point, `18` tests, examples, gates, and persona disclaimer preservation. It retained only low-severity friction: per-invocation capacity state, later validation of arbitrary comma-separated persona slugs, and Markdown newline flattening with lossless JSON.
 
-The verdict remains a CLI/package feasibility view, not browser, viewport, accessibility, or human-task validation.
+The verdict remains a CLI/package feasibility view, not browser, viewport, accessibility, assistive-technology, or human-task validation; it also does not turn `local-rules` into semantic or NotebookLM retrieval.
 
-Accepted verdict: [`evidence/revalidation-judge-ux.md`](evidence/revalidation-judge-ux.md).
+Accepted verdict: [`evidence/verification-judge-ux.md`](evidence/verification-judge-ux.md).
 
 ## Debate and synthesis
 
-### Required Grok path and truthful fallback
+### Brief-authorized judge path and truthful exclusions
 
-Three separate fresh commands used the required form:
+The resource guard was already above 50%, prohibiting a new expensive Codex/OMX burst. The brief explicitly permits three `agy` perspectives instead of Grok workers, so this pass used `agy` directly. No Grok result or failure is claimed for this pass.
 
-```text
-grok --single <role-specific prompt> -m grok-4.5 --effort high
-```
+Initial malformed `agy --print` invocations returned generic greetings and were excluded. The corrected sequence was: Gemini 3.1 Pro High completed knowledge; Claude Sonnet 4.6 Thinking and GPT-OSS 120B Medium were individually quota-blocked before answers; Gemini 3.5 Flash High completed criticism; Gemini 3.5 Flash Low produced only an incomplete procedural summary and was excluded; Gemini 3.5 Flash Medium completed UX.
 
-All failed before model output with HTTP 402, `Grok Build usage balance exhausted`. No Grok prose exists.
-
-The authorized fallback sequence was: Gemini 3.1 Pro High completed knowledge; Claude Sonnet 4.6 Thinking and GPT-OSS 120B Medium were individually quota-blocked before output; Gemini 3.5 Flash High completed criticism; Gemini 3.5 Flash Low returned only procedural narration and was excluded; Gemini 3.5 Flash Medium completed UX.
-
-The accepted set proves separate fresh sessions, role prompts, conclusion-free packet isolation, and file-scope attestation. All accepted verdicts are Gemini-family models, so no provider-family diversity, statistical independence, provider-memory isolation, or correlated-bias control is claimed. Full provenance: [`evidence/revalidation-external-attempts.md`](evidence/revalidation-external-attempts.md).
+The accepted set proves separate fresh sessions, role prompts, conclusion-free packet isolation, and file-scope attestation. All accepted verdicts are Gemini-family models, so no provider-family diversity, statistical independence, provider-memory isolation, or correlated-bias control is claimed. Full provenance: [`evidence/verification-external-attempts.md`](evidence/verification-external-attempts.md).
 
 ### Agreements
 
 - The dependency-free core is coherent as structural orchestration plus a backend seam.
 - `local-rules` is not semantic fact checking, visual inspection, NotebookLM retrieval, live quota discovery, or family enforcement.
 - Unique personas and separate calls are useful blind routing but insufficient proof of independent errors.
-- Bounded input/errors, JSON provenance, explicit gaps, packaging, and disclaimer preservation are strong.
+- Bounded input/errors, JSON provenance, explicit gaps, packaging, and disclaimer preservation are strong after the canonical-URL repair.
 - Production use requires real provider/model provenance, trusted backend gaps, injection controls, calibration, durable budgets/traces, and external visual/executable evidence.
 
 ### Material disagreements
 
-- The knowledge judge treated the published boundary as highly credible; the critique judge deducted heavily because the matrix is self-authored and backends self-declare scores/gaps. Both are retained: the matrix is mechanically consistent but not an independent benchmark, and the backend is a trust boundary.
-- The critique judge interpreted `UI/UX ✅` as a visual green result. The matrix definition is narrower, but the report now repeats that limitation at the table and verdict.
-- The critique judge called the mandatory three-person validation and orchestrator provenance evidence pollution defects. Current code/tests treat them as deliberate, documented contracts.
-- The UX judge's packaging deprecation was reproduced and fixed. Its namespace-collision risk remains real but requires a separately planned breaking migration.
-- All three judges accept that semantic verification, family diversity, persistent trace/budget state, and visual proof are external to the thin core.
+- Knowledge and UX rated the bounded contract `95` and `85`; criticism rated broader production/distribution risk `57` and blocked. Scores remain separate role judgments, not an average.
+- Criticism's query/fragment finding was reproduced and fixed; final E2E extended the same repair to literal/example identifiers.
+- Criticism treats the `personas` namespace and zipapp/PEX behavior as blockers. Synthesis retains the namespace as future major-version risk and does not claim zipapp/PEX support.
+- Criticism's `_markdown_code` XSS assertion lacks a concrete unsafe-renderer reproduction; Markdown flattening is accepted as documented display behavior because JSON preserves originals.
+- All judges agree that backend truth, semantic verification, family diversity, persistent trace/budget state, and visual proof are external to the thin core.
 
 ### Synthesized verdict
 
-Scores `95/100`, `70/100`, and `94/100` are not averaged because the roles assessed different surfaces and share one model family. No accepted judge reproduced a blocking runtime defect in the declared CLI/API/skill contract. One actionable packaging defect was reproduced and fixed. Subject to deterministic gates and immutable publication, Codex Tribunal is fit to ship as an auditable offline orchestration contract and reusable skill; production semantic judgment remains an integration. Full finding disposition: [`evidence/revalidation-synthesis.md`](evidence/revalidation-synthesis.md).
+Scores `95/100`, `57/100`, and `85/100` are not averaged because the roles assessed different surfaces and share one model family. The hostile verdict controls defect reproduction, not the final decision automatically. Its canonical-URL finding and the final related `<id>` gap were repaired and retested; the other proposed blockers are unsupported surfaces, documented boundaries, future breaking-migration risks, or an unreproduced renderer claim. Subject to deterministic gates and immutable publication, Codex Tribunal is fit to ship as an auditable offline orchestration contract and reusable skill; production semantic judgment remains an integration. Full finding disposition: [`evidence/verification-synthesis.md`](evidence/verification-synthesis.md).
 
 ## 100-point rubric
 
@@ -233,36 +228,37 @@ The Karpathy-inspired persona is intentionally direct and non-sycophantic: it re
 2. **Persona library and skill:** nine validated JSON personas; public GitHub references; explicit role, stance, skill labels, reference input, and optional disclaimer; disclosed Karpathy-inspired implementation critic; reusable hard-criticism workflow.
 3. **Operator and safety behavior:** concise expected CLI errors; stable JSON/Markdown; target and backend-output Markdown neutralization; positive markers only when every view reaches 80 and declares no gaps; bounded rounds/target length.
 4. **Packaging:** PEP 517/PEP 639 project metadata, SPDX MIT expression, explicit license file, console script, bundled persona JSON, dependency-free runtime, and a warning-free current setuptools build.
-5. **Live evidence:** authenticated NotebookLM IDR with failed-ingestion provenance and contradiction controls; three isolated accepted fallback verdicts after truthful Grok/quota/incomplete exclusions; live GitHub metadata; differentiated 100-point scoring; one winner.
+5. **Live evidence:** authenticated NotebookLM IDR with processed/failed-ingestion provenance and contradiction controls; three isolated accepted `agy` verdicts after truthful malformed/quota/incomplete exclusions; live GitHub metadata; differentiated 100-point scoring; one winner.
 6. **Anti-drift controls:** persona disclaimer serialized in judge views and Markdown; routed skill labels described as host responsibilities; report validation joined to the sibling CSV's snapshot, tools, URLs, scores, and winner; generated false blockers rejected by current source and exact-wheel proof.
 
 ### Real E2E proof
 
-A realistic comparison asked whether Tribunal should remain the narrow review contract while composing promptfoo, Microsoft Agent Framework, and Langfuse for mature external capability:
+A realistic comparison asked whether the dependency-free Tribunal contract should be retained while established OSS supplies larger evaluation capabilities:
 
 ```bash
 python tribunal.py \
   --mode comparison \
   --rounds 2 \
   --hardness hard \
-  --target "Decide whether Codex Tribunal should remain the narrow review contract while composing promptfoo, Microsoft Agent Framework, and Langfuse for mature external capabilities" \
+  --target "Compare a dependency-free local Tribunal library with adopting established OSS evaluation frameworks for a release decision; require explicit evidence gaps and safe serialized output." \
   --notebooklm-url https://notebooklm.google.com/notebook/80cffd38-0185-4f4d-ae00-bbc67c4bc515 \
   --json
 ```
 
-Source-tree observations: exit `0`; requested/effective rounds `2/2`; hardness `hard`; six isolated views; `local-rules` from `builtin-local`; two explicit gaps per view; final `50/100`; marker `⚠️`, not a runtime winner. Knowledge, critique, and UI/UX each returned `40/100`, `⚠️`, three views, and two gaps per view. The malformed-host NotebookLM case returned exit `2`, concise stderr, and no traceback.
+Source-tree observations: exit `0`; requested/effective rounds `2/2`; hardness `hard`; six isolated views; `local-rules` from `builtin-local`; two explicit gaps per view; final `50/100`; marker `⚠️`, not a runtime winner. Knowledge, critique, and UI/UX each returned `40/100`, `⚠️`, three views, and two gaps per view. Host, `<id>`, `your-notebook-id`, query, and fragment provenance probes returned exit `2`, concise stderr, and no traceback.
 
-The initial PEP 517 build reproduced setuptools license-metadata deprecations. After the PEP-639/SPDX fix, a fresh isolated build exited `0` with no deprecation, emitted an sdist and wheel, and recorded `License-Expression: MIT` plus `License-File: LICENSE`. Wheel SHA-256: `082b979c0806d338c15f44d6d4337e01849181e19b411fdb7947ebbb755deae4`. Sdist SHA-256: `b01773ede8b01d94200941636c2b11cf59320ddd0fd841e660cdec63f63e0e82`.
+The final PEP 517 build created a fresh isolated build environment, built the sdist, and then built the wheel from that sdist with exit `0`. Wheel SHA-256: `d93a7bf3500bcd38507f90ad8059c8581c07d55971758c359fd964f4e2f2c8be`. Sdist SHA-256: `c509061b6bf5ded16dbb219408b80e44b5e966ff87d1e55c5458ce2474d5c88f`.
 
 The exact wheel was installed with `--no-deps` into an isolated environment. From outside the repository:
 
 - the installed `tribunal` console repeated the two-round comparison and all bounded evidence gaps;
-- the imported module resolved to isolated `site-packages/tribunal.py`;
+- the imported module resolved to `/tmp/tmp.uznQyIiPEl/final/lib/python3.12/site-packages/tribunal.py`;
 - the installed Python API returned critique, `40/100`, `⚠️`, three `local-rules` views, and gaps `[2, 2, 2]`;
-- JSON and Markdown both preserved the synthetic persona's neither-authored-nor-endorsed disclaimer;
+- all nine personas loaded; the three Karpathy source repositories remained bare GitHub URLs; JSON preserved the synthetic persona's neither-authored-nor-endorsed disclaimer;
+- the installed console also rejected `<id>` with exit `2` and no traceback;
 - the wheel listed `tribunal.py`, console metadata, the license, `personas/__init__.py`, and all nine persona JSON files.
 
-The first installed-API driver looked for the wrong key `backend_name` and was excluded; the stable field is `backend`, and the corrected driver passed. Full current proof: [`evidence/revalidation-e2e-2026-07-20.md`](evidence/revalidation-e2e-2026-07-20.md).
+Full current proof, including commands, exits, archive contents, and the distinction between display Markdown and lossless JSON: [`evidence/verification-e2e.md`](evidence/verification-e2e.md).
 
 ### Recommended next increments
 
@@ -301,10 +297,10 @@ flowchart TD
 ## Limitations
 
 - The bundled `local-rules` backend checks structure only. Its `40/100` result without a notebook reference and `50/100` with one are transparent readiness markers, not target-quality scores.
-- NotebookLM URL validation checks syntax only. This pass separately authenticated and queried the notebook, but all three fresh-source ingestion approaches failed; only 29 already processed selected sources grounded queries.
-- The shared NotebookLM corpus is concurrently mutable, duplicated, and mixed quality. Closing direct inventory was `669/600/69`; only the knowledge query returned formal grounding metadata, while three other answers returned zero source/citation mappings.
+- NotebookLM URL validation checks canonical syntax and rejects known documentation/example identifiers; it still does not authenticate or query content. This pass separately authenticated the notebook, processed two fresh current planning sources, excluded every failed source, and queried explicit selected sets.
+- The shared NotebookLM corpus is concurrently mutable, duplicated, and mixed quality. Closing direct inventory was `669/600/69`; the four accepted answers returned formal source/citation metadata, yet three role answers still invented false code blockers from normalized passages.
 - A custom backend can route every request to one model and self-declare scores and empty gaps. The library records claims/provenance but cannot make them independently true.
-- All accepted external verdicts are Gemini-family models in separate sessions. Grok 4.5 failed three times with HTTP 402; Claude Sonnet and GPT-OSS were quota-blocked; one Gemini Low UX run was incomplete. Process isolation is not provider-family or statistical independence.
+- All accepted external verdicts are Gemini-family models in separate sessions. Claude Sonnet and GPT-OSS corrected attempts were quota-blocked; one Gemini Low UX run was incomplete; earlier malformed `agy` invocations returned greetings. Process isolation is not provider-family or statistical independence.
 - Synthesis is post-hoc. Judges do not inspect or answer sibling arguments through the current `JudgeRequest` contract.
 - Live backend calls are evaluated synchronously. Production adapters must account for latency, cancellation, rate limits, retries, and trusted concurrency outside this core.
 - Arbitrary backend Markdown is normalized and flattens whitespace; JSON is lossless. Rendering hardening is not downstream prompt-injection protection.
@@ -330,6 +326,7 @@ openspec validate live-audit-codex-tribunal-library --strict
 openspec validate revalidate-live-codex-tribunal-library --strict
 openspec validate complete-live-codex-tribunal-library-brief --strict
 openspec validate revalidate-trib-codex-trib-lib-brief --strict
+openspec validate verify-complete-codex-tribunal-library-brief --strict
 python -m build
 python examples/phase1_core_modes.py
 python examples/e2e_demo.py
@@ -338,47 +335,25 @@ python examples/e2e_demo.py
 Clean-install proof:
 
 ```bash
-python -m venv /tmp/tribunal-live-audit-venv
-/tmp/tribunal-live-audit-venv/bin/python -m pip install .
+python -m build --outdir /tmp/tribunal-dist
+python -m venv /tmp/tribunal-wheel-venv
+/tmp/tribunal-wheel-venv/bin/python -m pip install --no-deps /tmp/tribunal-dist/codex_tribunal-1.0.0-py3-none-any.whl
 cd /tmp
-/tmp/tribunal-live-audit-venv/bin/tribunal --mode knowledge --target "Installed package E2E" --json
+/tmp/tribunal-wheel-venv/bin/tribunal --mode knowledge --target "Installed package E2E" --json
 ```
 
 Evidence index:
 
-- Current OpenSpec/guard/tool baseline: [`evidence/revalidation-baseline.md`](evidence/revalidation-baseline.md)
-- Current authenticated NotebookLM IDR: [`evidence/revalidation-notebooklm.md`](evidence/revalidation-notebooklm.md)
-- Current primary OSS snapshot and rubric check: [`evidence/revalidation-oss.md`](evidence/revalidation-oss.md)
-- Current frozen conclusion-free judge packet: [`evidence/revalidation-judge-packet.md`](evidence/revalidation-judge-packet.md)
-- Current Grok/fallback attempts and exclusions: [`evidence/revalidation-external-attempts.md`](evidence/revalidation-external-attempts.md)
-- Current accepted knowledge, criticism, and UX verdicts: [`evidence/revalidation-judge-knowledge.md`](evidence/revalidation-judge-knowledge.md), [`evidence/revalidation-judge-critique.md`](evidence/revalidation-judge-critique.md), [`evidence/revalidation-judge-ux.md`](evidence/revalidation-judge-ux.md)
-- Current synthesis and finding disposition: [`evidence/revalidation-synthesis.md`](evidence/revalidation-synthesis.md)
-- Current source/build/wheel/console/API proof: [`evidence/revalidation-e2e-2026-07-20.md`](evidence/revalidation-e2e-2026-07-20.md)
-
-- Baseline and tool/authentication record: [`evidence/live-audit-baseline.md`](evidence/live-audit-baseline.md)
-- Final revalidation baseline: [`evidence/final-revalidation-baseline.md`](evidence/final-revalidation-baseline.md)
-- NotebookLM live IDR: [`evidence/notebooklm-live-audit.md`](evidence/notebooklm-live-audit.md)
-- NotebookLM revalidation and contradiction control: [`evidence/notebooklm-revalidation.md`](evidence/notebooklm-revalidation.md)
-- Final NotebookLM inventory and cross-query audit: [`evidence/final-notebooklm-revalidation.md`](evidence/final-notebooklm-revalidation.md)
-- Frozen blind judge packet: [`evidence/live-audit-judge-packet.md`](evidence/live-audit-judge-packet.md)
-- Frozen revalidation packet: [`evidence/revalidation-judge-packet.md`](evidence/revalidation-judge-packet.md)
-- Final frozen judge packet: [`evidence/final-revalidation-judge-packet.md`](evidence/final-revalidation-judge-packet.md)
-- Grok failures, fallback provenance, and discarded attempts: [`evidence/live-audit-grok-attempts.md`](evidence/live-audit-grok-attempts.md)
-- Revalidation Grok/agy attempts: [`evidence/revalidation-external-attempts.md`](evidence/revalidation-external-attempts.md)
-- Final Grok/agy attempts and exclusions: [`evidence/final-revalidation-external-attempts.md`](evidence/final-revalidation-external-attempts.md)
-- Knowledge verdict: [`evidence/live-audit-judge-knowledge.md`](evidence/live-audit-judge-knowledge.md)
-- Additional revalidation knowledge verdict: [`evidence/revalidation-judge-knowledge.md`](evidence/revalidation-judge-knowledge.md)
-- Final knowledge verdict: [`evidence/final-revalidation-judge-knowledge.md`](evidence/final-revalidation-judge-knowledge.md)
-- Final harsh-critique verdict: [`evidence/final-revalidation-judge-critique.md`](evidence/final-revalidation-judge-critique.md)
-- Final UX verdict: [`evidence/final-revalidation-judge-ux.md`](evidence/final-revalidation-judge-ux.md)
-- Harsh-critique verdict: [`evidence/live-audit-judge-critique.md`](evidence/live-audit-judge-critique.md)
-- UX verdict: [`evidence/live-audit-judge-ux.md`](evidence/live-audit-judge-ux.md)
-- Frozen synthesis and finding disposition: [`evidence/live-audit-synthesis.md`](evidence/live-audit-synthesis.md)
-- Final synthesis and finding disposition: [`evidence/final-revalidation-synthesis.md`](evidence/final-revalidation-synthesis.md)
+- OpenSpec/guard/tool baseline: [`evidence/verification-baseline.md`](evidence/verification-baseline.md)
+- Authenticated NotebookLM IDR: [`evidence/verification-notebooklm.md`](evidence/verification-notebooklm.md)
+- Primary OSS snapshot and rubric check: [`evidence/verification-oss.md`](evidence/verification-oss.md)
+- Frozen conclusion-free judge packet: [`evidence/verification-judge-packet.md`](evidence/verification-judge-packet.md)
+- Judge attempts, exclusions, and provider provenance: [`evidence/verification-external-attempts.md`](evidence/verification-external-attempts.md)
+- Accepted knowledge, criticism, and UX verdicts: [`evidence/verification-judge-knowledge.md`](evidence/verification-judge-knowledge.md), [`evidence/verification-judge-critique.md`](evidence/verification-judge-critique.md), [`evidence/verification-judge-ux.md`](evidence/verification-judge-ux.md)
+- Post-hoc synthesis and finding disposition: [`evidence/verification-synthesis.md`](evidence/verification-synthesis.md)
+- Direct generated-claim and validator controls: [`evidence/verification-direct-controls.md`](evidence/verification-direct-controls.md)
+- Source/build/wheel/console/API proof: [`evidence/verification-e2e.md`](evidence/verification-e2e.md)
 - GitHub metadata: [`evidence/github-snapshot.json`](evidence/github-snapshot.json)
 - Machine-readable matrix: [`codex-trib-lib-matrix.csv`](codex-trib-lib-matrix.csv)
-- Public CLI/package proof: [`evidence/live-audit-e2e.md`](evidence/live-audit-e2e.md)
-- Fresh CLI/API/installed-package proof: [`evidence/revalidation-e2e.md`](evidence/revalidation-e2e.md)
-- Final source/build/wheel/CLI/API proof: [`evidence/final-revalidation-e2e.md`](evidence/final-revalidation-e2e.md)
 
 The release is complete only when these exact artifacts pass the gates, are committed together, the branch push contains that commit, and the final report is retrievable at a SHA-pinned public GitHub blob URL.

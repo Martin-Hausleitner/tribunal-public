@@ -66,9 +66,10 @@ NotebookLM removed line breaks, underscores, backticks, and escape context from 
 
 The hostile judge identified one different, reproducible issue: the documented canonical NotebookLM form did not reject query strings or fragments. Before repair, both the direct validator and source CLI accepted `https://notebooklm.google.com/notebook/abc?unexpected=1#fragment` and emitted a 50/100 structural result.
 
-`validate_notebooklm_url` now rejects URL params, query strings, and fragments, matching the existing strict GitHub URL boundary. The focused unit test adds query and fragment cases. After the change:
+`validate_notebooklm_url` now rejects URL params, query strings, fragments, invalid identifier characters, and documented placeholder identifiers, matching the canonical URL contract and the existing strict GitHub URL boundary. The focused unit test adds `<id>`, `your-notebook-id`, query, and fragment cases. After the change:
 
 - `python -m unittest tests.test_tribunal.TribunalContractTests.test_notebooklm_url_is_strictly_validated -v` passed;
-- the same CLI probe exited `2` with `tribunal: error: NotebookLM URL must match https://notebooklm.google.com/notebook/<id>` and no traceback.
+- host, `<id>`, `your-notebook-id`, query, and fragment CLI probes each exited `2` with `tribunal: error: NotebookLM URL must match https://notebooklm.google.com/notebook/<id>` and no traceback;
+- the exact rebuilt wheel preserved the same `<id>` failure behavior through the installed console.
 
-Full regression/build/install validation remains in the E2E phase.
+Full regression/build/install validation is recorded in `verification-e2e.md`.

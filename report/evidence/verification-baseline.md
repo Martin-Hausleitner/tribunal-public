@@ -55,3 +55,7 @@ The first exact notebook detail call returned `640` sources. The first full sour
 ## Judge packet freeze
 
 The conclusion-free packet `report/evidence/verification-judge-packet.md` was frozen before any fresh `agy` role session at `2026-07-20T22:21:07Z` with SHA-256 `f5ad6478b25e1078e93b0250bc70630984100b608dc92211fc9f9bf423ba1d6d`. All three roles receive that exact packet and are forbidden from reading sibling verdicts or prior synthesis artifacts.
+
+## Finalization guard heartbeat
+
+At `2026-07-20T22:36:51Z` both configured paths were attempted again. The Mac path `/Users/mh/.codex/codex-weekly-guard.sh` is absent on this VCVM and returned exit `127`; no Mac state is inferred. The VCVM guard returned exit `0` with `status=LIMIT_GUARD`, `session_used=9`, `session_left=91`, `session_reset=0s`, `weekly_used=67`, `weekly_left=33`, `weekly_reset=572678s`, and `fast=not_seen`. Weekly use remains above the 50% threshold; no new expensive Codex/OMX team burst or fast mode was started.
