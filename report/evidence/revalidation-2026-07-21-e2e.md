@@ -109,6 +109,22 @@ After the report, matrix, fallback provenance, and current OpenSpec wording were
 
 The first invocation of the optional cross-artifact helper referenced a nonexistent `html_url` key and exited `1` before comparing values. The corrected read-only invocation used the snapshot's actual `github_url`, `stars`, and `snapshot_utc` fields and passed. This was an audit-wrapper schema mistake, not an artifact or runtime failure.
 
+## OpenSpec requirement reconciliation before publication
+
+| Requirement | Controlling current evidence | State before commit |
+|---|---|---|
+| Authenticated canonical IDR | NotebookLM ledger and canonical public link | Satisfied |
+| Source-grounded cross-query research | Nine conversation UUIDs, explicit processed source IDs, four non-circular controls, citation/source metadata | Satisfied |
+| Current OSS-first comparison | GitHub JSON snapshot, OSS ledger, synchronized CSV, report matrix | Satisfied |
+| Three isolated adversarial judgments | Frozen packet, three Grok 402 exclusions, three accepted isolated `agy` verdicts, provenance ledger | Satisfied through brief-authorized fallback |
+| Evidence-controlled synthesis | Synthesis ledger and explicit primary/executable evidence hierarchy | Satisfied |
+| Explicit crown and implementation plan | One gated crown, three verdicts, trade-offs, phased plan, Mermaid flow | Satisfied |
+| Executable end-to-end proof | Source, build, archive, clean install, installed console/API, invalid-input observations | Satisfied |
+| Repeatable repository gates | Final reconciliation gate table above | Satisfied |
+| Immutable public handoff | Publication ledger | Pending until commit, push, remote equality, clean tree, and SHA-pinned retrieval are observed |
+
+This reconciliation closes the local requirements review without pre-claiming the external publication requirement.
+
 ## Manual QA verdict
 
 The actual source CLI, built wheel, clean-installed console, installed Python API, and expected failure surface all behaved according to the bounded contract. No runtime defect was reproduced. The generic top-level `personas` package remains a possible future ecosystem collision, not a failure of this claimed standard wheel surface.
