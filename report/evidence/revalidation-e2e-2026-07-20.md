@@ -110,3 +110,17 @@ The corrected outside-tree installed API test exited `0` and observed:
 ```
 
 This proves the import came from the isolated site-packages directory, JSON and Markdown serialization work, gaps remain explicit, and the identity disclaimer survives both surfaces.
+
+## Final deterministic gates
+
+- `python -m unittest discover -s tests -v`: 18 tests passed
+- `python -m py_compile ...`: exit 0
+- skill gate: pass
+- CSV gate: pass, 11 rows, one crown
+- report gate: pass, canonical notebook, 11 GitHub repositories, synchronized matrix
+- JSON parse: exit 0
+- strict current OpenSpec validation: pass
+- `examples/phase1_core_modes.py`: exit 0
+- `examples/e2e_demo.py`: exit 0
+
+An additional `pytest tests/` probe returned exit 2 with `No tests collected`; the suite is implemented and named for `unittest.TestCase`, and the authoritative unittest runner executed all 18 tests successfully. No test was deleted or weakened to alter that result.

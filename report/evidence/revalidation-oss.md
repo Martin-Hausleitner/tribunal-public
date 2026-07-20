@@ -1,6 +1,6 @@
 # OSS-first revalidation snapshot
 
-Completed UTC: `2026-07-20T22:08:10Z`
+Completed UTC: `2026-07-20T22:17:14Z`
 
 ## Candidate freeze
 
@@ -12,7 +12,7 @@ All eleven canonical repository endpoints returned successfully from the primary
 
 | Tool | Repository | Stars | API SPDX | Last push |
 |---|---|---:|---|---|
-| Codex Tribunal | https://github.com/Martin-Hausleitner/tribunal-public | 0 | MIT | `2026-07-20T22:00:11Z` |
+| Codex Tribunal | https://github.com/Martin-Hausleitner/tribunal-public | 0 | MIT | `2026-07-20T22:12:09Z` |
 | promptfoo | https://github.com/promptfoo/promptfoo | 23,446 | MIT | `2026-07-20T22:07:36Z` |
 | Microsoft Agent Framework | https://github.com/microsoft/agent-framework | 12,252 | MIT | `2026-07-20T21:57:35Z` |
 | DeepEval | https://github.com/confident-ai/deepeval | 16,982 | Apache-2.0 | `2026-07-20T18:36:22Z` |
@@ -21,7 +21,7 @@ All eleven canonical repository endpoints returned successfully from the primary
 | OpenAI Evals | https://github.com/openai/evals | 18,955 | NOASSERTION | `2026-04-14T15:29:57Z` |
 | Langfuse | https://github.com/langfuse/langfuse | 31,512 | NOASSERTION | `2026-07-20T20:55:18Z` |
 | DSPy | https://github.com/stanfordnlp/dspy | 36,261 | MIT | `2026-07-20T15:18:05Z` |
-| Phoenix | https://github.com/Arize-ai/phoenix | 10,642 | NOASSERTION | `2026-07-20T21:23:56Z` |
+| Phoenix | https://github.com/Arize-ai/phoenix | 10,642 | NOASSERTION | `2026-07-20T22:16:11Z` |
 | lm-evaluation-harness | https://github.com/EleutherAI/lm-evaluation-harness | 13,341 | MIT | `2026-07-13T20:18:15Z` |
 
 Since the prior `21:07:01Z` snapshot, promptfoo gained 3 stars; Microsoft Agent Framework and DeepEval gained 1 each; Langfuse and DSPy gained 2 each. Codex Tribunal, promptfoo, Agent Framework, and Phoenix reported newer pushes. These mutable changes did not alter any rubric dimension.
@@ -55,8 +55,7 @@ Codex Tribunal remains the narrow use-case winner at `85/100`; this is an extern
 ## Gate observations
 
 ```text
-csv-gate PASS: 11 rows, one crown=Codex Tribunal, score spread=53-85, snapshot=2026-07-20T22:08:10Z
-rubric-audit PASS [85, 78, 72, 68, 64, 61, 59, 58, 57, 56, 53] 2026-07-20T22:08:10Z
+csv-gate PASS: 11 rows, one crown=Codex Tribunal, score spread=53-85, snapshot=2026-07-20T22:17:14Z
+rubric-audit PASS [85, 78, 72, 68, 64, 61, 59, 58, 57, 56, 53] 2026-07-20T22:17:14Z
 python -m json.tool report/evidence/github-snapshot.json: exit 0
 ```
-
