@@ -71,6 +71,6 @@
 - [x] 8.2 Strictly validate every active OpenSpec change and confirm this task list is complete except publication steps
 - [x] 8.3 Review the intended diff and confirm no credentials, unrelated edits, or fabricated proof
 - [x] 8.4 Stage only intended artifacts and create one scoped commit
-- [ ] 8.5 Push the current branch and verify origin resolves to the exact local full SHA
-- [ ] 8.6 Retrieve the SHA-pinned public report blob and verify its identity/content
-- [ ] 8.7 Record the immutable commit/blob closure evidence and finish the final handoff
+- [x] 8.5 Push the current branch and verify origin resolves to the exact local full SHA
+- [x] 8.6 Retrieve the SHA-pinned public report blob and verify its identity/content
+- [x] 8.7 Record the immutable commit/blob closure evidence and finish the final handoff

@@ -152,7 +152,7 @@ The accepted set proves separate fresh sessions, role prompts, conclusion-free p
 
 ### Synthesized verdict
 
-Scores `95/100`, `57/100`, and `85/100` are not averaged because the roles assessed different surfaces and share one model family. The hostile verdict controls defect reproduction, not the final decision automatically. Its canonical-URL finding and the final related `<id>` gap were repaired and retested; the other proposed blockers are unsupported surfaces, documented boundaries, future breaking-migration risks, or an unreproduced renderer claim. Deterministic release gates passed; subject to immutable publication, Codex Tribunal is fit to ship as an auditable offline orchestration contract and reusable skill, while production semantic judgment remains an integration. Full finding disposition: [`evidence/verification-synthesis.md`](evidence/verification-synthesis.md).
+Scores `95/100`, `57/100`, and `85/100` are not averaged because the roles assessed different surfaces and share one model family. The hostile verdict controls defect reproduction, not the final decision automatically. Its canonical-URL finding and the final related `<id>` gap were repaired and retested; the other proposed blockers are unsupported surfaces, documented boundaries, future breaking-migration risks, or an unreproduced renderer claim. Deterministic release and immutable artifact-publication gates passed. Codex Tribunal is fit to ship as an auditable offline orchestration contract and reusable skill, while production semantic judgment remains an integration. Full finding disposition: [`evidence/verification-synthesis.md`](evidence/verification-synthesis.md).
 
 ## 100-point rubric
 
@@ -357,4 +357,4 @@ Evidence index:
 - GitHub metadata: [`evidence/github-snapshot.json`](evidence/github-snapshot.json)
 - Machine-readable matrix: [`codex-trib-lib-matrix.csv`](codex-trib-lib-matrix.csv)
 
-The release is complete only when these exact artifacts pass the gates, are committed together, the branch push contains that commit, and the final report is retrievable at a SHA-pinned public GitHub blob URL.
+These exact artifacts passed the gates, were committed and pushed, and the artifact report was retrieved from a SHA-pinned public GitHub blob. The closure ledger retains the observed commit, HTTP, and content-identity evidence; the final handoff identifies the later closure commit that contains that ledger.
