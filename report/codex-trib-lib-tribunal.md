@@ -6,6 +6,8 @@ Declared use case: a reusable, hard-critical review layer for knowledge/correctn
 
 **Final verdict:** ship Codex Tribunal for the bounded offline orchestration and reusable-skill scope. Keep it thin and compose mature OSS for adversarial CI, live runtimes, and observability. Do not represent the bundled backend as semantic verification, visual testing, provider-family independence, or a production trace platform.
 
+The single crown below is a narrow, project-authored fit assessment backed by the published rubric and deterministic gates. It is not an independent benchmark, community validation, a runtime semantic score, or a claim of universal product superiority.
+
 ## IDR
 
 IDR: ja
@@ -53,7 +55,7 @@ Microsoft Agent Framework, https://github.com/microsoft/agent-framework, was add
 
 ### Live metadata evidence
 
-GitHub metadata was refreshed concurrently from the authenticated REST endpoint and timestamped only after all eleven calls completed: `2026-07-20T20:51:06Z`. The machine-readable record is [`evidence/github-snapshot.json`](evidence/github-snapshot.json); the scoring record is [`codex-trib-lib-matrix.csv`](codex-trib-lib-matrix.csv); command disposition and primary license checks are in [`evidence/brief-live-oss.md`](evidence/brief-live-oss.md). Direct license-file checks reconfirmed AutoGen's CC-BY-4.0 repository license and maintenance-mode migration notice, OpenAI Evals' dataset exceptions, Langfuse's enterprise-directory exclusions, and Phoenix's Elastic License 2.0 hosted-service restriction.
+GitHub metadata was refreshed concurrently from the authenticated REST endpoint and timestamped only after all eleven calls completed: `2026-07-20T21:07:01Z`. The machine-readable record is [`evidence/github-snapshot.json`](evidence/github-snapshot.json); the scoring record is [`codex-trib-lib-matrix.csv`](codex-trib-lib-matrix.csv); command disposition and primary license checks are in [`evidence/brief-live-oss.md`](evidence/brief-live-oss.md). Direct license-file checks reconfirmed AutoGen's CC-BY-4.0 repository license and maintenance-mode migration notice, OpenAI Evals' dataset exceptions, Langfuse's enterprise-directory exclusions, and Phoenix's Elastic License 2.0 hosted-service restriction.
 
 ### Evidence-quality rule
 
@@ -193,19 +195,19 @@ This comparative score is not the runtime `local-rules` score. The matrix rates 
 
 ## OSS feature matrix
 
-Snapshot completed UTC: `2026-07-20T20:51:06Z`. Capability cells mean verified/native fit for the declared comparison (`✅`), partial/composable fit (`⚠️`), or absent fit (`❌`); they are not semantic target scores or visual test passes. Scores and unformatted star values are duplicated here for human review; the CSV is authoritative and mechanically gated.
+Snapshot completed UTC: `2026-07-20T21:07:01Z`. Capability cells mean verified/native fit for the declared comparison (`✅`), partial/composable fit (`⚠️`), or absent fit (`❌`); they are not semantic target scores or visual test passes. Scores and unformatted star values are duplicated here for human review; the CSV is authoritative and mechanically gated.
 
 | Rank | Tool | GitHub repository | Stars | License qualification | Knowledge | Critique | UI/UX | Independent judges | Evidence | Persona/skill | Repeatability | Score | Result |
 |---:|---|---|---:|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|---:|:---:|
 | 1 | Codex Tribunal | https://github.com/Martin-Hausleitner/tribunal-public | 0 | MIT | ✅ | ✅ | ✅ | ⚠️ | ✅ | ✅ | ⚠️ | 85/100 | 👑 |
-| 2 | promptfoo | https://github.com/promptfoo/promptfoo | 23,442 | MIT | ✅ | ✅ | ⚠️ | ❌ | ✅ | ⚠️ | ✅ | 78/100 |  |
-| 3 | Microsoft Agent Framework | https://github.com/microsoft/agent-framework | 12,250 | MIT | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ✅ | ✅ | 72/100 |  |
+| 2 | promptfoo | https://github.com/promptfoo/promptfoo | 23,443 | MIT | ✅ | ✅ | ⚠️ | ❌ | ✅ | ⚠️ | ✅ | 78/100 |  |
+| 3 | Microsoft Agent Framework | https://github.com/microsoft/agent-framework | 12,251 | MIT | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ✅ | ✅ | 72/100 |  |
 | 4 | DeepEval | https://github.com/confident-ai/deepeval | 16,981 | Apache-2.0 | ✅ | ⚠️ | ❌ | ❌ | ✅ | ⚠️ | ✅ | 68/100 |  |
 | 5 | AutoGen | https://github.com/microsoft/autogen | 59,850 | CC-BY-4.0; maintenance mode; component-specific review | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ✅ | ⚠️ | 64/100 |  |
 | 6 | Ragas | https://github.com/vibrantlabsai/ragas | 14,918 | Apache-2.0 | ✅ | ⚠️ | ❌ | ❌ | ✅ | ⚠️ | ✅ | 61/100 |  |
 | 7 | OpenAI Evals | https://github.com/openai/evals | 18,955 | MIT code; dataset licenses vary | ✅ | ⚠️ | ❌ | ❌ | ✅ | ⚠️ | ✅ | 59/100 |  |
-| 8 | Langfuse | https://github.com/langfuse/langfuse | 31,509 | MIT except declared enterprise directories | ⚠️ | ⚠️ | ❌ | ❌ | ✅ | ⚠️ | ✅ | 58/100 |  |
-| 9 | DSPy | https://github.com/stanfordnlp/dspy | 36,258 | MIT | ⚠️ | ⚠️ | ❌ | ❌ | ⚠️ | ✅ | ✅ | 57/100 |  |
+| 8 | Langfuse | https://github.com/langfuse/langfuse | 31,510 | MIT except declared enterprise directories | ⚠️ | ⚠️ | ❌ | ❌ | ✅ | ⚠️ | ✅ | 58/100 |  |
+| 9 | DSPy | https://github.com/stanfordnlp/dspy | 36,259 | MIT | ⚠️ | ⚠️ | ❌ | ❌ | ⚠️ | ✅ | ✅ | 57/100 |  |
 | 10 | Phoenix | https://github.com/Arize-ai/phoenix | 10,642 | Elastic-2.0; source-available, not OSI open source | ⚠️ | ⚠️ | ❌ | ❌ | ✅ | ⚠️ | ✅ | 56/100 |  |
 | 11 | lm-evaluation-harness | https://github.com/EleutherAI/lm-evaluation-harness | 13,341 | MIT | ✅ | ❌ | ❌ | ❌ | ✅ | ⚠️ | ✅ | 53/100 |  |
 
@@ -213,7 +215,7 @@ The ranking is deliberately use-case-specific. promptfoo is stronger for ready-m
 
 ## Verdict and recommendation
 
-**Winner for the declared narrow use case: Codex Tribunal, `85/100`.** It wins on direct three-mode fit, blind per-persona backend calls, explicit gaps, a validated persona library, the disclosed implementation-first critic, the reusable skill, transparent local behavior, stable JSON/Markdown, and a zero-runtime-dependency install. The deductions are intentional: no family-diversity enforcement, calibration/bias probes, durable trace store, or bundled live backend.
+**Winner for the declared narrow use case: Codex Tribunal, `85/100`.** This is the project-authored, evidence-backed rubric result, not an externally calibrated benchmark. It wins on direct three-mode fit, blind per-persona backend calls, explicit gaps, a validated persona library, the disclosed implementation-first critic, the reusable skill, transparent local behavior, stable JSON/Markdown, and a zero-runtime-dependency install. The deductions are intentional: no family-diversity enforcement, calibration/bias probes, durable trace store, or bundled live backend.
 
 The OSS-first recommendation is composition, not reinvention:
 
@@ -234,8 +236,8 @@ The Karpathy-inspired persona is intentionally direct and non-sycophantic: it re
 2. **Persona library and skill:** nine validated JSON personas; public GitHub references; explicit role, stance, skill labels, reference input, and optional disclaimer; disclosed Karpathy-inspired implementation critic; reusable hard-criticism workflow.
 3. **Operator and safety behavior:** concise expected CLI errors; stable JSON/Markdown; target and backend-output Markdown neutralization; positive markers only when every view reaches 80 and declares no gaps; bounded rounds/target length.
 4. **Packaging:** PEP 517 project metadata, console script, bundled persona JSON, dependency-free runtime.
-5. **Live evidence:** authenticated NotebookLM IDR, three isolated external fallback verdicts after truthful Grok failures, live GitHub metadata, differentiated 100-point scoring, one winner, and a preserved evidence ledger.
-6. **Anti-drift fixes from this tribunal:** persona disclaimer serialized in judge views and Markdown; routed skill labels described as host responsibilities; report validation joined to the sibling CSV's snapshot, tools, URLs, scores, and winner.
+5. **Live evidence:** authenticated NotebookLM IDR with direct contradiction controls, three isolated accepted fallback verdicts after truthful Grok failures, two accepted provider families, live GitHub metadata, differentiated 100-point scoring, one winner, and preserved exclusion provenance.
+6. **Anti-drift controls:** persona disclaimer serialized in judge views and Markdown; routed skill labels described as host responsibilities; report validation joined to the sibling CSV's snapshot, tools, URLs, scores, and winner; generated false blockers rejected by executable proof.
 
 ### Real E2E proof
 
@@ -253,7 +255,7 @@ tribunal \
 
 Observed: exit `0`; requested/effective rounds `2/2`; hardness `hard`; six coordinates from `R1J1` through `R2J3`; six unique personas; backend `local-rules`; engine source `builtin-local`; two explicit evidence gaps per view; `debate.kind=post-hoc-synthesis`; final `50/100`; marker `⚠️`; no runtime winner marker. The Karpathy-inspired disclaimer was present in JSON and Markdown. The same command worked from outside the repository after PEP 517 installation. An invalid NotebookLM reference exited `2` with concise stderr and no traceback. Full proof: [`evidence/live-audit-e2e.md`](evidence/live-audit-e2e.md).
 
-The final revalidation repeated the repository CLI, all three primary modes, comparison demo, expected failure, isolated PEP 517 sdist/wheel build, exact-wheel install, installed console script, and installed Python API. Every surface reproduced the bounded contract; the wheel hash, observations, and non-blocking setuptools license-metadata warning are retained in [`evidence/final-revalidation-e2e.md`](evidence/final-revalidation-e2e.md).
+This brief-live closure repeated the repository CLI, all three primary modes, comparison case, expected failure, isolated PEP 517 sdist/wheel build, exact-wheel install, installed console script, installed Python API, JSON serialization, and Markdown disclaimer outside the repository. Every surface reproduced the bounded contract; hashes, commands, observations, and two excluded test-driver mistakes are retained in [`evidence/brief-live-e2e.md`](evidence/brief-live-e2e.md). Historical final-revalidation evidence remains in [`evidence/final-revalidation-e2e.md`](evidence/final-revalidation-e2e.md).
 
 ### Recommended next increments
 
@@ -293,9 +295,9 @@ flowchart TD
 - The bundled `local-rules` backend checks structure only. Its `40/100` result without a notebook reference and `50/100` with one are transparent readiness markers, not target-quality scores.
 - NotebookLM URL validation checks syntax only. Live corpus/query proof is external and retained in the IDR ledger; the runtime does not fetch notebook content.
 - A custom backend can send every request to one model and can self-declare empty gaps. The library records claims and provenance but cannot independently make them true.
-- The final accepted external verdict set used the authorized fallback and one provider family. All three are Gemini-family models in separate sessions. No provider-family diversity, statistical independence, or bias calibration is claimed.
+- The accepted brief-live verdict set used the authorized fallback and two provider families: Gemini for knowledge/UX and Claude for criticism. This is some family diversity, not statistical independence, provider-memory isolation, three-family coverage, or bias calibration.
 - Grok 4.5 was installed and authenticated but all three required high-effort calls failed before model output with HTTP 402. No Grok verdict was fabricated.
-- The final revalidation reproduced all three Grok 402 failures. Claude critique and GPT-OSS UX fallbacks were quota-blocked before answer; fresh Gemini 3.5 sessions completed those roles and the quota failures remain excluded.
+- This pass reproduced all three Grok 402 failures. One Claude output was excluded for cross-repository scope contamination; two GPT-OSS outputs were excluded as incomplete or unsupported by inspected source; fresh restricted Claude and Gemini sessions completed the accepted critique and UX roles.
 - Synthesis is post-hoc. Judges do not inspect or answer sibling arguments through the current `JudgeRequest` contract.
 - Arbitrary backend Markdown is normalized for safe rendering; JSON is the lossless surface. A safe structured-rendering contract remains future work.
 - No TUI/web UI exists. CLI proof cannot establish visual polish, responsive layout, contrast, interaction quality, or end-user task success.
@@ -318,6 +320,7 @@ python scripts/csv_gate.py report/codex-trib-lib-matrix.csv
 python scripts/report_gate.py report/codex-trib-lib-tribunal.md
 openspec validate live-audit-codex-tribunal-library --strict
 openspec validate revalidate-live-codex-tribunal-library --strict
+openspec validate complete-live-codex-tribunal-library-brief --strict
 python -m build
 python examples/phase1_core_modes.py
 python examples/e2e_demo.py
@@ -334,27 +337,45 @@ cd /tmp
 
 Evidence index:
 
+- Current brief baseline and guard state: [`evidence/brief-live-baseline.md`](evidence/brief-live-baseline.md)
+- Current authenticated NotebookLM IDR: [`evidence/brief-live-notebooklm.md`](evidence/brief-live-notebooklm.md)
+- Current primary OSS snapshot and rubric check: [`evidence/brief-live-oss.md`](evidence/brief-live-oss.md)
+- Current frozen judge packet: [`evidence/brief-live-judge-packet.md`](evidence/brief-live-judge-packet.md)
+- Current Grok/fallback attempts and exclusions: [`evidence/brief-live-external-attempts.md`](evidence/brief-live-external-attempts.md)
+- Current accepted knowledge, criticism, and UX verdicts: [`evidence/brief-live-judge-knowledge.md`](evidence/brief-live-judge-knowledge.md), [`evidence/brief-live-judge-critique.md`](evidence/brief-live-judge-critique.md), [`evidence/brief-live-judge-ux.md`](evidence/brief-live-judge-ux.md)
+- Current synthesis and finding disposition: [`evidence/brief-live-synthesis.md`](evidence/brief-live-synthesis.md)
+- Current source/build/wheel/console/API proof: [`evidence/brief-live-e2e.md`](evidence/brief-live-e2e.md)
+
 - Baseline and tool/authentication record: [`evidence/live-audit-baseline.md`](evidence/live-audit-baseline.md)
 - Final revalidation baseline: [`evidence/final-revalidation-baseline.md`](evidence/final-revalidation-baseline.md)
+- Brief-live baseline and guard heartbeats: [`evidence/brief-live-baseline.md`](evidence/brief-live-baseline.md)
 - NotebookLM live IDR: [`evidence/notebooklm-live-audit.md`](evidence/notebooklm-live-audit.md)
 - NotebookLM revalidation and contradiction control: [`evidence/notebooklm-revalidation.md`](evidence/notebooklm-revalidation.md)
 - Final NotebookLM inventory and cross-query audit: [`evidence/final-notebooklm-revalidation.md`](evidence/final-notebooklm-revalidation.md)
+- Brief-live NotebookLM inventory, four queries, and false-blocker controls: [`evidence/brief-live-notebooklm.md`](evidence/brief-live-notebooklm.md)
 - Frozen blind judge packet: [`evidence/live-audit-judge-packet.md`](evidence/live-audit-judge-packet.md)
 - Frozen revalidation packet: [`evidence/revalidation-judge-packet.md`](evidence/revalidation-judge-packet.md)
 - Final frozen judge packet: [`evidence/final-revalidation-judge-packet.md`](evidence/final-revalidation-judge-packet.md)
+- Brief-live conclusion-free judge packet: [`evidence/brief-live-judge-packet.md`](evidence/brief-live-judge-packet.md)
 - Grok failures, fallback provenance, and discarded attempts: [`evidence/live-audit-grok-attempts.md`](evidence/live-audit-grok-attempts.md)
 - Revalidation Grok/agy attempts: [`evidence/revalidation-external-attempts.md`](evidence/revalidation-external-attempts.md)
 - Final Grok/agy attempts and exclusions: [`evidence/final-revalidation-external-attempts.md`](evidence/final-revalidation-external-attempts.md)
+- Brief-live Grok/agy attempts and exclusions: [`evidence/brief-live-external-attempts.md`](evidence/brief-live-external-attempts.md)
 - Knowledge verdict: [`evidence/live-audit-judge-knowledge.md`](evidence/live-audit-judge-knowledge.md)
 - Additional revalidation knowledge verdict: [`evidence/revalidation-judge-knowledge.md`](evidence/revalidation-judge-knowledge.md)
 - Final knowledge verdict: [`evidence/final-revalidation-judge-knowledge.md`](evidence/final-revalidation-judge-knowledge.md)
+- Brief-live knowledge verdict: [`evidence/brief-live-judge-knowledge.md`](evidence/brief-live-judge-knowledge.md)
 - Final harsh-critique verdict: [`evidence/final-revalidation-judge-critique.md`](evidence/final-revalidation-judge-critique.md)
 - Final UX verdict: [`evidence/final-revalidation-judge-ux.md`](evidence/final-revalidation-judge-ux.md)
+- Brief-live harsh-critique verdict: [`evidence/brief-live-judge-critique.md`](evidence/brief-live-judge-critique.md)
+- Brief-live UX verdict: [`evidence/brief-live-judge-ux.md`](evidence/brief-live-judge-ux.md)
 - Harsh-critique verdict: [`evidence/live-audit-judge-critique.md`](evidence/live-audit-judge-critique.md)
 - UX verdict: [`evidence/live-audit-judge-ux.md`](evidence/live-audit-judge-ux.md)
 - Frozen synthesis and finding disposition: [`evidence/live-audit-synthesis.md`](evidence/live-audit-synthesis.md)
 - Final synthesis and finding disposition: [`evidence/final-revalidation-synthesis.md`](evidence/final-revalidation-synthesis.md)
+- Brief-live synthesis and finding disposition: [`evidence/brief-live-synthesis.md`](evidence/brief-live-synthesis.md)
 - GitHub metadata: [`evidence/github-snapshot.json`](evidence/github-snapshot.json)
+- Brief-live OSS metadata and rubric audit: [`evidence/brief-live-oss.md`](evidence/brief-live-oss.md)
 - Machine-readable matrix: [`codex-trib-lib-matrix.csv`](codex-trib-lib-matrix.csv)
 - Public CLI/package proof: [`evidence/live-audit-e2e.md`](evidence/live-audit-e2e.md)
 - Fresh CLI/API/installed-package proof: [`evidence/revalidation-e2e.md`](evidence/revalidation-e2e.md)
