@@ -255,6 +255,8 @@ tribunal \
 
 Observed: exit `0`; requested/effective rounds `2/2`; hardness `hard`; six coordinates from `R1J1` through `R2J3`; six unique personas; backend `local-rules`; engine source `builtin-local`; two explicit evidence gaps per view; `debate.kind=post-hoc-synthesis`; final `50/100`; marker `⚠️`; no runtime winner marker. The Karpathy-inspired disclaimer was present in JSON and Markdown. The same command worked from outside the repository after PEP 517 installation. An invalid NotebookLM reference exited `2` with concise stderr and no traceback. Full proof: [`evidence/live-audit-e2e.md`](evidence/live-audit-e2e.md).
 
+The revalidation repeated the repository CLI, all three primary modes, comparison demo, expected failure, clean PEP 517 install, installed console script, and installed Python API. Every surface reproduced the bounded contract; the fresh machine-checked log is [`evidence/revalidation-e2e.md`](evidence/revalidation-e2e.md).
+
 ### Recommended next increments
 
 1. Place live-provider adapters in a separate package and record immutable provider/model/version, prompt/rubric, latency, token/cost, source, and error provenance.
@@ -346,5 +348,6 @@ Evidence index:
 - GitHub metadata: [`evidence/github-snapshot.json`](evidence/github-snapshot.json)
 - Machine-readable matrix: [`codex-trib-lib-matrix.csv`](codex-trib-lib-matrix.csv)
 - Public CLI/package proof: [`evidence/live-audit-e2e.md`](evidence/live-audit-e2e.md)
+- Fresh CLI/API/installed-package proof: [`evidence/revalidation-e2e.md`](evidence/revalidation-e2e.md)
 
 The release is complete only when these exact artifacts pass the gates, are committed together, the branch push contains that commit, and the final report is retrievable at a SHA-pinned public GitHub blob URL.
