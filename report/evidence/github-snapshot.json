@@ -1,5 +1,5 @@
 {
-  "snapshot_utc": "2026-07-20T19:48:22Z",
+  "snapshot_utc": "2026-07-20T20:51:06Z",
   "source": "Live GitHub REST repository, README, and license endpoints queried with authenticated gh CLI",
   "stars_are_adoption_only": true,
   "rubric_points_from_stars": 0,
@@ -11,7 +11,7 @@
       "reported_license": "MIT",
       "license_url": "https://github.com/Martin-Hausleitner/tribunal-public/blob/master/LICENSE",
       "readme_url": "https://github.com/Martin-Hausleitner/tribunal-public/blob/master/README.md",
-      "pushed_at": "2026-07-20T19:48:06Z",
+      "pushed_at": "2026-07-20T20:36:06Z",
       "archived": false,
       "feature_basis": "Three explicit review modes, isolated per-persona backend calls, evidence gaps, persona/skill routing, stable CLI/API output, and an explicitly structural local backend."
     },
@@ -28,18 +28,18 @@
     },
     {
       "github_url": "https://github.com/microsoft/agent-framework",
-      "stars": 12248,
+      "stars": 12250,
       "github_api_spdx": "MIT",
       "reported_license": "MIT",
       "license_url": "https://github.com/microsoft/agent-framework/blob/main/LICENSE",
       "readme_url": "https://github.com/microsoft/agent-framework/blob/main/README.md",
-      "pushed_at": "2026-07-20T18:17:19Z",
+      "pushed_at": "2026-07-20T20:34:52Z",
       "archived": false,
       "feature_basis": "README documents production-grade multi-agent workflows, multiple providers, checkpointing, human-in-the-loop, OpenTelemetry observability, DevUI, and Python/.NET support."
     },
     {
       "github_url": "https://github.com/confident-ai/deepeval",
-      "stars": 16979,
+      "stars": 16981,
       "github_api_spdx": "Apache-2.0",
       "reported_license": "Apache-2.0",
       "license_url": "https://github.com/confident-ai/deepeval/blob/main/LICENSE.md",
@@ -50,7 +50,7 @@
     },
     {
       "github_url": "https://github.com/microsoft/autogen",
-      "stars": 59849,
+      "stars": 59850,
       "github_api_spdx": "CC-BY-4.0",
       "reported_license": "CC-BY-4.0; component-level use needs separate review",
       "license_url": "https://github.com/microsoft/autogen/blob/main/LICENSE",
@@ -83,7 +83,7 @@
     },
     {
       "github_url": "https://github.com/langfuse/langfuse",
-      "stars": 31508,
+      "stars": 31509,
       "github_api_spdx": "NOASSERTION",
       "reported_license": "MIT outside the enterprise directories declared by the repository",
       "license_url": "https://github.com/langfuse/langfuse/blob/main/LICENSE",
@@ -94,7 +94,7 @@
     },
     {
       "github_url": "https://github.com/stanfordnlp/dspy",
-      "stars": 36256,
+      "stars": 36258,
       "github_api_spdx": "MIT",
       "reported_license": "MIT",
       "license_url": "https://github.com/stanfordnlp/dspy/blob/main/LICENSE",
@@ -110,7 +110,7 @@
       "reported_license": "Elastic License 2.0; source-available, not OSI open source",
       "license_url": "https://github.com/Arize-ai/phoenix/blob/main/LICENSE",
       "readme_url": "https://github.com/Arize-ai/phoenix/blob/main/README.md",
-      "pushed_at": "2026-07-20T19:46:14Z",
+      "pushed_at": "2026-07-20T20:43:47Z",
       "archived": false,
       "feature_basis": "README documents OpenTelemetry tracing, evaluations, datasets, experiments, prompt playground, and agent debugging; ELv2 restricts hosted-service use."
     },
