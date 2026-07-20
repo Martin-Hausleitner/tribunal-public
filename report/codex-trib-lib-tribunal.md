@@ -1,6 +1,6 @@
 # Codex Tribunal Library: live IDR and adversarial tribunal
 
-Audit date: `2026-07-20`
+Audit date: `2026-07-21`
 
 Declared use case: a reusable, hard-critical review layer for knowledge/correctness, critique/risk, and UI/UX feasibility, with blind initial views, explicit evidence gaps, a disclosed Karpathy-inspired critic, stable CLI/API output, and low-friction OSS reuse.
 
@@ -12,26 +12,27 @@ The single crown below is a narrow, project-authored fit assessment backed by th
 
 IDR: ja
 
-- Canonical NotebookLM notebook: https://notebooklm.google.com/notebook/80cffd38-0185-4f4d-ae00-bbc67c4bc515
-- Authenticated identity, title `Tribunal IDR 2026-07-04`, and public-link sharing were reverified with `nlm 0.8.9`; the verification ledger was recorded at `2026-07-20T22:14:42Z`.
-- Direct baseline inventory was `640` total, `598` processed, and `42` failed. The shared notebook changed during collection; the closing direct inventory was `669` total, `600` processed, and `69` failed.
-- Four current planning files were offered as fresh sources. Proposal and design were processed; the nested spec/task uploads returned `INVALID_ARGUMENT`, a materially different inline bundle later failed, and a direct-control upload was rejected. Failed records were excluded from every query.
-- A default-conversation knowledge attempt returned `0` selected sources and `0` mappings and was excluded. Four accepted cross-topic queries then used separate fresh conversation IDs and explicit processed-source selections: knowledge `17/72`, critique `6/22`, UX `11/40`, and contradiction control `6/23` returned source IDs/citation mappings.
-- NotebookLM repeatedly invented syntax, import, regex, delimiter, and missing-method defects from normalized passages. Exact source, compiler, import, rendering, CLI, build, and installed-wheel controls overruled them. The contradiction control accepted those executable facts as external evidence rather than pretending they were notebook citations.
+- Canonical public NotebookLM notebook: https://notebooklm.google.com/notebook/80cffd38-0185-4f4d-ae00-bbc67c4bc515
+- Authenticated identity, title `Tribunal IDR 2026-07-04`, and public sharing were reverified with `nlm 0.8.9`.
+- The final direct inventory was `875` total sources: `600` processed and `275` failed. The canonical notebook is at its exact processed-source ceiling.
+- Two uniquely titled current-pass manifests returned IDs but settled empty at failed status `3`. Creating another notebook failed safely while the account contained exactly `500` notebooks. No unrelated user notebook or processed source was deleted, renamed, or repurposed; failed source IDs were excluded from every query.
+- Five broad fresh conversations covered knowledge, hostile risk, CLI UX, OSS composition, and contradiction/source attribution. Because several follow-ups over-relied on a prior report, four new non-circular controls excluded that report entirely.
+- The non-circular knowledge control returned `13` selected source IDs and `34` citation mappings; the UX control used the code snapshot, promptfoo, Agent Framework, Nielsen, and WCAG; the OSS control cited all ten canonical alternatives.
+- NotebookLM still treated old snapshot behavior as current and described interactive debate in one hostile answer even though the implementation is post-hoc. Exact current code, primary metadata, and execution overruled those statements.
 
-The authoritative source IDs, ingestion failures, rejected attempt, four query contracts, grounding counts, control labels, and manual corrections are retained in [`evidence/verification-notebooklm.md`](evidence/verification-notebooklm.md). Historical IDR ledgers remain reference material, not current proof.
+The current source IDs, conversation UUIDs, grounding metadata, capacity failures, exclusions, and manual corrections are retained in [`evidence/revalidation-2026-07-21-notebooklm.md`](evidence/revalidation-2026-07-21-notebooklm.md). Earlier ledgers remain historical inputs, not current proof.
 
 ## Method
 
-1. **OpenSpec-first contract.** This run was specified and strictly validated before fresh synthesis in [`../openspec/changes/verify-complete-codex-tribunal-library-brief/`](../openspec/changes/verify-complete-codex-tribunal-library-brief/): proposal, design, capability scenarios, and 53 checkable tasks. Earlier completed changes remain historical inputs.
-2. **Canonical live research.** The authenticated notebook and public link were verified, mutable source state was inventoried, two fresh current planning sources reached processed status, failures were excluded, and four accepted queries used explicit selected sources plus fresh conversation IDs.
-3. **OSS before custom work.** Eleven viable repositories were refreshed in one primary GitHub REST batch. Stars, licenses, archive/disabled state, activity, canonical URLs, README status, and the six score components were checked; stars provide zero points.
-4. **Blind adversarial judgments.** The weekly guard was above its 50% threshold, so no expensive Codex/OMX burst was started. The brief-authorized `agy` alternative used three accepted fresh role sessions and one conclusion-free common packet. Synthesis started only after outputs were frozen.
-5. **Adversarial controls.** Generated claims were reconciled against exact code, unit/compile/build gates, a malformed-input case, source CLI modes, an exact-wheel install, the installed console, and the installed Python API.
-6. **Scoped implementation.** The hostile judge reproduced that canonical NotebookLM URLs still accepted query strings and fragments. Final E2E additionally reproduced acceptance of the literal `<id>` documentation token. The validator and regression test now reject both defect classes while retaining real UUID/slug forms.
-7. **Fail-closed publication.** Unit, compile, build, skill, CSV, report, OpenSpec, evidence-link, diff, remote-SHA, and immutable-blob checks gate release.
+1. **OpenSpec-first contract.** The current run is specified in [`../openspec/changes/revalidate-codex-tribunal-library-2026-07-21/`](../openspec/changes/revalidate-codex-tribunal-library-2026-07-21/): proposal, design, nine testable requirements, and 42 checkable tasks.
+2. **Canonical live research.** Authentication, public sharing, source/account capacity, processed source IDs, nine fresh conversations, and non-circular controls were observed directly. Failed sources were never treated as research.
+3. **OSS before custom work.** Eleven primary GitHub REST endpoints and relevant root README/license files were refreshed. Stars are numeric, dated, and worth zero rubric points.
+4. **Blind adversarial judgments.** Three required Grok 4.5 High calls reached the service but stopped before model output with HTTP 402. The brief-authorized fallback produced three accepted isolated `agy` verdicts from one frozen, conclusion-free packet.
+5. **Adversarial controls.** Every generated claim was separated into current fact, historical finding, documented non-capability, hypothesis, or pending proof. The only new reproduced blocker was stale CSV metadata relative to the new snapshot.
+6. **Scoped implementation.** The CSV timestamp and seven changed star values were synchronized. No runtime change was made because the source, unit, build, installed console/API, and expected-error surfaces reproduced no runtime defect.
+7. **Fail-closed publication.** Unit, compile, examples, build, wheel contents, clean install, installed CLI/API, skill, CSV, report, strict OpenSpec, diff, remote SHA, clean tree, and immutable public retrieval gate the handoff.
 
-NotebookLM synthesis, external judge opinion, GitHub primary metadata, and executable package behavior are separate evidence classes. None substitutes for another.
+NotebookLM synthesis, external judge opinion, GitHub primary metadata, project-authored scoring, and executable package behavior are separate evidence classes. None substitutes for another.
 
 ## Source inventory
 
