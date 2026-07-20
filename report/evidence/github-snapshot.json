@@ -1,5 +1,5 @@
 {
-  "snapshot_utc": "2026-07-20T18:04:59Z",
+  "snapshot_utc": "2026-07-20T18:41:26Z",
   "source": "Live GitHub REST repository, README, and license endpoints queried with authenticated gh CLI",
   "stars_are_adoption_only": true,
   "rubric_points_from_stars": 0,
@@ -11,18 +11,18 @@
       "reported_license": "MIT",
       "license_url": "https://github.com/Martin-Hausleitner/tribunal-public/blob/master/LICENSE",
       "readme_url": "https://github.com/Martin-Hausleitner/tribunal-public/blob/master/README.md",
-      "pushed_at": "2026-07-20T18:00:08Z",
+      "pushed_at": "2026-07-20T18:36:28Z",
       "archived": false,
       "feature_basis": "Three explicit review modes, isolated per-persona backend calls, evidence gaps, persona/skill routing, stable CLI/API output, and an explicitly structural local backend."
     },
     {
       "github_url": "https://github.com/promptfoo/promptfoo",
-      "stars": 23440,
+      "stars": 23441,
       "github_api_spdx": "MIT",
       "reported_license": "MIT",
       "license_url": "https://github.com/promptfoo/promptfoo/blob/main/LICENSE",
       "readme_url": "https://github.com/promptfoo/promptfoo/blob/main/README.md",
-      "pushed_at": "2026-07-20T18:04:56Z",
+      "pushed_at": "2026-07-20T18:15:45Z",
       "archived": false,
       "feature_basis": "README documents CLI/library evaluation, automated evals, red teaming, vulnerability scanning, and CI/CD checks."
     },
@@ -33,7 +33,7 @@
       "reported_license": "MIT",
       "license_url": "https://github.com/microsoft/agent-framework/blob/main/LICENSE",
       "readme_url": "https://github.com/microsoft/agent-framework/blob/main/README.md",
-      "pushed_at": "2026-07-20T18:06:24Z",
+      "pushed_at": "2026-07-20T18:17:19Z",
       "archived": false,
       "feature_basis": "README documents production-grade multi-agent workflows, multiple providers, checkpointing, human-in-the-loop, OpenTelemetry observability, DevUI, and Python/.NET support."
     },
@@ -44,13 +44,13 @@
       "reported_license": "Apache-2.0",
       "license_url": "https://github.com/confident-ai/deepeval/blob/main/LICENSE.md",
       "readme_url": "https://github.com/confident-ai/deepeval/blob/main/README.md",
-      "pushed_at": "2026-07-20T10:32:06Z",
+      "pushed_at": "2026-07-20T18:36:22Z",
       "archived": false,
       "feature_basis": "README documents pytest-style LLM evaluation, custom and agentic metrics, task completion, tool correctness, and goal accuracy."
     },
     {
       "github_url": "https://github.com/microsoft/autogen",
-      "stars": 59846,
+      "stars": 59848,
       "github_api_spdx": "CC-BY-4.0",
       "reported_license": "CC-BY-4.0; component-level use needs separate review",
       "license_url": "https://github.com/microsoft/autogen/blob/main/LICENSE",
@@ -83,7 +83,7 @@
     },
     {
       "github_url": "https://github.com/langfuse/langfuse",
-      "stars": 31503,
+      "stars": 31504,
       "github_api_spdx": "NOASSERTION",
       "reported_license": "MIT outside the enterprise directories declared by the repository",
       "license_url": "https://github.com/langfuse/langfuse/blob/main/LICENSE",
@@ -94,7 +94,7 @@
     },
     {
       "github_url": "https://github.com/stanfordnlp/dspy",
-      "stars": 36254,
+      "stars": 36256,
       "github_api_spdx": "MIT",
       "reported_license": "MIT",
       "license_url": "https://github.com/stanfordnlp/dspy/blob/main/LICENSE",
@@ -110,7 +110,7 @@
       "reported_license": "Elastic License 2.0; source-available, not OSI open source",
       "license_url": "https://github.com/Arize-ai/phoenix/blob/main/LICENSE",
       "readme_url": "https://github.com/Arize-ai/phoenix/blob/main/README.md",
-      "pushed_at": "2026-07-20T18:04:02Z",
+      "pushed_at": "2026-07-20T18:30:12Z",
       "archived": false,
       "feature_basis": "README documents OpenTelemetry tracing, evaluations, datasets, experiments, prompt playground, and agent debugging; ELv2 restricts hosted-service use."
     },
