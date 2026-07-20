@@ -337,4 +337,4 @@ python -m venv /tmp/tribunal-release-venv
 /tmp/tribunal-release-venv/bin/tribunal --mode knowledge --target "Installed package E2E" --json
 ```
 
-Observed final gate expectations are 15 passing unit tests, successful compilation, three completed primary-mode runs, a completed comparison run, a clean installed-package JSON run, concise exit-2 behavior for the invalid NotebookLM reference, skill/CSV/report gate passes, and strict OpenSpec validation. The public handoff pins the final report URL to the delivered Git commit SHA so later branch movement cannot change the referenced evidence.
+Observed final gate expectations are 18 passing unit tests, successful compilation, three completed primary-mode runs, a completed comparison run, a clean installed-package JSON run, concise exit-2 behavior for the invalid NotebookLM reference, skill/CSV/report gate passes, and strict OpenSpec validation. The public handoff pins the final report URL to the delivered Git commit SHA so later branch movement cannot change the referenced evidence.
