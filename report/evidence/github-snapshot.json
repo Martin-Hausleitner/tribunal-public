@@ -1,77 +1,129 @@
 {
-  "snapshot_utc": "2026-07-20T15:53:55Z",
-  "source": "GitHub REST API repositories endpoint queried with authenticated gh CLI",
+  "snapshot_utc": "2026-07-20T18:04:59Z",
+  "source": "Live GitHub REST repository, README, and license endpoints queried with authenticated gh CLI",
   "stars_are_adoption_only": true,
+  "rubric_points_from_stars": 0,
   "repositories": [
     {
       "github_url": "https://github.com/Martin-Hausleitner/tribunal-public",
       "stars": 0,
-      "github_api_spdx": "NOASSERTION",
-      "reported_license": "MIT from the local LICENSE included in the release commit",
-      "archived": false
+      "github_api_spdx": "MIT",
+      "reported_license": "MIT",
+      "license_url": "https://github.com/Martin-Hausleitner/tribunal-public/blob/master/LICENSE",
+      "readme_url": "https://github.com/Martin-Hausleitner/tribunal-public/blob/master/README.md",
+      "pushed_at": "2026-07-20T18:00:08Z",
+      "archived": false,
+      "feature_basis": "Three explicit review modes, isolated per-persona backend calls, evidence gaps, persona/skill routing, stable CLI/API output, and an explicitly structural local backend."
     },
     {
       "github_url": "https://github.com/promptfoo/promptfoo",
-      "stars": 23438,
+      "stars": 23440,
       "github_api_spdx": "MIT",
       "reported_license": "MIT",
-      "archived": false
+      "license_url": "https://github.com/promptfoo/promptfoo/blob/main/LICENSE",
+      "readme_url": "https://github.com/promptfoo/promptfoo/blob/main/README.md",
+      "pushed_at": "2026-07-20T18:04:56Z",
+      "archived": false,
+      "feature_basis": "README documents CLI/library evaluation, automated evals, red teaming, vulnerability scanning, and CI/CD checks."
     },
     {
-      "github_url": "https://github.com/microsoft/autogen",
-      "stars": 59845,
-      "github_api_spdx": "CC-BY-4.0",
-      "reported_license": "CC-BY-4.0; component-level use needs separate review",
-      "archived": false
+      "github_url": "https://github.com/microsoft/agent-framework",
+      "stars": 12247,
+      "github_api_spdx": "MIT",
+      "reported_license": "MIT",
+      "license_url": "https://github.com/microsoft/agent-framework/blob/main/LICENSE",
+      "readme_url": "https://github.com/microsoft/agent-framework/blob/main/README.md",
+      "pushed_at": "2026-07-20T18:06:24Z",
+      "archived": false,
+      "feature_basis": "README documents production-grade multi-agent workflows, multiple providers, checkpointing, human-in-the-loop, OpenTelemetry observability, DevUI, and Python/.NET support."
     },
     {
       "github_url": "https://github.com/confident-ai/deepeval",
-      "stars": 16968,
+      "stars": 16977,
       "github_api_spdx": "Apache-2.0",
       "reported_license": "Apache-2.0",
-      "archived": false
+      "license_url": "https://github.com/confident-ai/deepeval/blob/main/LICENSE.md",
+      "readme_url": "https://github.com/confident-ai/deepeval/blob/main/README.md",
+      "pushed_at": "2026-07-20T10:32:06Z",
+      "archived": false,
+      "feature_basis": "README documents pytest-style LLM evaluation, custom and agentic metrics, task completion, tool correctness, and goal accuracy."
+    },
+    {
+      "github_url": "https://github.com/microsoft/autogen",
+      "stars": 59846,
+      "github_api_spdx": "CC-BY-4.0",
+      "reported_license": "CC-BY-4.0; component-level use needs separate review",
+      "license_url": "https://github.com/microsoft/autogen/blob/main/LICENSE",
+      "readme_url": "https://github.com/microsoft/autogen/blob/main/README.md",
+      "pushed_at": "2026-04-15T11:59:09Z",
+      "archived": false,
+      "feature_basis": "README documents multi-agent orchestration and runtimes but states AutoGen is in maintenance mode and recommends Microsoft Agent Framework for new projects."
     },
     {
       "github_url": "https://github.com/vibrantlabsai/ragas",
       "stars": 14918,
       "github_api_spdx": "Apache-2.0",
       "reported_license": "Apache-2.0",
-      "archived": false
+      "license_url": "https://github.com/vibrantlabsai/ragas/blob/main/LICENSE",
+      "readme_url": "https://github.com/vibrantlabsai/ragas/blob/main/README.md",
+      "pushed_at": "2026-02-24T07:47:19Z",
+      "archived": false,
+      "feature_basis": "Project README and documentation position Ragas as an LLM application, RAG, and agent evaluation metrics framework."
     },
     {
       "github_url": "https://github.com/openai/evals",
-      "stars": 18953,
+      "stars": 18955,
       "github_api_spdx": "NOASSERTION",
       "reported_license": "MIT code with separately licensed datasets",
-      "archived": false
+      "license_url": "https://github.com/openai/evals/blob/main/LICENSE.md",
+      "readme_url": "https://github.com/openai/evals/blob/main/README.md",
+      "pushed_at": "2026-04-14T15:29:57Z",
+      "archived": false,
+      "feature_basis": "README documents an LLM/system evaluation framework, public eval registry, custom/private evals, and benchmark data; LICENSE lists dataset-specific exceptions."
     },
     {
       "github_url": "https://github.com/langfuse/langfuse",
-      "stars": 31497,
+      "stars": 31503,
       "github_api_spdx": "NOASSERTION",
       "reported_license": "MIT outside the enterprise directories declared by the repository",
-      "archived": false
+      "license_url": "https://github.com/langfuse/langfuse/blob/main/LICENSE",
+      "readme_url": "https://github.com/langfuse/langfuse/blob/main/README.md",
+      "pushed_at": "2026-07-20T17:16:51Z",
+      "archived": false,
+      "feature_basis": "README documents OpenTelemetry tracing, evaluations, datasets, debugging, experiments, and self-hosting; top-level license excludes named enterprise directories."
     },
     {
       "github_url": "https://github.com/stanfordnlp/dspy",
-      "stars": 36252,
+      "stars": 36254,
       "github_api_spdx": "MIT",
       "reported_license": "MIT",
-      "archived": false
+      "license_url": "https://github.com/stanfordnlp/dspy/blob/main/LICENSE",
+      "readme_url": "https://github.com/stanfordnlp/dspy/blob/main/README.md",
+      "pushed_at": "2026-07-20T15:18:05Z",
+      "archived": false,
+      "feature_basis": "README documents modular language-model programs and prompt/weight optimization for classifiers, RAG pipelines, and agent loops."
     },
     {
       "github_url": "https://github.com/Arize-ai/phoenix",
-      "stars": 10641,
+      "stars": 10642,
       "github_api_spdx": "NOASSERTION",
       "reported_license": "Elastic License 2.0; source-available, not OSI open source",
-      "archived": false
+      "license_url": "https://github.com/Arize-ai/phoenix/blob/main/LICENSE",
+      "readme_url": "https://github.com/Arize-ai/phoenix/blob/main/README.md",
+      "pushed_at": "2026-07-20T18:04:02Z",
+      "archived": false,
+      "feature_basis": "README documents OpenTelemetry tracing, evaluations, datasets, experiments, prompt playground, and agent debugging; ELv2 restricts hosted-service use."
     },
     {
       "github_url": "https://github.com/EleutherAI/lm-evaluation-harness",
-      "stars": 13340,
+      "stars": 13341,
       "github_api_spdx": "MIT",
       "reported_license": "MIT",
-      "archived": false
+      "license_url": "https://github.com/EleutherAI/lm-evaluation-harness/blob/main/LICENSE.md",
+      "readme_url": "https://github.com/EleutherAI/lm-evaluation-harness/blob/main/README.md",
+      "pushed_at": "2026-07-13T20:18:15Z",
+      "archived": false,
+      "feature_basis": "README documents a unified model-evaluation framework, more than 60 academic benchmarks, task configuration, local models, and reproducible public prompts."
     }
   ]
 }

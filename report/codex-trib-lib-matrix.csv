@@ -1,11 +1,12 @@
 Rank,Tool,GitHub URL,License,Stars,Snapshot UTC,Knowledge,Critique,UI/UX,Independent Judges,Evidence Provenance,Persona/Skill Extensibility,Observability/Repeatability,Type Fit (25),Adversarial Depth (20),Evidence (20),Extensibility (15),Repeatability (10),Integration (10),Score,Crown
-1,Codex Tribunal,https://github.com/Martin-Hausleitner/tribunal-public,MIT,0,2026-07-20T15:53:55Z,✅,✅,✅,⚠️,✅,✅,⚠️,25,13,18,15,7,7,85,👑
-2,promptfoo,https://github.com/promptfoo/promptfoo,MIT,23438,2026-07-20T15:53:55Z,✅,✅,⚠️,❌,✅,⚠️,✅,15,16,18,11,10,8,78,
-3,AutoGen,https://github.com/microsoft/autogen,"CC-BY-4.0 (component-specific)",59845,2026-07-20T15:53:55Z,⚠️,⚠️,⚠️,⚠️,⚠️,✅,⚠️,18,16,10,14,7,5,70,
-4,DeepEval,https://github.com/confident-ai/deepeval,Apache-2.0,16968,2026-07-20T15:53:55Z,✅,⚠️,❌,❌,✅,⚠️,✅,13,12,17,10,9,7,68,
-5,Ragas,https://github.com/vibrantlabsai/ragas,Apache-2.0,14918,2026-07-20T15:53:55Z,✅,⚠️,❌,❌,✅,⚠️,✅,11,8,17,9,9,7,61,
-6,OpenAI Evals,https://github.com/openai/evals,"MIT code; dataset licenses vary",18953,2026-07-20T15:53:55Z,✅,⚠️,❌,❌,✅,⚠️,✅,10,7,17,8,10,7,59,
-7,Langfuse,https://github.com/langfuse/langfuse,"MIT except declared enterprise directories",31497,2026-07-20T15:53:55Z,⚠️,⚠️,❌,❌,✅,⚠️,✅,8,6,18,10,10,6,58,
-8,DSPy,https://github.com/stanfordnlp/dspy,MIT,36252,2026-07-20T15:53:55Z,⚠️,⚠️,❌,❌,⚠️,✅,✅,9,8,12,14,8,6,57,
-9,Phoenix,https://github.com/Arize-ai/phoenix,"Elastic-2.0 (source-available)",10641,2026-07-20T15:53:55Z,⚠️,⚠️,❌,❌,✅,⚠️,✅,8,6,18,10,10,4,56,
-10,lm-evaluation-harness,https://github.com/EleutherAI/lm-evaluation-harness,MIT,13340,2026-07-20T15:53:55Z,✅,❌,❌,❌,✅,⚠️,✅,7,5,18,7,10,6,53,
+1,Codex Tribunal,https://github.com/Martin-Hausleitner/tribunal-public,MIT,0,2026-07-20T18:04:59Z,✅,✅,✅,⚠️,✅,✅,⚠️,25,13,18,15,7,7,85,👑
+2,promptfoo,https://github.com/promptfoo/promptfoo,MIT,23440,2026-07-20T18:04:59Z,✅,✅,⚠️,❌,✅,⚠️,✅,15,16,18,11,10,8,78,
+3,Microsoft Agent Framework,https://github.com/microsoft/agent-framework,MIT,12247,2026-07-20T18:04:59Z,⚠️,⚠️,⚠️,⚠️,⚠️,✅,✅,17,12,12,15,10,6,72,
+4,DeepEval,https://github.com/confident-ai/deepeval,Apache-2.0,16977,2026-07-20T18:04:59Z,✅,⚠️,❌,❌,✅,⚠️,✅,13,12,17,10,9,7,68,
+5,AutoGen,https://github.com/microsoft/autogen,"CC-BY-4.0 (maintenance mode; component-specific)",59846,2026-07-20T18:04:59Z,⚠️,⚠️,⚠️,⚠️,⚠️,✅,⚠️,16,14,10,14,6,4,64,
+6,Ragas,https://github.com/vibrantlabsai/ragas,Apache-2.0,14918,2026-07-20T18:04:59Z,✅,⚠️,❌,❌,✅,⚠️,✅,11,8,17,9,9,7,61,
+7,OpenAI Evals,https://github.com/openai/evals,"MIT code; dataset licenses vary",18955,2026-07-20T18:04:59Z,✅,⚠️,❌,❌,✅,⚠️,✅,10,7,17,8,10,7,59,
+8,Langfuse,https://github.com/langfuse/langfuse,"MIT except declared enterprise directories",31503,2026-07-20T18:04:59Z,⚠️,⚠️,❌,❌,✅,⚠️,✅,8,6,18,10,10,6,58,
+9,DSPy,https://github.com/stanfordnlp/dspy,MIT,36254,2026-07-20T18:04:59Z,⚠️,⚠️,❌,❌,⚠️,✅,✅,9,8,12,14,8,6,57,
+10,Phoenix,https://github.com/Arize-ai/phoenix,"Elastic-2.0 (source-available)",10642,2026-07-20T18:04:59Z,⚠️,⚠️,❌,❌,✅,⚠️,✅,8,6,18,10,10,4,56,
+11,lm-evaluation-harness,https://github.com/EleutherAI/lm-evaluation-harness,MIT,13341,2026-07-20T18:04:59Z,✅,❌,❌,❌,✅,⚠️,✅,7,5,18,7,10,6,53,
