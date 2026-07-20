@@ -57,5 +57,5 @@
 ## 8. Publication
 
 - [x] 8.1 Review the final staged diff and force-add all brief-required report/evidence files
-- [ ] 8.2 Commit the complete audit with an accurate message and push the configured branch
-- [ ] 8.3 Verify the remote commit and public GitHub blob URL for the exact delivered report
+- [x] 8.2 Commit the complete audit with an accurate message and push the configured branch
+- [x] 8.3 Verify the remote commit and public GitHub blob URL for the exact delivered report
