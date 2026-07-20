@@ -58,6 +58,8 @@ flowchart TD
 
 Every persona is evaluated through a separate `JudgeBackend.evaluate(JudgeRequest)` call. Backends return a validated `BackendResult` with a score, verdict, findings, evidence, and unresolved gaps. `evidence_gaps` may be empty only when that backend declares no unresolved proof. The bundled backend is named `local-rules`; its output explicitly says that it reviewed structure rather than target semantics.
 
+Routed skill names are declared orchestration labels, not proof that a matching Codex skill is installed or executed. The dependency-free core records labels for a host or live backend to validate and invoke; it does not discover external skill installations itself.
+
 Positive runtime markers require every judge to score at least 80 and every judge to return an empty evidence-gap list. A qualifying comparison receives `👑`; a qualifying knowledge, critique, or UI/UX run receives `✅`. An 80-plus average with one lower judge or any unresolved gap remains `⚠️`. This is an assertion made by the injected backend, not independent proof that its evidence is true.
 
 Without configuration the engine manager records only `local-rules` from `builtin-local`, with no third-party quota claim. Optional integer values are judge-slot capacities, not tokens or provider promises. They can be supplied through:

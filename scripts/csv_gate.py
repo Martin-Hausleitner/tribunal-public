@@ -95,6 +95,8 @@ def main() -> int:
         for column in CAPABILITY_COLUMNS:
             if row[column] not in EMOJIS:
                 return fail(f"row {index} capability {column} must be one of {sorted(EMOJIS)}")
+        if all(row[column] == "✅" for column in CAPABILITY_COLUMNS) and score < 70:
+            return fail(f"row {index} cannot claim all capabilities at score {score} below 70")
         snapshot = row["Snapshot UTC"]
         try:
             datetime.fromisoformat(snapshot.replace("Z", "+00:00"))
@@ -118,6 +120,8 @@ def main() -> int:
     winner = next(row for row in rows if "👑" in row["Crown"])
     if winner["Rank"] != "1" or int(winner["Score"]) != max(scores):
         return fail("the crown must belong to rank 1 with the highest score")
+    if int(winner["Score"]) < 70:
+        return fail("the crowned winner must score at least 70")
     print(
         "csv-gate PASS: "
         f"{len(rows)} rows, one crown={winner['Tool']}, "

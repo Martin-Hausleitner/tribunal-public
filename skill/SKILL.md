@@ -23,6 +23,7 @@ Use this skill when a task needs a rigorous meta-analysis, product/library compa
    - Critique: architecture, production-code-audit, Karpathy-inspired technical critic.
    - UI/UX: high-end-visual-design, minimalist-ui, ui-ux-pro-max, design-taste-frontend, web-design-guidelines.
    - Comparison: competitive-landscape, CSV/report gate, source verification.
+   Routed names are declared labels for the host workflow. The local Python core records but does not discover, validate, or invoke installed Codex skills; the host must fail visibly when a required live capability is unavailable.
 4. Use NotebookLM or an equivalent source corpus for substantive deep research. Record the canonical notebook identity, processed sources, questions, and answers. A URL is provenance only unless a live evidence-capable judge actually queries its contents. Never invent a NotebookLM link.
 5. Synthesize only after all judges finish. Name recurring failures, disagreements, and strongest points. Label this as post-hoc synthesis; the current library contract does not provide interactive inter-agent debate.
 6. Produce a verdict with judge/backend/engine provenance, findings, evidence, evidence gaps, and a single recommendation or crown when warranted.

@@ -291,6 +291,13 @@ class TribunalContractTests(unittest.TestCase):
         orchestrator = TribunalOrchestrator(TribunalType.CRITIQUE)
         persona = orchestrator.personas.personas["andrej-karpathy"]
         self.assertIn("neither authored nor endorsed", persona.disclaimer or "")
+        report = orchestrator.judge("identity-boundary target")
+        view = next(
+            item for item in report.judge_views if item.persona_slug == "andrej-karpathy"
+        )
+        self.assertEqual(view.persona_disclaimer, persona.disclaimer)
+        self.assertIn("- Persona disclaimer:", report.to_markdown())
+        self.assertIn("neither authored nor endorsed", report.to_markdown())
         for loaded in orchestrator.personas.personas.values():
             self.assertTrue(
                 all(url.startswith("https://github.com/") for url in loaded.reference_repos)

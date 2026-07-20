@@ -110,6 +110,7 @@ class JudgeView:
     persona_slug: str
     persona: str
     role: str
+    persona_disclaimer: str | None
     backend: str
     engine: str
     engine_source: str
@@ -167,10 +168,10 @@ class VerdictReport:
             "## Judge Views",
         ]
         for view in self.judge_views:
-            lines.extend(
-                [
+            view_lines = [
                     f"### R{view.round_index} J{view.judge_index}: "
                     f"{_markdown_text(view.persona)} ({_markdown_code(view.persona_slug)})",
+                    f"- Role: {_markdown_text(view.role)}",
                     f"- Backend: {_markdown_code(view.backend)}",
                     f"- Engine: {_markdown_code(view.engine)} from {_markdown_code(view.engine_source)} "
                     f"(capacity before: {_markdown_code(view.engine_capacity_before if view.engine_capacity_before is not None else 'unlimited local')})",
@@ -188,7 +189,12 @@ class VerdictReport:
                     ),
                     "",
                 ]
-            )
+            if view.persona_disclaimer:
+                view_lines.insert(
+                    2,
+                    f"- Persona disclaimer: {_markdown_text(view.persona_disclaimer)}",
+                )
+            lines.extend(view_lines)
         lines.extend(
             [
                 "## Post-hoc Synthesis",
@@ -688,6 +694,7 @@ class TribunalOrchestrator:
             persona_slug=persona.slug,
             persona=persona.name,
             role=persona.role,
+            persona_disclaimer=persona.disclaimer,
             backend=self.backend.name,
             engine=allocation.provider,
             engine_source=allocation.source,
