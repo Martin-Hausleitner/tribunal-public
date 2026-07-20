@@ -58,11 +58,15 @@ Verdict reports SHALL serialize to UTF-8-safe JSON-compatible dictionaries, JSON
 - **THEN** both representations expose the same mode, round counts, judge identities, provenance, and final score
 
 ### Requirement: Hardened synthesis and recommendation markers
-Markdown rendering SHALL neutralize raw HTML and line-structure injection from backend-authored fields. Post-hoc synthesis SHALL include a persona lens for every collected view. A comparison SHALL receive `👑` only when every view scores at least 80 and declares no unresolved evidence gaps; a high average with dissent or gaps MUST remain `⚠️`.
+Markdown rendering SHALL neutralize raw HTML and line-structure injection from backend-authored fields. Post-hoc synthesis SHALL include a persona lens for every collected view. A positive runtime recommendation marker SHALL require every view to score at least 80 and declare no unresolved evidence gaps. A qualifying comparison SHALL receive `👑`, a qualifying non-comparison SHALL receive `✅`, and a high average with dissent or gaps MUST remain `⚠️`.
 
 #### Scenario: Backend supplies markup and an unresolved gap
 - **WHEN** a comparison backend returns raw HTML in its verdict or evidence and at least one view retains an evidence gap
 - **THEN** Markdown renders the markup as text and the report does not award a crown
+
+#### Scenario: Non-comparison retains an unresolved gap
+- **WHEN** a knowledge, critique, or UI/UX backend returns a high average but at least one view scores below 80 or retains an evidence gap
+- **THEN** the report remains `⚠️` instead of awarding `✅`
 
 #### Scenario: Brutal synthesis covers all views
 - **WHEN** brutal hardness produces twelve judge views

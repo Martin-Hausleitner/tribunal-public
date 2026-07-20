@@ -15,7 +15,7 @@ The three core modes are `knowledge`, `critique`, and `ui_ux`. `comparison` is a
 
 ## Hardness And Nx Multiplier
 
-`--rounds N` requests explicit Nx independent rounds. `--hardness` raises the minimum review pressure:
+`--rounds N` requests explicit Nx rounds of isolated judge views. `--hardness` raises the minimum review pressure:
 
 - `light`: at least 1 round
 - `standard`: at least 1 round
@@ -58,7 +58,7 @@ flowchart TD
 
 Every persona is evaluated through a separate `JudgeBackend.evaluate(JudgeRequest)` call. Backends return a validated `BackendResult` with a score, verdict, findings, evidence, and unresolved gaps. `evidence_gaps` may be empty only when that backend declares no unresolved proof. The bundled backend is named `local-rules`; its output explicitly says that it reviewed structure rather than target semantics.
 
-Comparison output receives `👑` only when every judge scores at least 80 and every judge returns an empty evidence-gap list. An 80-plus average with one lower judge or any unresolved gap remains `⚠️`. This is an assertion made by the injected backend, not independent proof that its evidence is true.
+Positive runtime markers require every judge to score at least 80 and every judge to return an empty evidence-gap list. A qualifying comparison receives `👑`; a qualifying knowledge, critique, or UI/UX run receives `✅`. An 80-plus average with one lower judge or any unresolved gap remains `⚠️`. This is an assertion made by the injected backend, not independent proof that its evidence is true.
 
 Without configuration the engine manager records only `local-rules` from `builtin-local`, with no third-party quota claim. Optional integer values are judge-slot capacities, not tokens or provider promises. They can be supplied through:
 
@@ -142,7 +142,7 @@ Markdown serialization HTML-escapes and collapses line breaks in backend-authore
 - A NotebookLM URL must be real; placeholders are invalid.
 - A syntactically valid NotebookLM URL is a reference, not proof that its content was queried.
 - The local-rules score measures review setup only and must not be presented as a substantive target verdict.
-- A runtime comparison crown requires every view to score at least 80 with no declared evidence gaps.
+- Every positive runtime marker requires every view to score at least 80 with no declared evidence gaps; comparison uses `👑`, while the other modes use `✅`.
 - Comparison CSVs must use bare GitHub URLs, numeric star counts, emoji capability cells, differentiated scores, and exactly one `👑`.
 - UI/UX passes require visual or interaction evidence outside the local CLI.
 - A green verdict is invalid unless the repeatable gate can be run again.

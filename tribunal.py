@@ -632,18 +632,14 @@ class TribunalOrchestrator:
 
         debate = self._debate(views)
         final_score = round(sum(view.score for view in views) / len(views))
-        crown_ready = (
-            self.tribunal_type == TribunalType.COMPARISON
-            and final_score >= 80
-            and all(view.score >= 80 and not view.evidence_gaps for view in views)
-        )
+        positive_ready = all(view.score >= 80 and not view.evidence_gaps for view in views)
         if self.tribunal_type == TribunalType.COMPARISON:
-            crown = "👑" if crown_ready else "⚠️"
+            crown = "👑" if positive_ready else "⚠️"
         else:
-            crown = "✅" if final_score >= 80 else "⚠️"
+            crown = "✅" if positive_ready else "⚠️"
         verdict = (
             f"{crown} Tribunal score {final_score}/100 from backend `{self.backend.name}`. "
-            f"{len(views)} judge views across {self.rounds} independent round(s). "
+            f"{len(views)} isolated judge views across {self.rounds} evaluation round(s). "
             "The score is bounded by the recorded evidence and all missing proof remains flagged."
         )
         return VerdictReport(

@@ -41,3 +41,10 @@ All source, spec, evidence, gate, and report artifacts SHALL be committed and pu
 #### Scenario: Fetch delivered blob
 - **WHEN** a reviewer requests the reported GitHub blob URL without local workspace access
 - **THEN** GitHub returns the published `report/codex-trib-lib-tribunal.md` content successfully
+
+### Requirement: Executed end-to-end proof
+The release SHALL exercise the real CLI, Python API, installed console script, positive and negative anti-fake behavior, and deterministic gates. The observed commands and outcomes SHALL be retained in a versioned evidence ledger rather than asserted only as a future plan.
+
+#### Scenario: Audit the release execution
+- **WHEN** a reviewer opens `report/evidence/e2e-proof.md`
+- **THEN** it identifies the runtime, executed surfaces, view/marker outcomes, gate results, installed-package result, and concise expected failure path

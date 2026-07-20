@@ -110,7 +110,7 @@ class TribunalContractTests(unittest.TestCase):
         self.assertEqual(report.final_score, 81)
         self.assertEqual(report.crown, "👑")
 
-    def test_comparison_crown_requires_unanimous_gap_free_views(self) -> None:
+    def test_positive_markers_require_unanimous_gap_free_views(self) -> None:
         gapped = TribunalOrchestrator(
             TribunalType.COMPARISON,
             backend=RecordingBackend(score=95, evidence_gaps=["unresolved proof"]),
@@ -121,6 +121,22 @@ class TribunalContractTests(unittest.TestCase):
         ).judge("mixed comparison")
         self.assertEqual((gapped.final_score, gapped.crown), (95, "⚠️"))
         self.assertEqual((mixed.final_score, mixed.crown), (80, "⚠️"))
+
+        gapped_knowledge = TribunalOrchestrator(
+            TribunalType.KNOWLEDGE,
+            backend=RecordingBackend(score=95, evidence_gaps=["unresolved proof"]),
+        ).judge("gapped knowledge review")
+        mixed_critique = TribunalOrchestrator(
+            TribunalType.CRITIQUE,
+            backend=MixedScoreBackend(),
+        ).judge("mixed critique review")
+        gap_free_ux = TribunalOrchestrator(
+            TribunalType.UI_UX,
+            backend=RecordingBackend(score=81),
+        ).judge("gap-free UX review")
+        self.assertEqual((gapped_knowledge.final_score, gapped_knowledge.crown), (95, "⚠️"))
+        self.assertEqual((mixed_critique.final_score, mixed_critique.crown), (80, "⚠️"))
+        self.assertEqual((gap_free_ux.final_score, gap_free_ux.crown), (81, "✅"))
 
     def test_ui_first_panel_contains_only_ui_ux_personas(self) -> None:
         report = TribunalOrchestrator(TribunalType.UI_UX).judge("operator dashboard")
@@ -238,6 +254,8 @@ class TribunalContractTests(unittest.TestCase):
         self.assertEqual(payload["debate"]["kind"], "post-hoc-synthesis")
         self.assertIn("## Post-hoc Synthesis", markdown)
         self.assertIn("not an interactive agent debate", markdown)
+        self.assertIn("isolated judge views", report.final_verdict)
+        self.assertNotIn("independent round", report.final_verdict)
 
     def test_backend_markdown_is_escaped_without_mutating_json(self) -> None:
         report = TribunalOrchestrator(

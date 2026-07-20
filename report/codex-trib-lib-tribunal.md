@@ -58,6 +58,7 @@ The research corpus also included `https://arxiv.org/abs/2305.14325`, NN/g's ten
 - `report/evidence/agy-judge-critique.md`: complete harsh-critique/risk verdict.
 - `report/evidence/agy-judge-ux.md`: complete UX/implementability verdict.
 - `report/evidence/github-snapshot.json`: dated stars, API SPDX values, license qualifications, and archive state.
+- `report/evidence/e2e-proof.md`: executed CLI, API, installed-package, gate, and expected-failure observations.
 - `report/codex-trib-lib-matrix.csv`: machine-gated score and capability matrix.
 
 ## NotebookLM cross-query synthesis
@@ -177,7 +178,7 @@ The judges' 100/100, 64/100, and 74/100 scores should not be averaged into a fal
 | Opaque local score | Fixed: four structural checks, optional URL provenance, 50-point ceiling | Evidence text and score tests |
 | Debate overclaim | Fixed: post-hoc synthesis marker | JSON/Markdown contract test |
 | Brutal synthesis drops later views | Fixed: every collected view contributes one persona lens | 12-view brutal synthesis test |
-| Score-only runtime crown | Fixed: every view must score at least 80 and declare no evidence gaps | Gap and dissent crown regression test |
+| Score-only runtime pass/crown | Fixed: every view must score at least 80 and declare no evidence gaps before any positive marker | Gap and dissent marker regression test |
 | Generic Security-Auditor provenance | Fixed: evidence/abuse review roles route to the critique rationale | Critique provenance regression test |
 | No standard package | Fixed: PEP 517 metadata, console entry point, bundled JSON | Isolated virtual-environment install/E2E |
 | Report, matrix, public delivery absent | Fixed by final gated artifacts and public push | Report/CSV gates and pinned blob request |
@@ -256,7 +257,7 @@ Ship this repository now for its bounded offline/library/skill scope. Do not mar
 
 1. **Contracts:** dependency-free Python API and CLI; four modes; bounded Nx/hardness; isolated judge requests; strict backend result validation; honest local provenance.
 2. **Personas and skill:** nine JSON personas, validated live GitHub references, runtime disclaimer preservation, direct-criticism boundaries, and a gated Codex `SKILL.md`.
-3. **Safety and operator UX:** Markdown target/backend-field escaping, gap-free unanimous runtime crowns, clean CLI errors/help, complete Nx post-hoc synthesis, per-run capacity semantics, and standard packaging.
+3. **Safety and operator UX:** Markdown target/backend-field escaping, gap-free unanimous positive runtime markers, clean CLI errors/help, complete Nx post-hoc synthesis, per-run capacity semantics, and standard packaging.
 4. **Research and tribunal:** public 330-source NotebookLM corpus, five cross-queries, manual answer audit, three failed Grok paths recorded, three independent `agy` verdicts retained.
 5. **Comparison and delivery:** live GitHub metadata, 100-point matrix, deterministic gates, installed-package E2E, public repository, and SHA-pinned report verification.
 
@@ -338,3 +339,5 @@ python -m venv /tmp/tribunal-release-venv
 ```
 
 Observed final gate expectations are 18 passing unit tests, successful compilation, three completed primary-mode runs, a completed comparison run, a clean installed-package JSON run, concise exit-2 behavior for the invalid NotebookLM reference, skill/CSV/report gate passes, and strict OpenSpec validation. The public handoff pins the final report URL to the delivered Git commit SHA so later branch movement cannot change the referenced evidence.
+
+The captured execution results are retained in `report/evidence/e2e-proof.md`.

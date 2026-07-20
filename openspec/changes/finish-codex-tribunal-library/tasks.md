@@ -6,7 +6,7 @@
 - [x] 1.4 Make three unique persona evaluations per round produce persona-specific findings and defer synthesis until all views exist.
 - [x] 1.5 Preserve stable JSON and Markdown output with final numeric score and all new provenance fields.
 - [x] 1.6 Make per-run capacity reusable, bound rounds/targets, escape Markdown targets, and render clean CLI input failures.
-- [x] 1.7 Escape backend-authored Markdown fields, require gap-free consensus for comparison crowns, synthesize every Nx view, and preserve critique-route provenance.
+- [x] 1.7 Escape backend-authored Markdown fields, require gap-free consensus for every positive runtime marker, synthesize every Nx view, and preserve critique-route provenance.
 
 ## 2. Personas, Skill, and Documentation
 
@@ -41,6 +41,7 @@
 - [x] 6.2 Apply the declared 100-point rubric, produce the gated CSV matrix, and award exactly one use-case-bounded crown.
 - [x] 6.3 Write `report/codex-trib-lib-tribunal.md` with IDR, three verdicts, debate, matrix, recommendation, Mermaid flow, plan, limits, and reproduction steps.
 - [x] 6.4 Run the report, CSV, skill, OpenSpec, test, compilation, and live CLI gates against the final artifacts.
+- [x] 6.5 Preserve the executed CLI, Python API, installed-package, positive/negative marker, and failure-path observations in `report/evidence/e2e-proof.md`.
 
 ## 7. Public Delivery
 
