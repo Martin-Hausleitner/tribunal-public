@@ -34,6 +34,16 @@ No Grok output exists and none is represented as a verdict.
 
 All accepted totals were recomputed: `20+16+20+15+8+9=88`, `18+11+12+11+6+6=64`, and `25+18+18+15+10+10=96`. Each output identifies scope, findings, evidence, gaps, recommendation, and the required non-inspection sentence.
 
+## Closure reproducibility probes
+
+After the three accepted files were frozen, a separate closure control reproduced the provider dispositions without replacing any verdict:
+
+- Three additional correctly formed Grok 4.5/high processes again reached the provider and each exited `1` with the same HTTP 402 balance-exhausted response before prose. Three earlier parser-only invocations had placed the prompt after `-m`; they exited `2` locally and never reached a provider, so they are command diagnostics rather than judge attempts.
+- A duplicate Gemini 3.1 Pro knowledge session returned no answer before its ten-minute print timeout and is excluded.
+- Duplicate Claude Sonnet 4.6 critique and GPT-OSS 120B UX requests again stopped before answer generation on individual quota, this time reporting a reset in about 13 minutes; they are excluded.
+
+These probes add availability evidence only. They do not alter the accepted role set, scores, or independence boundary.
+
 ## Independence limit
 
 The three accepted results prove separate process/session and conclusion-free input isolation. They do not prove provider-memory isolation, statistical independence, or provider-family diversity: all accepted final-revalidation judges are Gemini-family models because the required Grok path returned 402 and the Claude/GPT-OSS fallback quotas blocked before answer generation. This limitation materially lowers the consensus claim; disagreements and reproducible facts control synthesis rather than score averaging.
