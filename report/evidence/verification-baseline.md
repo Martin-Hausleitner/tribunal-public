@@ -44,6 +44,14 @@ The VCVM guard exited `0` at `2026-07-20T21:44:05Z` with `status=LIMIT_GUARD`, `
 
 `openspec validate verify-complete-codex-tribunal-library-brief --strict` exited `0`: `Change 'verify-complete-codex-tribunal-library-brief' is valid`. Proposal, design, capability scenarios, and 53 checkable tasks were complete before any new NotebookLM query or judge synthesis.
 
+## 30-minute guard heartbeat
+
+At `2026-07-20T22:14:52Z` both configured paths were attempted. The Mac path `/Users/mh/.codex/codex-weekly-guard.sh` is absent on this VCVM and returned exit `1`; no Mac state is inferred. The VCVM guard returned exit `0` with `status=LIMIT_GUARD`, `session_used=9`, `session_left=91`, `session_reset=0s`, `weekly_used=65`, `weekly_left=35`, `weekly_reset=574507s`, and `fast=not_seen`. The pass remains on the already authorized `agy` path with no new expensive Codex/OMX team burst.
+
 ## Notebook baseline and concurrency note
 
 The first exact notebook detail call returned `640` sources. The first full source-list reduction returned `640` total, `598` processed (`status=2`), and `42` failed (`status=3`). While this pass added sources, other unowned activity changed the shared notebook: a later inventory returned `658` total, `600` processed, and `58` failed. Counts are therefore timestamped observations, not a stable invariant. Every query in this pass uses an explicit selected source-ID set so unrelated concurrent additions cannot silently enter its grounding corpus.
+
+## Judge packet freeze
+
+The conclusion-free packet `report/evidence/verification-judge-packet.md` was frozen before any fresh `agy` role session at `2026-07-20T22:21:07Z` with SHA-256 `f5ad6478b25e1078e93b0250bc70630984100b608dc92211fc9f9bf423ba1d6d`. All three roles receive that exact packet and are forbidden from reading sibling verdicts or prior synthesis artifacts.

@@ -1,5 +1,5 @@
 {
-  "snapshot_utc": "2026-07-20T22:08:10Z",
+  "snapshot_utc": "2026-07-20T22:17:14Z",
   "source": "Live GitHub REST repository, README, and license endpoints queried with authenticated gh CLI",
   "stars_are_adoption_only": true,
   "rubric_points_from_stars": 0,
@@ -11,7 +11,7 @@
       "reported_license": "MIT",
       "license_url": "https://github.com/Martin-Hausleitner/tribunal-public/blob/master/LICENSE",
       "readme_url": "https://github.com/Martin-Hausleitner/tribunal-public/blob/master/README.md",
-      "pushed_at": "2026-07-20T22:00:11Z",
+      "pushed_at": "2026-07-20T22:12:09Z",
       "archived": false,
       "feature_basis": "Three explicit review modes, isolated per-persona backend calls, evidence gaps, persona/skill routing, stable CLI/API output, and an explicitly structural local backend."
     },
@@ -110,7 +110,7 @@
       "reported_license": "Elastic License 2.0; source-available, not OSI open source",
       "license_url": "https://github.com/Arize-ai/phoenix/blob/main/LICENSE",
       "readme_url": "https://github.com/Arize-ai/phoenix/blob/main/README.md",
-      "pushed_at": "2026-07-20T21:23:56Z",
+      "pushed_at": "2026-07-20T22:16:11Z",
       "archived": false,
       "feature_basis": "README documents OpenTelemetry tracing, evaluations, datasets, experiments, prompt playground, and agent debugging; ELv2 restricts hosted-service use."
     },
