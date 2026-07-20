@@ -329,7 +329,7 @@ Verify packaging in a clean virtual environment:
 
 ```bash
 python -m venv /tmp/tribunal-release-venv
-/tmp/tribunal-release-venv/bin/python -m pip install --no-build-isolation .
+/tmp/tribunal-release-venv/bin/python -m pip install .
 /tmp/tribunal-release-venv/bin/tribunal --mode knowledge --target "Installed package E2E" --json
 ```
 
