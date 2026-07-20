@@ -53,6 +53,6 @@
 - [x] 7.1 Run unit tests, compile checks, package build, skill gate, CSV gate, and report gate
 - [x] 7.2 Validate all relevant OpenSpec changes strictly and mark this checklist complete only from captured evidence
 - [x] 7.3 Inspect the final diff for accidental, stale, secret, or unrelated content and stage the intended artifact set
-- [ ] 7.4 Commit the completed revalidation with the report and proof artifacts in one tree
-- [ ] 7.5 Push the commit and verify the remote branch resolves to the exact full local SHA
-- [ ] 7.6 Retrieve the SHA-pinned public report blob successfully and record the immutable link
+- [x] 7.4 Commit the completed revalidation with the report and proof artifacts in one tree
+- [x] 7.5 Push the commit and verify the remote branch resolves to the exact full local SHA
+- [x] 7.6 Retrieve the SHA-pinned public report blob successfully and record the immutable link
