@@ -54,6 +54,6 @@
 - [x] 6.2 Review the final diff for scope, secrets, generated noise, and evidence consistency
 - [x] 6.3 Commit the completed verification artifacts
 - [x] 6.4 Push the commit to `origin/master`
-- [ ] 6.5 Verify the local and remote full SHA are identical and the worktree is clean
+- [x] 6.5 Verify the local and remote full SHA are identical and the worktree is clean
 - [x] 6.6 Retrieve the SHA-pinned public report and verify its content matches the committed artifact
 - [x] 6.7 Record and report the immutable GitHub blob URL
