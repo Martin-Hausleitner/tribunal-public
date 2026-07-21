@@ -256,7 +256,7 @@ The exact wheel was installed with `--no-deps` into an isolated environment. Fro
 - the installed Python API used a real `verified-primary-evidence` backend that parsed the current `11`-repository snapshot before running knowledge, critique, and UI/UX; each mode returned three views, `82/100`, `post-hoc-synthesis`, a concrete proof gap, and `⚠️` rather than inventing semantic evidence;
 - an independent installed-API repeat used a live `github-rest-evidence` backend, received HTTP `200` from the canonical GitHub REST endpoint, verified repository identity/archive state, and returned three views at `82/100` with one semantic-proof gap each and `⚠️`;
 - all nine personas loaded; the three Karpathy source repositories remained bare GitHub URLs; JSON preserved the synthetic persona's neither-authored-nor-endorsed disclaimer;
-- the installed console rejected empty target, zero rounds, a missing quota file, a placeholder NotebookLM URL, and an unknown persona with exit `2` and no traceback;
+- the installed console rejected empty target, zero rounds, a missing quota file, a documentation-example NotebookLM URL, and an unknown persona with exit `2` and no traceback;
 - the wheel listed `tribunal.py`, console metadata, the license, `personas/__init__.py`, and all nine persona JSON files.
 
 Full current proof, including commands, exits, archive contents, source-tree observations, installed evidence parsing, and explicit non-capabilities: [`evidence/final-live-2026-07-21-e2e.md`](evidence/final-live-2026-07-21-e2e.md).
@@ -355,7 +355,8 @@ Evidence index:
 - Accepted knowledge, criticism, and UX verdicts: [`evidence/final-live-2026-07-21-judge-knowledge.md`](evidence/final-live-2026-07-21-judge-knowledge.md), [`evidence/final-live-2026-07-21-judge-critique.md`](evidence/final-live-2026-07-21-judge-critique.md), [`evidence/final-live-2026-07-21-judge-ux.md`](evidence/final-live-2026-07-21-judge-ux.md)
 - Post-hoc synthesis and finding disposition: [`evidence/final-live-2026-07-21-synthesis.md`](evidence/final-live-2026-07-21-synthesis.md)
 - Source/build/wheel/console/API proof: [`evidence/final-live-2026-07-21-e2e.md`](evidence/final-live-2026-07-21-e2e.md)
-- Immutable publication closure: [`evidence/revalidation-2026-07-21-publication.md`](evidence/revalidation-2026-07-21-publication.md)
+- Specification-to-evidence reconciliation: [`evidence/final-live-2026-07-21-spec-reconciliation.md`](evidence/final-live-2026-07-21-spec-reconciliation.md)
+- Immutable publication closure: [`evidence/final-live-2026-07-21-publication.md`](evidence/final-live-2026-07-21-publication.md)
 - GitHub metadata: [`evidence/github-snapshot.json`](evidence/github-snapshot.json)
 - Machine-readable matrix: [`codex-trib-lib-matrix.csv`](codex-trib-lib-matrix.csv)
 

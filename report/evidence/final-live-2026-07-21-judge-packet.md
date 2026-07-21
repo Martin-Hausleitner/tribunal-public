@@ -46,8 +46,8 @@ Read-only direct commands against those surfaces are allowed. Do not edit files.
 ## Authenticated NotebookLM observations
 
 - Canonical public notebook: https://notebooklm.google.com/notebook/80cffd38-0185-4f4d-ae00-bbc67c4bc515; authenticated with `nlm 0.8.9`.
-- The account had exactly `500` notebooks. No pre-existing external content was deleted, renamed, refreshed, or repurposed.
-- The canonical notebook had `600` processed sources and `342` failed sources. Only 15 explicitly selected `status=2` source IDs were queried, and historical Tribunal report sources were excluded from the current controls.
+- The account had exactly `500` notebooks. No external content was modified or deleted.
+- The canonical notebook had `600` processed sources and `342` failed sources. Only 15 explicitly selected `status=2` source IDs were queried; historical Tribunal report sources were excluded from the current controls.
 - A compact knowledge answer returned 6 used sources and 30 citation mappings; harsh risk returned 5 and 27; OSS composition returned all 10 selected repositories and 183 mappings.
 - The initial broad knowledge, compact UX, and contradiction controls returned substantive answers but empty `sources_used`/citation metadata. They establish no new factual support and are retained only as query provenance, hypotheses, or falsification checklists.
 - Every fresh request returned the same historical conversation identifier even though no continuation identifier was supplied. Fresh service requests are observed; fresh-conversation isolation is not claimed.
