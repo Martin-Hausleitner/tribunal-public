@@ -45,3 +45,17 @@ This observed clean/equal stage satisfies the final OpenSpec publication conditi
 The repair did not relabel the earlier unverifiable transient judge packet. It published three later isolated verdicts that actually used committed packet SHA-256 `a5cda94bf1b2bbff444e37f15767357565c981bf700d9247bab3e74b118dddbf`: Knowledge `80/100`, Critique `73/100`, and UX `94/100`. The closing refresh then synchronized the final authenticated NotebookLM control and the `2026-07-21T00:12:42Z` eleven-repository GitHub snapshot without changing the `85/100` score or single Codex Tribunal crown.
 
 Adding this observed publication record initially dirtied only this ledger. A subsequently completed installed-wheel verification updated the report and E2E ledger before this publication record was committed. The final commit containing those three files therefore receives its own report hash and is verified separately in the handoff; that later immutable result supersedes `b2cb34b` as the final URL without invalidating the historical observation above.
+
+## Final installed-wheel and report publication stage
+
+- Observed UTC: `2026-07-21T00:25:34Z`
+- Final report/E2E commit: `2f796a97b0aa8eb5891abf4d2a8d999be89a181f`
+- Local `HEAD`, local `origin/master`, live `refs/heads/master`, and the GitHub commit API all returned that full SHA.
+- `git status --porcelain=v1` returned no path before this observation was added to the ledger.
+- SHA-pinned raw report: HTTP `200`
+- SHA-pinned GitHub blob page: HTTP `200`
+- Local committed report SHA-256: `5181736f906814f198299b36dd28df313114f9a604737d363d0f8009ef8a6e74`
+- Public raw report SHA-256: `5181736f906814f198299b36dd28df313114f9a604737d363d0f8009ef8a6e74`
+- Immutable final-report URL: https://github.com/Martin-Hausleitner/tribunal-public/blob/2f796a97b0aa8eb5891abf4d2a8d999be89a181f/report/codex-trib-lib-tribunal.md
+
+This stage includes the fresh no-dependency installed-wheel Console/API proof and changes the report evidence hash relative to `b2cb34b` without changing the `85/100` matrix score or the single Codex Tribunal crown. Adding this observation dirties only the publication ledger; its following ledger-only commit does not change the report payload.
