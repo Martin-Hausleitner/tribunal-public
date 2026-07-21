@@ -36,7 +36,7 @@ Read-only direct commands against those surfaces are allowed. Do not edit files.
 
 - Baseline local HEAD equaled the then-current `origin/master`; tracked files were clean before this pass's artifacts.
 - `nlm login --check` authenticated; the canonical notebook and sharing endpoints returned the public link recorded below.
-- The canonical source inventory began at `942` total, `600` processed, and `342` failed; all 15 explicitly selected sources were independently reduced to `status=2`. Two safe current-pass insertion attempts created only failed records, so the final inventory was `944/600/344`; neither failed record was queried or cited.
+- The canonical source inventory was `942` total, `600` processed, and `342` failed; all 15 explicitly selected sources were independently reduced to `status=2`.
 - A direct critique CLI run emitted three `local-rules` views at `40/100`, explicit gaps, `post-hoc-synthesis`, and `⚠️`.
 - Current source permits `evidence_gaps=[]`; the processed NotebookLM snapshot's contrary characterization is stale.
 - Current `main` catches expected `OSError`, `RuntimeError`, `TypeError`, and `ValueError` paths and returns concise exit code `2`; full final error-path and clean-install gates remain pending.
@@ -47,10 +47,9 @@ Read-only direct commands against those surfaces are allowed. Do not edit files.
 
 - Canonical public notebook: https://notebooklm.google.com/notebook/80cffd38-0185-4f4d-ae00-bbc67c4bc515; authenticated with `nlm 0.8.9`.
 - The account had exactly `500` notebooks. No pre-existing external content was deleted, renamed, refreshed, or repurposed.
-- The canonical notebook began with `600` processed sources and `342` failed sources. A SHA-pinned URL insertion and a truth-bounded manifest insertion settled as two new failed records, yielding a final `600/344`; neither is evidence. Only 15 explicitly selected `status=2` source IDs were queried, and historical Tribunal report sources were excluded from the current controls.
+- The canonical notebook had `600` processed sources and `342` failed sources. Only 15 explicitly selected `status=2` source IDs were queried, and historical Tribunal report sources were excluded from the current controls.
 - A compact knowledge answer returned 6 used sources and 30 citation mappings; harsh risk returned 5 and 27; OSS composition returned all 10 selected repositories and 183 mappings.
 - The initial broad knowledge, compact UX, and contradiction controls returned substantive answers but empty `sources_used`/citation metadata. They establish no new factual support and are retained only as query provenance, hypotheses, or falsification checklists.
-- Subsequent controls returned knowledge `7/21`, UX `5/35`, OSS `10/31`, and contradiction `13/36` used-source/citation counts. A harsh-risk call returned only `1/1`, while its compact capture returned `0/0`; ungrounded risk prose was excluded.
 - Every fresh request returned the same historical conversation identifier even though no continuation identifier was supplied. Fresh service requests are observed; fresh-conversation isolation is not claimed.
 - NotebookLM repeated stale claims that `local-rules` is a semantic mock pass, empty gap lists crash, and expected errors escape. Current source and direct execution overrule them.
 - NotebookLM citation mappings establish provenance, not correctness. The current code checkout, primary GitHub reads, and final executable proof control conflicts.

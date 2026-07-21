@@ -14,19 +14,20 @@ IDR: ja
 
 - Canonical public NotebookLM notebook: https://notebooklm.google.com/notebook/80cffd38-0185-4f4d-ae00-bbc67c4bc515
 - Authenticated identity, title `Tribunal IDR 2026-07-04`, and public sharing were reverified with `nlm 0.8.9`.
-- The frozen direct inventory was `942` total sources: `600` processed and `342` failed. The canonical notebook remained at its exact processed-source ceiling while the authenticated account contained exactly `500` notebooks.
-- This pass changed no external notebook or source. Fifteen explicitly selected sources were freshly reduced to `status=2`; every failed source and every historical Tribunal report source was excluded from the current controls.
-- Six fresh requests covered broad knowledge, compact knowledge, hostile risk, CLI UX, OSS composition, and contradiction/source attribution. All omitted a continuation ID but NotebookLM returned the same historical conversation identifier, so the calls prove fresh authenticated requests, not conversation isolation.
+- The initial direct inventory was `942` total sources: `600` processed and `342` failed. Two safe current-pass insertions at the exact processed-source ceiling created only failed records; the final inventory was `944/600/344` while the authenticated account contained exactly `500` notebooks.
+- Fifteen explicitly selected sources were freshly reduced to `status=2`; both new failed records, every other failed source, and every historical Tribunal report source were excluded from the controls. No pre-existing notebook or source was deleted, renamed, refreshed, or repurposed.
+- Twelve fresh requests across two non-circular control batches covered knowledge, hostile risk, CLI UX, OSS composition, and contradiction/source attribution. All omitted a continuation ID but NotebookLM returned the same historical conversation identifier, so the calls prove fresh authenticated requests, not conversation isolation.
 - The compact knowledge control returned `6` used sources and `30` citation mappings; harsh criticism returned `5` and `27`; the OSS control returned all `10` selected repositories and `183` mappings.
 - The initial broad knowledge, UX, and contradiction answers returned empty `sources_used`/citation metadata. They remain provenance, hypotheses, or falsification checklists and establish no new fact.
+- Independent subsequent controls returned knowledge `7/21`, UX `5/35`, OSS `10/31`, and contradiction `13/36` used-source/citation counts. The later harsh-risk calls returned only `1/1` and `0/0`, so their ungrounded compact risk prose was excluded.
 - NotebookLM treated old snapshot behavior as current, calling `local-rules` a mock, claiming empty gaps crash, and overstating expected error leakage. Exact current code, primary metadata, and direct execution overruled those statements.
 
 The selected source IDs, returned grounding metadata, query dispositions, exclusions, and manual corrections are retained in [`evidence/final-live-2026-07-21-notebooklm.md`](evidence/final-live-2026-07-21-notebooklm.md). Earlier ledgers remain historical inputs, not current proof.
 
 ## Method
 
-1. **OpenSpec-first contract.** The current run is specified in [`../openspec/changes/final-live-tribunal-verification-2026-07-21/`](../openspec/changes/final-live-tribunal-verification-2026-07-21/): proposal, design, eleven testable requirements, and 61 checkable tasks.
-2. **Canonical live research.** Authentication, public sharing, source/account capacity, fifteen processed source IDs, six fresh requests, grounding metadata, and non-circular controls were observed directly. Empty grounding and failed sources were never treated as research.
+1. **OpenSpec-first contract.** The current run is specified in [`../openspec/changes/final-live-tribunal-verification-2026-07-21/`](../openspec/changes/final-live-tribunal-verification-2026-07-21/): proposal, design, nine testable requirements, and 61 checkable tasks.
+2. **Canonical live research.** Authentication, public sharing, source/account capacity, fifteen processed source IDs, twelve fresh requests, grounding metadata, and non-circular controls were observed directly. Empty grounding and failed sources were never treated as research.
 3. **OSS before custom work.** Eleven primary GitHub REST endpoints and relevant root README/license files were refreshed. Stars are numeric, dated, and worth zero rubric points.
 4. **Blind adversarial judgments.** Three required Grok 4.5 High calls reached the service but stopped before model output with HTTP 402. The brief-authorized fallback then produced three accepted isolated `agy` verdicts from one frozen conclusion-free packet after Claude and GPT-OSS quota-only attempts were excluded.
 5. **Adversarial controls.** Every generated claim was separated into current fact, historical finding, documented non-capability, hypothesis, or pending proof. Current source and execution reproduced no runtime blocker; the primary refresh synchronized two later star increments plus three push times.
@@ -239,25 +240,26 @@ python tribunal.py \
   --mode comparison \
   --rounds 2 \
   --hardness hard \
-  --target "Compare a dependency-free local Tribunal library with adopting established OSS evaluation frameworks for a release decision; require explicit evidence gaps and safe serialized output." \
+  --target "Decide whether to retain the dependency-free Codex Tribunal contract while composing established OSS for adversarial CI, semantic metrics, production orchestration, and observability; preserve every evidence gap." \
   --notebooklm-url https://notebooklm.google.com/notebook/80cffd38-0185-4f4d-ae00-bbc67c4bc515 \
   --json
 ```
 
-Current source-tree observations: exit `0`; requested/effective rounds `2/2`; hardness `hard`; six isolated views; `local-rules` from `builtin-local`; two explicit gaps per view; final `50/100`; marker `⚠️`, not a runtime winner. The three-mode example completed knowledge, critique, and UI/UX paths; unit discovery ran all `18` tests in `0.214s`; compilation and both example scripts exited `0`.
+Current source-tree observations: exit `0`; requested/effective rounds `2/2`; hardness `hard`; six isolated views; `local-rules` from `builtin-local`; two explicit gaps per view; final `50/100`; marker `⚠️`, not a runtime winner. The three-mode example completed knowledge, critique, and UI/UX paths; unit discovery ran all `18` tests in `0.237s`; compilation and both example scripts exited `0`.
 
-The current PEP 517 build created a fresh isolated build environment, built the sdist, and then built the wheel from that sdist with exit `0`. Wheel SHA-256: `cab4ce06a01a6869d643bc07e9cf5695e12da6181cdbb5e2bcbc7c57ac5bf334`. Sdist SHA-256: `a2fd7c3a677f19972c7b8fb2a00cd887edaca03aa9c3584687709ab5e1baa174`.
+The current PEP 517 build created a fresh isolated build environment, built the sdist, and then built the wheel from that sdist with exit `0`. A post-reconciliation repeat produced wheel SHA-256 `e61cef19e810e01af802b3c3babb7e2ba0cc1a60750f5caa3ccf03cb1f0cae8a` and sdist SHA-256 `0ad6d87f8d51f0d9e5069da2e40c9c48bccd3da5e0ace2b614cb08d07becd187`.
 
 The exact wheel was installed with `--no-deps` into an isolated environment. From outside the repository:
 
 - the installed `tribunal` console repeated the two-round comparison and all bounded evidence gaps;
-- the imported module resolved to `/tmp/tribunal-final-verify.9v2ecu/venv/lib/python3.12/site-packages/tribunal.py`;
-- the installed Python API used the actual bundled `local-rules` backend and returned critique, `50/100`, `⚠️`, three views, and two explicit gaps per view; this proves the bounded structural contract without inventing semantic evidence;
+- the imported module resolved to `/tmp/tribunal-final-live-RYNaTR/venv/lib/python3.12/site-packages/tribunal.py`;
+- the installed Python API used a real `verified-primary-evidence` backend that parsed the current `11`-repository snapshot before running knowledge, critique, and UI/UX; each mode returned three views, `82/100`, `post-hoc-synthesis`, a concrete proof gap, and `⚠️` rather than inventing semantic evidence;
+- an independent installed-API repeat used a live `github-rest-evidence` backend, received HTTP `200` from the canonical GitHub REST endpoint, verified repository identity/archive state, and returned three views at `82/100` with one semantic-proof gap each and `⚠️`;
 - all nine personas loaded; the three Karpathy source repositories remained bare GitHub URLs; JSON preserved the synthetic persona's neither-authored-nor-endorsed disclaimer;
-- the installed console also rejected `<id>` with exit `2` and no traceback;
+- the installed console rejected empty target, zero rounds, a missing quota file, a placeholder NotebookLM URL, and an unknown persona with exit `2` and no traceback;
 - the wheel listed `tribunal.py`, console metadata, the license, `personas/__init__.py`, and all nine persona JSON files.
 
-Full current proof, including commands, exits, archive contents, and the distinction between structural local output and an injected-backend assertion: [`evidence/revalidation-2026-07-21-e2e.md`](evidence/revalidation-2026-07-21-e2e.md).
+Full current proof, including commands, exits, archive contents, source-tree observations, installed evidence parsing, and explicit non-capabilities: [`evidence/final-live-2026-07-21-e2e.md`](evidence/final-live-2026-07-21-e2e.md).
 
 ### Recommended next increments
 
@@ -296,8 +298,8 @@ flowchart TD
 ## Limitations
 
 - The bundled `local-rules` backend checks structure only. Its `40/100` result without a notebook reference and `50/100` with one are transparent readiness markers, not target-quality scores.
-- NotebookLM URL validation checks canonical syntax and rejects known documentation/example identifiers; it still does not authenticate or query content. This pass separately authenticated the notebook, changed no external data, and queried explicit processed-source sets.
-- The shared NotebookLM corpus is concurrently mutable, duplicated, mixed quality, and full. Frozen direct inventory was `942/600/342`; all calls reused one historical conversation ID, and generated answers still repeated stale implementation claims until exact-source checks corrected them.
+- NotebookLM URL validation checks canonical syntax and rejects known documentation/example identifiers; it still does not authenticate or query content. This pass separately authenticated the notebook, safely attempted two current-source insertions that settled failed, and queried only explicit processed-source sets.
+- The shared NotebookLM corpus is concurrently mutable, duplicated, mixed quality, and full. Initial direct inventory was `942/600/342` and final inventory `944/600/344`; all calls reused one historical conversation ID, and generated answers still repeated stale implementation claims until exact-source checks corrected them.
 - A custom backend can route every request to one model and self-declare scores and empty gaps. The library records claims/provenance but cannot make them independently true.
 - All accepted external verdicts are Gemini-family models in separate sessions. Three Grok 4.5 High calls were HTTP-402 blocked before output; Claude Sonnet 4.6 Thinking and GPT-OSS 120B Medium were quota-blocked before output. Process isolation is not provider-family or statistical independence.
 - Synthesis is post-hoc. Judges do not inspect or answer sibling arguments through the current `JudgeRequest` contract.
@@ -352,7 +354,7 @@ Evidence index:
 - Judge attempts, exclusions, and provider provenance: [`evidence/final-live-2026-07-21-external-attempts.md`](evidence/final-live-2026-07-21-external-attempts.md)
 - Accepted knowledge, criticism, and UX verdicts: [`evidence/final-live-2026-07-21-judge-knowledge.md`](evidence/final-live-2026-07-21-judge-knowledge.md), [`evidence/final-live-2026-07-21-judge-critique.md`](evidence/final-live-2026-07-21-judge-critique.md), [`evidence/final-live-2026-07-21-judge-ux.md`](evidence/final-live-2026-07-21-judge-ux.md)
 - Post-hoc synthesis and finding disposition: [`evidence/final-live-2026-07-21-synthesis.md`](evidence/final-live-2026-07-21-synthesis.md)
-- Source/build/wheel/console/API proof: [`evidence/revalidation-2026-07-21-e2e.md`](evidence/revalidation-2026-07-21-e2e.md)
+- Source/build/wheel/console/API proof: [`evidence/final-live-2026-07-21-e2e.md`](evidence/final-live-2026-07-21-e2e.md)
 - Immutable publication closure: [`evidence/revalidation-2026-07-21-publication.md`](evidence/revalidation-2026-07-21-publication.md)
 - GitHub metadata: [`evidence/github-snapshot.json`](evidence/github-snapshot.json)
 - Machine-readable matrix: [`codex-trib-lib-matrix.csv`](codex-trib-lib-matrix.csv)
