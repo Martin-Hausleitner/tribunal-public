@@ -1,5 +1,5 @@
 {
-  "snapshot_utc": "2026-07-21T00:12:42Z",
+  "snapshot_utc": "2026-07-21T00:53:15Z",
   "source": "Live GitHub REST repository, README, and license endpoints queried with authenticated gh CLI",
   "stars_are_adoption_only": true,
   "rubric_points_from_stars": 0,
@@ -11,7 +11,7 @@
       "reported_license": "MIT",
       "license_url": "https://github.com/Martin-Hausleitner/tribunal-public/blob/master/LICENSE",
       "readme_url": "https://github.com/Martin-Hausleitner/tribunal-public/blob/master/README.md",
-      "pushed_at": "2026-07-20T23:53:37Z",
+      "pushed_at": "2026-07-21T00:48:07Z",
       "archived": false,
       "feature_basis": "Three explicit review modes, isolated per-persona backend calls, evidence gaps, persona/skill routing, stable CLI/API output, and an explicitly structural local backend."
     },
@@ -22,7 +22,7 @@
       "reported_license": "MIT",
       "license_url": "https://github.com/promptfoo/promptfoo/blob/main/LICENSE",
       "readme_url": "https://github.com/promptfoo/promptfoo/blob/main/README.md",
-      "pushed_at": "2026-07-20T23:59:35Z",
+      "pushed_at": "2026-07-21T00:52:26Z",
       "archived": false,
       "feature_basis": "README documents CLI/library evaluation, automated evals, red teaming, vulnerability scanning, and CI/CD checks."
     },
@@ -39,7 +39,7 @@
     },
     {
       "github_url": "https://github.com/confident-ai/deepeval",
-      "stars": 16983,
+      "stars": 16984,
       "github_api_spdx": "Apache-2.0",
       "reported_license": "Apache-2.0",
       "license_url": "https://github.com/confident-ai/deepeval/blob/main/LICENSE.md",
@@ -72,7 +72,7 @@
     },
     {
       "github_url": "https://github.com/openai/evals",
-      "stars": 18956,
+      "stars": 18957,
       "github_api_spdx": "NOASSERTION",
       "reported_license": "MIT code with separately licensed datasets",
       "license_url": "https://github.com/openai/evals/blob/main/LICENSE.md",
@@ -110,7 +110,7 @@
       "reported_license": "Elastic License 2.0; source-available, not OSI open source",
       "license_url": "https://github.com/Arize-ai/phoenix/blob/main/LICENSE",
       "readme_url": "https://github.com/Arize-ai/phoenix/blob/main/README.md",
-      "pushed_at": "2026-07-20T23:25:24Z",
+      "pushed_at": "2026-07-21T00:18:32Z",
       "archived": false,
       "feature_basis": "README documents OpenTelemetry tracing, evaluations, datasets, experiments, prompt playground, and agent debugging; ELv2 restricts hosted-service use."
     },
