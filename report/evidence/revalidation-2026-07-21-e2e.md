@@ -153,3 +153,26 @@ The first shell wrapper around the invalid-input observation returned status `1`
 ## Manual QA verdict
 
 The actual source CLI, built wheel, clean-installed console, installed Python API, and expected failure surface all behaved according to the bounded contract. No runtime defect was reproduced. The generic top-level `personas` package remains a possible future ecosystem collision, not a failure of this claimed standard wheel surface.
+
+## Final continuation verification
+
+At `2026-07-21T00:20:27Z`, the completed evidence repair and refreshed `2026-07-21T00:12:42Z` GitHub snapshot were verified again through the real consumer surfaces:
+
+| Surface | Final observed result |
+|---|---|
+| Unit discovery | exit `0`; all `18` `unittest` cases passed in `0.214s` |
+| Compilation | exit `0` over runtime, persona loader, gates, tests, and both examples |
+| Three primary modes | knowledge, critique, and UI/UX each exited `0`; 3 views, `local-rules`, `50/100`, two explicit gaps/view, `post-hoc-synthesis`, and `⚠️` |
+| Source comparison | exit `0`; requested/effective rounds `2/2`, 6 distinct personas, `local-rules`, `50/100`, two gaps/view, and `⚠️` |
+| Source invalid input | exit `2`; exact concise NotebookLM URL error; no traceback |
+| Skill / CSV / report / strict OpenSpec | PASS; 11 rows, score spread `53-85`, one Codex Tribunal crown, current snapshot timestamp, canonical NotebookLM link |
+
+A fresh PEP 517 build under `/tmp/tribunal-final-verify.9v2ecu` created the sdist and then built the wheel from that sdist:
+
+- wheel SHA-256: `cab4ce06a01a6869d643bc07e9cf5695e12da6181cdbb5e2bcbc7c57ac5bf334`
+- sdist SHA-256: `a2fd7c3a677f19972c7b8fb2a00cd887edaca03aa9c3584687709ab5e1baa174`
+- wheel inventory: runtime, license, entry point metadata, `personas/__init__.py`, and all nine persona JSON files
+
+The exact wheel was installed with `--no-deps` into a fresh virtual environment. From outside the repository, the installed comparison console exited `0` with 6 distinct personas, score `50`, two gaps per view, `post-hoc-synthesis`, `⚠️`, and the synthetic Karpathy disclaimer. The installed Python API loaded from `/tmp/tribunal-final-verify.9v2ecu/venv/lib/python3.12/site-packages/tribunal.py`, discovered all 9 personas, returned 3 critique views at the honest structural `50/100` ceiling, preserved two gaps per view, and retained the neither-authored-nor-endorsed disclaimer in JSON and Markdown. The installed invalid-input command exited `2` with the exact concise error and no traceback.
+
+This final E2E used the actual bundled `local-rules` backend rather than a mock. It proves the declared structural library contract and preserves the semantic-evidence warning; it does not claim that the local backend judged target truth.

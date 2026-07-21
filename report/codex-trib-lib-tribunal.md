@@ -244,15 +244,15 @@ python tribunal.py \
   --json
 ```
 
-Current source-tree observations: exit `0`; requested/effective rounds `2/2`; hardness `hard`; six isolated views; `local-rules` from `builtin-local`; two explicit gaps per view; final `50/100`; marker `⚠️`, not a runtime winner. The three-mode example completed knowledge, critique, and UI/UX paths; unit discovery ran `18` tests in `0.183s`; compilation and both example scripts exited `0`.
+Current source-tree observations: exit `0`; requested/effective rounds `2/2`; hardness `hard`; six isolated views; `local-rules` from `builtin-local`; two explicit gaps per view; final `50/100`; marker `⚠️`, not a runtime winner. The three-mode example completed knowledge, critique, and UI/UX paths; unit discovery ran all `18` tests in `0.214s`; compilation and both example scripts exited `0`.
 
-The current PEP 517 build created a fresh isolated build environment, built the sdist, and then built the wheel from that sdist with exit `0`. Wheel SHA-256: `e6ba78e8ace92568a85c567d63bb511aaf8a19e4aebd8487fe9b442a5e36fa5b`. Sdist SHA-256: `3e89c3b9b4c78210b8969a2376ea4f6e8181cf765321dee13820c46fea4be62d`.
+The current PEP 517 build created a fresh isolated build environment, built the sdist, and then built the wheel from that sdist with exit `0`. Wheel SHA-256: `cab4ce06a01a6869d643bc07e9cf5695e12da6181cdbb5e2bcbc7c57ac5bf334`. Sdist SHA-256: `a2fd7c3a677f19972c7b8fb2a00cd887edaca03aa9c3584687709ab5e1baa174`.
 
 The exact wheel was installed with `--no-deps` into an isolated environment. From outside the repository:
 
 - the installed `tribunal` console repeated the two-round comparison and all bounded evidence gaps;
-- the imported module resolved to `/tmp/tribunal-revalidation-20260721.FTq39Y/venv/lib/python3.12/site-packages/tribunal.py`;
-- the installed Python API used a minimal injected evidence backend and returned critique, `88/100`, `✅`, three views, and empty gap lists; this proves the backend contract and positive-marker condition, not the truth of the backend's prose;
+- the imported module resolved to `/tmp/tribunal-final-verify.9v2ecu/venv/lib/python3.12/site-packages/tribunal.py`;
+- the installed Python API used the actual bundled `local-rules` backend and returned critique, `50/100`, `⚠️`, three views, and two explicit gaps per view; this proves the bounded structural contract without inventing semantic evidence;
 - all nine personas loaded; the three Karpathy source repositories remained bare GitHub URLs; JSON preserved the synthetic persona's neither-authored-nor-endorsed disclaimer;
 - the installed console also rejected `<id>` with exit `2` and no traceback;
 - the wheel listed `tribunal.py`, console metadata, the license, `personas/__init__.py`, and all nine persona JSON files.
