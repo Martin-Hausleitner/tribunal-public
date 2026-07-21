@@ -72,10 +72,10 @@
 
 ## 7. Publication and immutable handoff
 
-- [ ] 7.1 Reconcile every specification scenario against evidence and complete the OpenSpec checklist
+- [x] 7.1 Reconcile every specification scenario against evidence and complete the OpenSpec checklist
 - [x] 7.2 Review the final diff for scope, secrets, generated noise, internal consistency, and unrelated user changes
-- [ ] 7.3 Force-stage the required report/evidence artifacts and create a publication commit
-- [ ] 7.4 Push the publication commit to `origin/master`
-- [ ] 7.5 Verify the publication commit local/remote full SHA equality and clean tree
-- [ ] 7.6 Retrieve the SHA-pinned public report blob and verify its identity against the committed report
-- [ ] 7.7 Record the immutable blob URL and complete the final closure commit and push
+- [x] 7.3 Force-stage the required report/evidence artifacts and create a publication commit
+- [x] 7.4 Push the publication commit to `origin/master`
+- [x] 7.5 Verify the publication commit local/remote full SHA equality and clean tree
+- [x] 7.6 Retrieve the SHA-pinned public report blob and verify its identity against the committed report
+- [x] 7.7 Record the immutable blob URL and complete the final closure commit and push

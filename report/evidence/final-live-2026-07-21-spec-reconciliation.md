@@ -2,9 +2,9 @@
 
 Capability spec: `openspec/changes/final-live-tribunal-verification-2026-07-21/specs/final-live-brief-verification/spec.md`
 
-This ledger maps every normative requirement and scenario to direct current-pass evidence. Publication rows intentionally remain open until the corresponding remote operations are observed; no inherited branch state closes them.
+This ledger maps every normative requirement and scenario to direct current-pass evidence. Publication rows were closed only after the corresponding remote operations were observed; no inherited branch state was used.
 
-| Requirement / scenario | Evidence | Pre-publication verdict |
+| Requirement / scenario | Evidence | Final verdict |
 |---|---|---|
 | OpenSpec-first / planning precedes implementation | Proposal, design, spec, 61-task checklist; strict validation in `final-live-2026-07-21-baseline.md` | Pass |
 | Authenticated canonical NotebookLM / identity and sharing | `final-live-2026-07-21-notebooklm.md`: valid authentication, canonical ID/title/link, `is_public=true` | Pass |
@@ -19,7 +19,7 @@ This ledger maps every normative requirement and scenario to direct current-pass
 | Real E2E / installed package workflow | `final-live-2026-07-21-e2e.md`: fresh sdist/wheel, contents, isolated install, installed two-round CLI, live GitHub REST backend, gap-preserving marker | Pass |
 | Real E2E / artifacts agree | Skill/CSV/report/OpenSpec gates pass; canonical URL, 11 repos, scores, snapshot, winner, gaps, and disclaimers cross-check | Pass |
 | Evidence-class separation / generated contradiction resolved | NotebookLM, GitHub, judges, scoring, runtime, synthesis, and E2E use separate ledgers; direct code/runtime overruled stale generated claims | Pass |
-| Fail-closed public handoff / publication verifiable | Requires a new commit, local/remote SHA equality, and SHA-pinned public report retrieval | Open until publication |
+| Fail-closed public handoff / publication verifiable | Commit `db83f51442ac893cbc810ff313891321311f7103`; local/remote equality; blob/raw HTTP `200`; local/public SHA-256 `bf1f8f6e85c7f300cd8537d938774f1edb5d1bfa6bfa74e855bed0bff37a4903` | Pass |
 | Fail-closed public handoff / a gate fails | Grok/quota/grounding failures were retained and excluded; report gate caught and required removal of an unfinished-marker word; no false success substituted | Pass |
 
 ## Current executable gate summary
@@ -32,4 +32,4 @@ This ledger maps every normative requirement and scenario to direct current-pass
 - Skill, CSV, report, strict OpenSpec, score/link/snapshot consistency: pass.
 - Frozen judge packet content identity: `912f24d6b2503c5e07605f198df0ca4875a840bc9daff7617c7df42669c1aa74`.
 
-Final status is withheld until the publication row is replaced with exact remote SHA, HTTP, and content-identity evidence.
+All specification scenarios are reconciled. The publication proof is retained in `final-live-2026-07-21-publication.md`; the completed checklist and that ledger are included in the final closure commit.
