@@ -2,61 +2,57 @@
 
 - Engine: `agy`
 - Model: `Gemini 3.5 Flash (High)`
-- Packet SHA-256: `59de53373a1386b2d14ed7d8d82ad6f9493d1d2247eefebd93df1069bb8b1521`
-- File edits: none
+- Packet SHA-256: `a5cda94bf1b2bbff444e37f15767357565c981bf700d9247bab3e74b118dddbf`
+- Process: fresh `agy --mode plan --sandbox --print`; file edits: none
 
-## Role
+## 1. Assigned role and inspected scope
 
-Harsh criticism and risk judge.
+Harsh criticism and risk judge. The judge inspected the frozen packet and packet-authorized runtime, tests, skill, packaging, license, README, representative personas, examples, gates, current OpenSpec artifacts, current baseline/NotebookLM/OSS ledgers, and GitHub snapshot. It did not inspect the excluded main report, matrix, history, or sibling verdicts.
 
-## Evidence inspected
+## 2. Severity-ordered findings
 
-The judge inspected the frozen packet and every packet-authorized runtime, README, packaging, skill, persona, test, example, gate, matrix, current baseline/OSS/NotebookLM ledger, GitHub snapshot, and current OpenSpec artifact. It did not inspect the excluded main report or another verdict.
+1. **High, synthesis risk:** `_debate()` fills `strongest_points` from views sorted by descending score. For a critique lens, a lower-scoring view may carry the harshest blocker, so the label can emphasize lenient findings unless consumers also inspect the full disagreements and gaps.
+2. **High, aggregation limitation:** Recurring evidence gaps use exact string matching. Semantically equivalent backend phrases are not merged.
+3. **Medium, UX trade-off:** Markdown rendering deliberately collapses backend-authored line breaks, flattening rich multiline prose; JSON remains lossless.
+4. **Medium, integration boundary:** Capacity allocation is intentionally stateless across `judge()` calls and is not durable quota or billing enforcement.
+5. **Low, integration boundary:** Routed skills are unverified labels unless a host validates and executes them.
+6. **Low, research risk:** NotebookLM's processed corpus includes historical snapshots and repeatedly mischaracterized current code, requiring executable/current-source controls.
 
-## Score
+## 3. Six component scores
 
-`40`
+| Component | Score |
+|---|---:|
+| Type Fit | 20/25 |
+| Adversarial Depth | 12/20 |
+| Evidence Provenance | 14/20 |
+| Persona/Skill Extensibility | 11/15 |
+| Observability/Repeatability | 8/10 |
+| Integration Cost | 8/10 |
+| **Checked total** | **73/100** |
 
-The judge linked this score to the local structural ceiling. The synthesis does not adopt that rationale: an external product-review score and a `local-rules` invocation score are different instruments.
+Arithmetic: `20 + 12 + 14 + 11 + 8 + 8 = 73`.
 
-## Recommendation
+## 4. Evidence inspected and direct observations
 
-`BLOCK`
+The judge inspected the complete runtime, bounds, URL validation, persona disclaimer path, result synthesis, test assertions, gate scripts, NotebookLM correction ledger, and current OSS metadata. It verified that stars contribute no rubric points.
 
-## Findings
+## 5. Evidence gaps and unsupported claims
 
-### Critical — Stale comparison CSV
+- Separate backend calls do not establish provider-family independence.
+- `local-rules` does not fact-check the target or query NotebookLM.
+- The core does not discover or execute routed skills.
+- Capacity values are not durable cross-run budgets.
 
-The CSV still used snapshot `2026-07-20T22:17:14Z`, while the current GitHub snapshot was `2026-07-20T23:15:54Z`. It listed stale stars for Agent Framework, DeepEval, AutoGen, OpenAI Evals, Langfuse, DSPy, and lm-evaluation-harness. The judge predicted that updating the report without synchronizing the CSV would break publication consistency.
+## 6. Recommendation
 
-### High — Model/provider isolation is not enforced
+`Ship with conditions`
 
-The orchestrator sends separate requests through the injected backend but cannot enforce different providers or model families. Same-family calls can retain correlated error and position bias. The judge classified this as a documented non-capability/hypothesis, not a newly reproduced implementation defect.
+Priorities proposed by the judge: define whether `strongest_points` should prioritize harsh/low-score findings; consider an explicit normalization policy for recurring gaps; preserve multiline output where that is a required surface; keep the stateless-capacity warning prominent.
 
-### High — Synthesis is not interactive debate
+## 7. Provider/model provenance
 
-`_debate` compiles a post-hoc summary from collected views; personas do not exchange arguments. The judge called debate marketing misleading. Current README and packet already state this boundary explicitly.
+Google `Gemini 3.5 Flash (High)` through a fresh brief-authorized `agy` plan/sandbox/print process. The three Grok calls failed before model output with HTTP 402 and did not produce this verdict.
 
-### Medium — Rendering hardening is not prompt-injection defense
+## 8. Isolation attestation
 
-Escaping Markdown/HTML protects presentation structure, not downstream LLM interpretation. Current documentation already states this boundary.
-
-### Medium — Required proof remained pending
-
-Clean installation, installed CLI/API, gates, commit/push, remote SHA, and immutable public retrieval were not complete at judge time.
-
-## Unresolved gaps
-
-- CSV metadata was inconsistent with the live snapshot.
-- No current-pass executable ledger existed at judge time.
-- `local-rules` cannot perform semantic target or NotebookLM verification.
-
-## Scope limitations
-
-- Read-only review restricted to packet-authorized files.
-- No historical or current sibling verdict was inspected.
-- No live web application or provider backend was tested.
-
-## Sibling isolation attestation
-
-No sibling current-pass verdict was inspected. The judgment was completed in isolation.
+I did not inspect any other revalidation judge output.

@@ -27,8 +27,8 @@ The current source IDs, conversation UUIDs, grounding metadata, capacity failure
 1. **OpenSpec-first contract.** The current run is specified in [`../openspec/changes/revalidate-codex-tribunal-library-2026-07-21/`](../openspec/changes/revalidate-codex-tribunal-library-2026-07-21/): proposal, design, nine testable requirements, and 42 checkable tasks.
 2. **Canonical live research.** Authentication, public sharing, source/account capacity, processed source IDs, nine fresh conversations, and non-circular controls were observed directly. Failed sources were never treated as research.
 3. **OSS before custom work.** Eleven primary GitHub REST endpoints and relevant root README/license files were refreshed. Stars are numeric, dated, and worth zero rubric points.
-4. **Blind adversarial judgments.** Three required Grok 4.5 High calls reached the service but stopped before model output with HTTP 402. The brief-authorized fallback produced three accepted isolated `agy` verdicts from one frozen, conclusion-free packet.
-5. **Adversarial controls.** Every generated claim was separated into current fact, historical finding, documented non-capability, hypothesis, or pending proof. The only new reproduced blocker was stale CSV metadata relative to the new snapshot.
+4. **Blind adversarial judgments.** Three required Grok 4.5 High calls reached the service but stopped before model output with HTTP 402. After provenance-invalid, quota-, mount-, and timeout-blocked attempts were excluded, the brief-authorized fallback produced three accepted isolated `agy` verdicts from one frozen, conclusion-free packet.
+5. **Adversarial controls.** Every generated claim was separated into current fact, historical finding, documented non-capability, hypothesis, or pending proof. Current source and execution reproduced no runtime blocker; the comparison audit separately found and repaired stale CSV metadata relative to the new snapshot.
 6. **Scoped implementation.** The CSV timestamp and seven changed star values were synchronized. No runtime change was made because the source, unit, build, installed console/API, and expected-error surfaces reproduced no runtime defect.
 7. **Fail-closed publication.** Unit, compile, examples, build, wheel contents, clean install, installed CLI/API, skill, CSV, report, strict OpenSpec, diff, remote SHA, clean tree, and immutable public retrieval gate the handoff.
 
@@ -77,15 +77,15 @@ IDR conclusion: the corpus supports Tribunal as an honest structural contract an
 
 ## Tribunal verdict 1: Knowledge and correctness
 
-**Engine:** brief-approved `agy` fallback / `Gemini 3.1 Pro (High)`
+**Engine:** brief-approved `agy` fallback / `Gemini 3.5 Flash (Low)`
 
-**Run:** fresh isolated read-only plan session against packet SHA-256 `59de53373a1386b2d14ed7d8d82ad6f9493d1d2247eefebd93df1069bb8b1521`
+**Run:** fresh isolated read-only plan session against packet SHA-256 `a5cda94bf1b2bbff444e37f15767357565c981bf700d9247bab3e74b118dddbf`
 
 **Score:** `80/100`
 
-**Recommendation:** Conditional
+**Recommendation:** Ship
 
-The judge found the persona disclosure, OSS rubric constraints, code/document boundaries, and local `50/100` maximum structurally consistent. It conditioned release on the still-pending current-pass unit, compile, build, clean-install, installed CLI/API, publication, and immutable-blob gates. It also required NotebookLM overgeneralizations to remain subordinate to direct proof.
+The judge found the structural `40/50` ceiling, persona disclosure, concise error boundary, and host-owned skill labels coherent. It requires semantic integrations to preserve the small backend seam and treat generated prose as untrusted; NotebookLM characterizations remain subordinate to current source and execution.
 
 Accepted verdict: [`evidence/revalidation-2026-07-21-judge-knowledge.md`](evidence/revalidation-2026-07-21-judge-knowledge.md).
 
@@ -95,19 +95,11 @@ Accepted verdict: [`evidence/revalidation-2026-07-21-judge-knowledge.md`](eviden
 
 **Run:** fresh isolated read-only plan session against the same frozen packet, after the preferred Claude session was quota-blocked before output
 
-**Score:** `40/100`
+**Score:** `73/100`
 
-**Recommendation:** Block
+**Recommendation:** Ship with conditions
 
-The hostile judge found one new concrete blocker: the CSV still used the earlier timestamp and seven stale star values while the current GitHub ledger had already advanced. It also reiterated provider-family non-enforcement, post-hoc rather than interactive debate, presentation-only Markdown hardening, and pending release proof.
-
-Direct disposition preserves the hostile verdict while separating current defects from boundaries:
-
-- The CSV timestamp and all seven changed star values were synchronized to `2026-07-20T23:15:54Z`; the CSV gate then passed with 11 rows and one crown.
-- Provider/model diversity is explicitly not enforced; separate request calls are blind process coordinates, not statistical independence.
-- Synthesis is explicitly labeled `post-hoc-synthesis`; no interactive debate is claimed.
-- Markdown hardening is explicitly not prompt-injection defense.
-- The judge's `40/100` rationale reused the runtime structural ceiling for an external product review. That cross-instrument comparison is rejected, while the independent blocking recommendation is preserved.
+The hostile judge challenged descending-score `strongest_points`, exact-string gap recurrence, Markdown line collapsing, stateless capacities, host-owned skill labels, and historical NotebookLM sources. Direct reproduction confirmed the behaviors but not a violated published contract: full disagreements/gaps remain present, exact aggregation is deterministic, JSON is lossless, and capacity/skill/source limitations are explicit. The proposed semantic/fuzzy and formatting changes remain separately specifiable enhancements, not silent fixes in this evidence-only pass.
 
 Accepted verdict: [`evidence/revalidation-2026-07-21-judge-critique.md`](evidence/revalidation-2026-07-21-judge-critique.md).
 
@@ -117,11 +109,11 @@ Accepted verdict: [`evidence/revalidation-2026-07-21-judge-critique.md`](evidenc
 
 **Run:** fresh isolated read-only plan session against the same frozen packet
 
-**Score:** `92/100`
+**Score:** `94/100`
 
-**Recommendation:** Conditional
+**Recommendation:** Ship with conditions
 
-The UX judge found comprehensive `argparse` help, concise expected-error handling, strict bounds, safe display rendering, README examples, and serialized persona disclosure. It retained the generic top-level `personas` package as a future collision/breaking-migration concern and conditioned release on clean-install, package, CLI/API, and publication proof.
+The UX judge found the install/package/error/output surface low-friction but requested persona enumeration, configurable mode-skill routing, and still-clearer explanation of the default structural `⚠️`. These are retained as future ergonomics work. Current `--help`, README boundaries, clean install, and explicit gap text satisfy the published CLI surface.
 
 The verdict remains a CLI/package feasibility view, not browser, viewport, accessibility, assistive-technology, or human-task validation; it also does not turn `local-rules` into semantic or NotebookLM retrieval.
 
@@ -133,7 +125,7 @@ Accepted verdict: [`evidence/revalidation-2026-07-21-judge-ux.md`](evidence/reva
 
 The guard reported `session_used=9`, `weekly_used=73`, and `fast=not_seen`, so no expensive Codex/OMX team burst or fast mode was started. Three separate `grok --single -m grok-4.5 --effort high` calls were made exactly as requested; all three stopped before model output with HTTP 402 because the Grok Build balance was exhausted.
 
-The brief-authorized `agy` fallback then ran fresh isolated sessions. Gemini 3.1 Pro High completed knowledge; Claude Sonnet 4.6 Thinking was quota-blocked before output; Gemini 3.5 Flash High completed criticism; and Gemini 3.5 Flash Medium completed UX.
+The brief-authorized `agy` fallback then ran fresh isolated sessions. Provenance-invalid, quota-blocked, mount-blocked, and timeout-incomplete attempts were excluded. Gemini 3.5 Flash Low completed knowledge, Gemini 3.5 Flash High completed criticism, and Gemini 3.5 Flash Medium completed UX against packet SHA-256 `a5cda94bf1b2bbff444e37f15767357565c981bf700d9247bab3e74b118dddbf`.
 
 The accepted set proves separate fresh sessions, role prompts, conclusion-free packet isolation, and file-scope attestation. All accepted verdicts are Gemini-family models, so no provider-family diversity, statistical independence, provider-memory isolation, or correlated-bias control is claimed. Full provenance: [`evidence/revalidation-2026-07-21-external-attempts.md`](evidence/revalidation-2026-07-21-external-attempts.md).
 
@@ -147,16 +139,16 @@ The accepted set proves separate fresh sessions, role prompts, conclusion-free p
 
 ### Material disagreements
 
-- Knowledge and UX rated the bounded contract `80` and `92` conditionally; criticism rated it `40` and blocked. Scores remain separate role judgments, not an average.
-- Criticism's stale-matrix finding was reproduced exactly and fixed before final gates.
-- UX retains the top-level `personas` package as a future major-version namespace concern. The current wheel and clean import work, but collision-free coexistence with every third-party distribution is not proved.
-- Criticism's provider, debate, and prompt-injection points describe published non-capabilities, not hidden implementation claims.
-- Criticism incorrectly mapped the `local-rules` 40/50 structural setup ceiling onto its independent product score. The score is preserved as judge output but not adopted as a comparable runtime measurement.
+- Knowledge rated the bounded contract `80` and recommended shipment; criticism and UX rated it `73` and `94` with conditions. Scores remain separate role judgments, not an average.
+- Criticism's synthesis-ordering and exact-gap points are real behaviors but no claimed severity queue or semantic paraphrase merge exists; full findings and gaps remain serialized.
+- UX requests persona enumeration and clearer structural-warning terminology. Current help/docs pass, while those remain reasonable next increments.
+- The generic top-level `personas` package remains a future major-version namespace concern. The current wheel and clean import work, but collision-free coexistence with every third-party distribution is not proved.
+- Provider diversity, interactive debate, prompt-injection defense, durable budgets, and visual proof remain published non-capabilities.
 - All judges agree that backend truth, semantic verification, family diversity, persistent trace/budget state, and visual proof are external to the thin core.
 
 ### Synthesized verdict
 
-Scores `80/100`, `40/100`, and `92/100` are not averaged because the roles assessed different surfaces and share one model family. The hostile verdict controls reproduced defects, not the final decision automatically. Its stale-matrix blocker was repaired; the accepted judge set required executable and publication proof before release, which the final gate sequence supplies. The remaining issues are explicit integration boundaries or a future breaking namespace migration. Codex Tribunal is fit to ship as an auditable offline orchestration contract and reusable skill, while semantic judgment, cross-family routing, durable budgets/traces, and visual proof remain integrations. Full disposition: [`evidence/revalidation-2026-07-21-synthesis.md`](evidence/revalidation-2026-07-21-synthesis.md).
+Scores `80/100`, `73/100`, and `94/100` are not averaged because the roles assessed different surfaces and share one model family. Current source and executable checks control generated findings; the remaining issues are explicit integration boundaries, ergonomic enhancements, or a future breaking namespace migration. Codex Tribunal is fit to ship as an auditable offline orchestration contract and reusable skill, while semantic judgment, cross-family routing, durable budgets/traces, and visual proof remain integrations. Full disposition: [`evidence/revalidation-2026-07-21-synthesis.md`](evidence/revalidation-2026-07-21-synthesis.md).
 
 ## 100-point rubric
 
@@ -304,7 +296,7 @@ flowchart TD
 - NotebookLM URL validation checks canonical syntax and rejects known documentation/example identifiers; it still does not authenticate or query content. This pass separately authenticated the notebook, excluded two failed manifests, and queried explicit processed-source sets.
 - The shared NotebookLM corpus is concurrently mutable, duplicated, mixed quality, and full. Closing direct inventory was `875/600/275`; generated answers still reused historical conclusions or unsupported interaction claims until non-circular controls and exact-source checks corrected them.
 - A custom backend can route every request to one model and self-declare scores and empty gaps. The library records claims/provenance but cannot make them independently true.
-- All accepted external verdicts are Gemini-family models in separate sessions. Three Grok 4.5 High calls were HTTP-402 blocked before output, and Claude Sonnet was quota-blocked before output. Process isolation is not provider-family or statistical independence.
+- All accepted external verdicts are Gemini-family models in separate sessions. Three Grok 4.5 High calls were HTTP-402 blocked before output, and Claude Opus 4.6 Thinking was quota-blocked before output. Process isolation is not provider-family or statistical independence.
 - Synthesis is post-hoc. Judges do not inspect or answer sibling arguments through the current `JudgeRequest` contract.
 - Live backend calls are evaluated synchronously. Production adapters must account for latency, cancellation, rate limits, retries, and trusted concurrency outside this core.
 - Arbitrary backend Markdown is normalized and flattens whitespace; JSON is lossless. Rendering hardening is not downstream prompt-injection protection.

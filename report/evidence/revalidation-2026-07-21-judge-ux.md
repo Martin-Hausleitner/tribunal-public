@@ -1,63 +1,56 @@
-# Independent verdict: UX and implementability
+# Independent verdict: CLI UX and implementability
 
 - Engine: `agy`
 - Model: `Gemini 3.5 Flash (Medium)`
-- Packet SHA-256: `59de53373a1386b2d14ed7d8d82ad6f9493d1d2247eefebd93df1069bb8b1521`
-- File edits: none
+- Packet SHA-256: `a5cda94bf1b2bbff444e37f15767357565c981bf700d9247bab3e74b118dddbf`
+- Process: fresh `agy --mode plan --sandbox --print`; file edits: none
 
-The CLI emitted read-only action narration before the verdict; the verdict content follows.
+The CLI emitted read-only action narration before the complete verdict; that narration is not part of the score or findings below.
 
-## Role
+## 1. Assigned role and inspected scope
 
-UX and implementability judge.
+CLI UX and implementability judge. The judge inspected the frozen packet and packet-authorized runtime, README, package metadata, license, skill, representative personas, examples, tests, gates, current OpenSpec artifacts, current baseline/NotebookLM/OSS ledgers, and GitHub snapshot. It did not inspect the excluded main report, matrix, history, or sibling verdicts.
 
-## Evidence inspected
+## 2. Severity-ordered findings
 
-The judge inspected the frozen packet and the packet-authorized packaging, README, skill, runtime, Karpathy persona, examples, unit tests, gates, matrix, current baseline/OSS/NotebookLM evidence, GitHub snapshot, and all current OpenSpec artifacts.
+1. **Medium:** Persona JSON is dynamically loaded, but the CLI has no explicit `--list-personas`; operators must inspect installed resources or documentation to discover available persona slugs.
+2. **Low:** Mode-to-skill routing is hardcoded. Custom hosts can add persona skills, but changing the standard mode routing table requires a core change.
+3. **Low:** Every default `local-rules` run emits `⚠️` because its honest structural ceiling is below the semantic positive threshold. This is contractually correct but can be misread as command failure without the accompanying explanation.
 
-## Score
+## 3. Six component scores
 
-`92`
+| Component | Score |
+|---|---:|
+| Type Fit | 24/25 |
+| Adversarial Depth | 18/20 |
+| Evidence Provenance | 18/20 |
+| Persona/Skill Extensibility | 14/15 |
+| Observability/Repeatability | 10/10 |
+| Integration Cost | 10/10 |
+| **Checked total** | **94/100** |
 
-## Recommendation
+Arithmetic: `24 + 18 + 18 + 14 + 10 + 10 = 94`.
 
-`CONDITIONAL`
+## 4. Evidence inspected and direct observations
 
-Condition: clean installation, packaging, CLI/API gates, publication, and SHA-pinned public retrieval must complete without regression.
+The judge inspected package layout, bundled persona data, installed-resource lookup, CLI arguments/error handling, Markdown/JSON output, README examples, skill constraints, and current evidence ledgers. It observed that expected errors return status 2 and that package data declares all persona JSON files.
 
-## Findings
+## 5. Evidence gaps and unsupported claims
 
-### High — Generic top-level `personas` package
+- `ui_ux` has no bundled viewport, contrast, keyboard, reflow, target-size, screen-reader, or human-task runner.
+- A NotebookLM URL is syntax-checked only by the core.
+- Stateless capacities do not coordinate budgets across processes.
 
-`pyproject.toml` installs both `tribunal.py` and a top-level `personas` package. The sibling-resource lookup is coherent, but the generic `personas` name can collide with another installed distribution. Namespace separation remains a future breaking-package concern; clean-install proof was pending.
+## 6. Recommendation
 
-### Medium — Clean expected-error behavior
+`Ship with conditions`
 
-The console entry point maps to `tribunal:main`. `main()` catches expected `OSError`, `RuntimeError`, `TypeError`, and `ValueError` cases and returns concise stderr/status 2; unexpected programming faults remain tracebacks for debugging.
+Priorities proposed by the judge: consider a persona-discovery command; keep the structural meaning of `⚠️` prominent; require dedicated external visual/accessibility checks for UI/UX claims.
 
-### Medium — CLI discoverability and disclosure
+## 7. Provider/model provenance
 
-`argparse` exposes documented mode, round, hardness, target, persona, quota, NotebookLM, and JSON options. README provides CLI and API examples. The Karpathy-inspired persona disclaimer is serialized into Markdown output, reducing misattribution risk.
+Google `Gemini 3.5 Flash (Medium)` through a fresh brief-authorized `agy` plan/sandbox/print process. The three Grok calls failed before model output with HTTP 402 and did not produce this verdict.
 
-### Low — Strict input validation
+## 8. Isolation attestation
 
-Round/target bounds and strict NotebookLM URLs fail closed before downstream orchestration.
-
-### Low — Output rendering
-
-Markdown rendering escapes structural markers and HTML. JSON remains lossless. This is display hardening, not prompt-injection defense.
-
-## Unresolved gaps
-
-- No interactive sibling debate; synthesis is post-hoc.
-- `local-rules` cannot perform semantic research or retrieval.
-- Quota allocation is stateless across runs and is not persistent billing control.
-
-## Scope limitations
-
-- Headless CLI/API only. Nielsen/WCAG informed terminal/help/error criteria; no visual layout, focus, contrast, screen-reader, or human-task proof was claimed.
-- Runtime metrics/crown behavior discussed here describe the bundled local backend boundary, not a live semantic backend.
-
-## Sibling isolation attestation
-
-No sibling current-pass verdict was inspected.
+I did not inspect any other revalidation judge output.

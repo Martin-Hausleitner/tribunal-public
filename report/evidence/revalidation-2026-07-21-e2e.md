@@ -125,6 +125,31 @@ The first invocation of the optional cross-artifact helper referenced a nonexist
 
 This reconciliation closes the local requirements review without pre-claiming the external publication requirement.
 
+## Post-publication consistency repair revalidation
+
+At `2026-07-21T00:06:43Z`, a later audit found that the published judge files named a transient packet hash while the committed packet contained a different conclusion-free input. The unverifiable transient chain was not relabeled. It was replaced with three later, fully captured isolated `agy` verdicts that actually used the committed packet SHA-256 `a5cda94bf1b2bbff444e37f15767357565c981bf700d9247bab3e74b118dddbf`.
+
+The repaired judge set is Knowledge `80/100`, Critique `73/100`, and UX `94/100`. All three contain six bounded component scores with correct arithmetic, actual model provenance, all eight required sections, and the exact sibling-isolation attestation. The external-attempt ledger retains every Grok 402, quota, timeout, mount, and provenance-invalid exclusion.
+
+Fresh post-repair observations:
+
+| Surface | Result |
+|---|---|
+| Unit suite | exit `0`; 18 tests in `0.155s`; `OK` |
+| Compilation | exit `0` over runtime, personas init, gates, tests, and both examples |
+| Three-mode and comparison examples | exit `0`; explicit structural gaps and `⚠️` retained |
+| Skill / CSV / report gates | PASS; 11 rows, one crown, snapshot `2026-07-20T23:15:54Z` |
+| Seven strict OpenSpec changes | PASS |
+| Judge-packet/schema audit | PASS; committed packet hash plus scores `80,73,94`, no transient hash reference |
+| JSON/CSV/report/link audit | PASS; 11 repositories/stars/timestamp matched, one crown, every relative report link existed |
+| Fresh PEP 517 build | exit `0`; wheel SHA-256 `ecb0816e8f37adecc42d51524ef6da3ba1d8cadb088cfdca29252a39e161f871`; sdist SHA-256 `8468417136b376dde7c3e606fe0445ff53130544c07638c8b01e65c8216558d6` |
+| Fresh no-deps install from `/tmp` | exit `0`; wheel contained runtime, license, entry point, and all nine persona JSON files |
+| Installed comparison CLI | exit `0`; 6 views, all scores `50`, two gaps per view, `post-hoc-synthesis`, `⚠️` |
+| Installed API driver | module loaded from isolated `site-packages`; 3 evidence-backend views, score `88`, no gaps, `✅` |
+| Installed invalid-input path | actual command exit `2`; one concise error, zero stdout lines, zero tracebacks |
+
+The first shell wrapper around the invalid-input observation returned status `1` only because a final `grep -c` reports status `1` for zero matches. A corrected wrapper explicitly asserted actual command status `2`, zero traceback matches, and zero stdout lines, then exited `0`. This was a test-wrapper mistake, not a product failure.
+
 ## Manual QA verdict
 
 The actual source CLI, built wheel, clean-installed console, installed Python API, and expected failure surface all behaved according to the bounded contract. No runtime defect was reproduced. The generic top-level `personas` package remains a possible future ecosystem collision, not a failure of this claimed standard wheel surface.

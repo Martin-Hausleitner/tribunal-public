@@ -1,55 +1,55 @@
 # Independent verdict: knowledge and correctness
 
 - Engine: `agy`
-- Model: `Gemini 3.1 Pro (High)`
-- Packet SHA-256: `59de53373a1386b2d14ed7d8d82ad6f9493d1d2247eefebd93df1069bb8b1521`
-- File edits: none
+- Model: `Gemini 3.5 Flash (Low)`
+- Packet SHA-256: `a5cda94bf1b2bbff444e37f15767357565c981bf700d9247bab3e74b118dddbf`
+- Process: fresh `agy --mode plan --sandbox --print`; file edits: none
 
-## Role
+## 1. Assigned role and inspected scope
 
-Knowledge and correctness judge.
+Knowledge and correctness judge. The judge inspected the frozen packet and packet-authorized runtime, packaging, README, license, skill, all nine personas, tests, examples, gates, current OpenSpec artifacts, current baseline/NotebookLM/OSS ledgers, and GitHub snapshot. It did not inspect the excluded main report, matrix, history, or sibling verdicts.
 
-## Evidence inspected
+## 2. Severity-ordered findings
 
-- `report/evidence/revalidation-2026-07-21-judge-packet.md`
-- `pyproject.toml`
-- `README.md`
-- `tribunal.py`
-- `personas/andrej-karpathy.json`
-- `report/codex-trib-lib-matrix.csv`
-- `report/evidence/github-snapshot.json`
-- `skill/SKILL.md`
+1. **High, positive boundary:** `local-rules` is honestly capped at `40/100`, or `50/100` with a syntactically valid NotebookLM reference. It cannot turn structural setup into a semantic pass.
+2. **High, positive identity control:** The Karpathy-inspired critic carries an explicit neither-authored-nor-endorsed disclaimer, and the runtime preserves it in rendered output.
+3. **Medium, positive error control:** Expected CLI input failures return status `2` with a concise stderr message and no traceback.
+4. **Low, explicit integration boundary:** Routed skills remain host orchestration labels; the dependency-free core does not claim to discover or execute them.
 
-## Score
+## 3. Six component scores
 
-`80`
+| Component | Score |
+|---|---:|
+| Type Fit | 20/25 |
+| Adversarial Depth | 16/20 |
+| Evidence Provenance | 15/20 |
+| Persona/Skill Extensibility | 12/15 |
+| Observability/Repeatability | 8/10 |
+| Integration Cost | 9/10 |
+| **Checked total** | **80/100** |
 
-## Recommendation
+Arithmetic: `20 + 16 + 15 + 12 + 8 + 9 = 80`.
 
-`CONDITIONAL`
+## 4. Evidence inspected and direct observations
 
-## Findings
+The judge read the orchestrator, backend validation, persona loading, identity disclosure, CLI error boundary, Markdown/JSON surfaces, package metadata, unit and gate definitions, and the current evidence hierarchy. It observed nine persona files and the declared bare-GitHub-reference validation.
 
-1. **High — Executable proof and gates are pending.** The codebase outlines requirements for executable E2E proofs, unit testing, clean virtual-environment installation, package builds, and console comparisons. These remain unproved until a later executable ledger records them. A final release cannot happen without them.
-2. **High — NotebookLM hallucination and overgeneralization.** The IDR evidence reports that NotebookLM overgeneralized historical conclusions, described interactive debate behavior the post-hoc synthesis does not implement, and treated old snapshot metadata as current.
-3. **Low — Persona identity disclosure is compliant.** The Karpathy-inspired persona implements a strict disclaimer forbidding attribution, endorsement, or impersonation.
-4. **Low — OSS comparison constraints are present.** The matrix uses a bounded 100-point rubric and treats stars as zero-point context. License characterization distinguishes API SPDX from primary repository qualifications.
-5. **Low — Code and documentation are structurally consistent.** `tribunal.py`, `README.md`, and `skill/SKILL.md` align on limits, modes, and the structural-only 50/100 local ceiling when a NotebookLM reference is present.
+## 5. Evidence gaps and unsupported claims
 
-## Unresolved gaps
+- The bundled backend does not perform semantic fact checking or live NotebookLM queries.
+- Skill route names do not prove skill installation or execution.
+- Separate persona requests do not prove cross-model statistical independence or interactive debate.
 
-- Compilation and unit-test gates were not yet verified.
-- Source examples and comparison CLI execution were pending.
-- Clean install and sdist/wheel proof were absent.
-- Installed Python API proof with an injected evidence backend was absent.
-- Commit, push, remote-SHA equality, and immutable blob retrieval were pending.
+## 6. Recommendation
 
-## Scope limitations
+`Ship`
 
-- Read-only review restricted to the packet-authorized files.
-- The historical report, historical judge outputs, and current sibling verdicts were not inspected.
-- No live LLM backend or external-source validation was executed by this judge.
+Priorities: retain the structural ceiling; preserve the small `JudgeRequest`/`BackendResult` seam for semantic integrations; treat custom-backend natural language as untrusted downstream input.
 
-## Sibling isolation attestation
+## 7. Provider/model provenance
 
-No sibling current-pass verdict was inspected. The findings and conclusion were generated independently from the frozen packet and allowed files.
+Google `Gemini 3.5 Flash (Low)` through a fresh brief-authorized `agy` plan/sandbox/print process. The three Grok calls failed before model output with HTTP 402 and did not produce this verdict.
+
+## 8. Isolation attestation
+
+I did not inspect any other revalidation judge output.
