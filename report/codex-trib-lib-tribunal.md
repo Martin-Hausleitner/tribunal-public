@@ -18,6 +18,7 @@ IDR: ja
 - Two uniquely titled current-pass manifests returned IDs but settled empty at failed status `3`. Creating another notebook failed safely while the account contained exactly `500` notebooks. No unrelated user notebook or processed source was deleted, renamed, or repurposed; failed source IDs were excluded from every query.
 - Five broad fresh conversations covered knowledge, hostile risk, CLI UX, OSS composition, and contradiction/source attribution. Because several follow-ups over-relied on a prior report, four new non-circular controls excluded that report entirely.
 - The non-circular knowledge control returned `13` selected source IDs and `34` citation mappings; the UX control used the code snapshot, promptfoo, Agent Framework, Nielsen, and WCAG; the OSS control cited all ten canonical alternatives.
+- A final authenticated read-only control returned `10` actually used source IDs and `37` citation mappings. NotebookLM reused a prior conversation identifier despite no requested continuation, so the call proves fresh querying but not conversation isolation.
 - NotebookLM still treated old snapshot behavior as current and described interactive debate in one hostile answer even though the implementation is post-hoc. Exact current code, primary metadata, and execution overruled those statements.
 
 The current source IDs, conversation UUIDs, grounding metadata, capacity failures, exclusions, and manual corrections are retained in [`evidence/revalidation-2026-07-21-notebooklm.md`](evidence/revalidation-2026-07-21-notebooklm.md). Earlier ledgers remain historical inputs, not current proof.
@@ -25,11 +26,11 @@ The current source IDs, conversation UUIDs, grounding metadata, capacity failure
 ## Method
 
 1. **OpenSpec-first contract.** The current run is specified in [`../openspec/changes/revalidate-codex-tribunal-library-2026-07-21/`](../openspec/changes/revalidate-codex-tribunal-library-2026-07-21/): proposal, design, nine testable requirements, and 42 checkable tasks.
-2. **Canonical live research.** Authentication, public sharing, source/account capacity, processed source IDs, nine fresh conversations, and non-circular controls were observed directly. Failed sources were never treated as research.
+2. **Canonical live research.** Authentication, public sharing, source/account capacity, processed source IDs, nine isolated conversations, non-circular controls, and one final live continuation control were observed directly. Failed sources were never treated as research.
 3. **OSS before custom work.** Eleven primary GitHub REST endpoints and relevant root README/license files were refreshed. Stars are numeric, dated, and worth zero rubric points.
 4. **Blind adversarial judgments.** Three required Grok 4.5 High calls reached the service but stopped before model output with HTTP 402. After provenance-invalid, quota-, mount-, and timeout-blocked attempts were excluded, the brief-authorized fallback produced three accepted isolated `agy` verdicts from one frozen, conclusion-free packet.
-5. **Adversarial controls.** Every generated claim was separated into current fact, historical finding, documented non-capability, hypothesis, or pending proof. Current source and execution reproduced no runtime blocker; the comparison audit separately found and repaired stale CSV metadata relative to the new snapshot.
-6. **Scoped implementation.** The CSV timestamp and seven changed star values were synchronized. No runtime change was made because the source, unit, build, installed console/API, and expected-error surfaces reproduced no runtime defect.
+5. **Adversarial controls.** Every generated claim was separated into current fact, historical finding, documented non-capability, hypothesis, or pending proof. Current source and execution reproduced no runtime blocker; the comparison audit repaired stale metadata and the closing primary refresh synchronized three later star increments plus three push times.
+6. **Scoped implementation.** JSON, CSV, OSS ledger, and report metadata were synchronized atomically. No runtime change was made because the source, unit, build, installed console/API, and expected-error surfaces reproduced no runtime defect.
 7. **Fail-closed publication.** Unit, compile, examples, build, wheel contents, clean install, installed CLI/API, skill, CSV, report, strict OpenSpec, diff, remote SHA, clean tree, and immutable public retrieval gate the handoff.
 
 NotebookLM synthesis, external judge opinion, GitHub primary metadata, project-authored scoring, and executable package behavior are separate evidence classes. None substitutes for another.
@@ -55,7 +56,7 @@ Role-specific selected sets also contained Nielsen Norman Group usability heuris
 
 ### Live metadata evidence
 
-GitHub metadata was refreshed concurrently and timestamped after all eleven primary REST calls completed: `2026-07-20T23:15:54Z`. The machine-readable record is [`evidence/github-snapshot.json`](evidence/github-snapshot.json), the score record is [`codex-trib-lib-matrix.csv`](codex-trib-lib-matrix.csv), and batch/license/rubric evidence is in [`evidence/revalidation-2026-07-21-oss.md`](evidence/revalidation-2026-07-21-oss.md). Root-file reads reconfirmed AutoGen's maintenance notice and successor guidance, OpenAI Evals' dataset exceptions, Langfuse's named enterprise-directory exclusions, and Phoenix's Elastic License 2.0 hosted-service restriction.
+GitHub metadata was refreshed concurrently and timestamped after all eleven primary REST calls completed: `2026-07-21T00:12:42Z`. The machine-readable record is [`evidence/github-snapshot.json`](evidence/github-snapshot.json), the score record is [`codex-trib-lib-matrix.csv`](codex-trib-lib-matrix.csv), and batch/license/rubric evidence is in [`evidence/revalidation-2026-07-21-oss.md`](evidence/revalidation-2026-07-21-oss.md). Root-file reads reconfirmed AutoGen's maintenance notice and successor guidance, OpenAI Evals' dataset exceptions, Langfuse's named enterprise-directory exclusions, and Phoenix's Elastic License 2.0 hosted-service restriction.
 
 ### Evidence-quality rule
 
@@ -72,6 +73,8 @@ Primary documentation and current executable behavior outrank generated characte
 | Contradiction/source attribution | ACL study plus historical report | Reinforces bias risk and the evidence hierarchy. | Current code, GitHub reads, and execution control all mutable claims. |
 
 Every accepted control used a fresh conversation UUID and explicit source IDs. Broad answers that collapsed back to the historical report were retained only as provenance and did not establish new facts.
+
+The final live continuation control used explicit source IDs and returned `10` used sources with `37` citation mappings. It repeated stale claims that the local backend was a mock, valid empty gap lists were impossible, and expected CLI failures emitted tracebacks. Current source and executable error/API checks overruled all three claims; its OSS-composition and bias-boundary findings were retained.
 
 IDR conclusion: the corpus supports Tribunal as an honest structural contract and extension point. It does not support native semantic verification, visual accessibility testing, provider-family independence, durable quota/trace enforcement, or production calibration.
 
@@ -183,18 +186,18 @@ This comparative score is not the runtime `local-rules` score. The matrix rates 
 
 ## OSS feature matrix
 
-Snapshot completed UTC: `2026-07-20T23:15:54Z`. Capability cells mean verified/native fit for the declared comparison (`✅`), partial/composable fit (`⚠️`), or absent fit (`❌`); they are not semantic target scores or visual test passes. Scores and unformatted star values are duplicated here for human review; the CSV is authoritative and mechanically gated.
+Snapshot completed UTC: `2026-07-21T00:12:42Z`. Capability cells mean verified/native fit for the declared comparison (`✅`), partial/composable fit (`⚠️`), or absent fit (`❌`); they are not semantic target scores or visual test passes. Scores and unformatted star values are duplicated here for human review; the CSV is authoritative and mechanically gated.
 
 | Rank | Tool | GitHub repository | Stars | License qualification | Knowledge | Critique | UI/UX | Independent judges | Evidence | Persona/skill | Repeatability | Score | Result |
 |---:|---|---|---:|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|---:|:---:|
 | 1 | Codex Tribunal | https://github.com/Martin-Hausleitner/tribunal-public | 0 | MIT | ✅ | ✅ | ✅ | ⚠️ | ✅ | ✅ | ⚠️ | 85/100 | 👑 |
 | 2 | promptfoo | https://github.com/promptfoo/promptfoo | 23,446 | MIT | ✅ | ✅ | ⚠️ | ❌ | ✅ | ⚠️ | ✅ | 78/100 |  |
-| 3 | Microsoft Agent Framework | https://github.com/microsoft/agent-framework | 12,253 | MIT | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ✅ | ✅ | 72/100 |  |
+| 3 | Microsoft Agent Framework | https://github.com/microsoft/agent-framework | 12,254 | MIT | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ✅ | ✅ | 72/100 |  |
 | 4 | DeepEval | https://github.com/confident-ai/deepeval | 16,983 | Apache-2.0 | ✅ | ⚠️ | ❌ | ❌ | ✅ | ⚠️ | ✅ | 68/100 |  |
 | 5 | AutoGen | https://github.com/microsoft/autogen | 59,851 | CC-BY-4.0; maintenance mode; component-specific review | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ✅ | ⚠️ | 64/100 |  |
-| 6 | Ragas | https://github.com/vibrantlabsai/ragas | 14,918 | Apache-2.0 | ✅ | ⚠️ | ❌ | ❌ | ✅ | ⚠️ | ✅ | 61/100 |  |
+| 6 | Ragas | https://github.com/vibrantlabsai/ragas | 14,919 | Apache-2.0 | ✅ | ⚠️ | ❌ | ❌ | ✅ | ⚠️ | ✅ | 61/100 |  |
 | 7 | OpenAI Evals | https://github.com/openai/evals | 18,956 | MIT code; dataset licenses vary | ✅ | ⚠️ | ❌ | ❌ | ✅ | ⚠️ | ✅ | 59/100 |  |
-| 8 | Langfuse | https://github.com/langfuse/langfuse | 31,515 | MIT except declared enterprise directories | ⚠️ | ⚠️ | ❌ | ❌ | ✅ | ⚠️ | ✅ | 58/100 |  |
+| 8 | Langfuse | https://github.com/langfuse/langfuse | 31,516 | MIT except declared enterprise directories | ⚠️ | ⚠️ | ❌ | ❌ | ✅ | ⚠️ | ✅ | 58/100 |  |
 | 9 | DSPy | https://github.com/stanfordnlp/dspy | 36,262 | MIT | ⚠️ | ⚠️ | ❌ | ❌ | ⚠️ | ✅ | ✅ | 57/100 |  |
 | 10 | Phoenix | https://github.com/Arize-ai/phoenix | 10,642 | Elastic-2.0; source-available, not OSI open source | ⚠️ | ⚠️ | ❌ | ❌ | ✅ | ⚠️ | ✅ | 56/100 |  |
 | 11 | lm-evaluation-harness | https://github.com/EleutherAI/lm-evaluation-harness | 13,342 | MIT | ✅ | ❌ | ❌ | ❌ | ✅ | ⚠️ | ✅ | 53/100 |  |
@@ -296,7 +299,7 @@ flowchart TD
 - NotebookLM URL validation checks canonical syntax and rejects known documentation/example identifiers; it still does not authenticate or query content. This pass separately authenticated the notebook, excluded two failed manifests, and queried explicit processed-source sets.
 - The shared NotebookLM corpus is concurrently mutable, duplicated, mixed quality, and full. Closing direct inventory was `875/600/275`; generated answers still reused historical conclusions or unsupported interaction claims until non-circular controls and exact-source checks corrected them.
 - A custom backend can route every request to one model and self-declare scores and empty gaps. The library records claims/provenance but cannot make them independently true.
-- All accepted external verdicts are Gemini-family models in separate sessions. Three Grok 4.5 High calls were HTTP-402 blocked before output, and Claude Opus 4.6 Thinking was quota-blocked before output. Process isolation is not provider-family or statistical independence.
+- All accepted external verdicts are Gemini-family models in separate sessions. Three Grok 4.5 High calls were HTTP-402 blocked before output; Claude Opus 4.6 Thinking and GPT-OSS 120B Medium were quota-blocked before output. Process isolation is not provider-family or statistical independence.
 - Synthesis is post-hoc. Judges do not inspect or answer sibling arguments through the current `JudgeRequest` contract.
 - Live backend calls are evaluated synchronously. Production adapters must account for latency, cancellation, rate limits, retries, and trusted concurrency outside this core.
 - Arbitrary backend Markdown is normalized and flattens whitespace; JSON is lossless. Rendering hardening is not downstream prompt-injection protection.

@@ -2,7 +2,7 @@
 
 IDR: ja
 
-- Recorded window: `2026-07-20T23:08Z` through `2026-07-20T23:31Z`
+- Recorded window: `2026-07-20T23:08Z` through `2026-07-21T00:11Z`
 - Canonical public notebook: https://notebooklm.google.com/notebook/80cffd38-0185-4f4d-ae00-bbc67c4bc515
 - Notebook ID: `80cffd38-0185-4f4d-ae00-bbc67c4bc515`
 - Title: `Tribunal IDR 2026-07-04`
@@ -94,6 +94,16 @@ Because several broad follow-ups over-relied on the earlier report, four new con
 - Returned grounding: all ten canonical OSS repository source IDs.
 - Retained composition: promptfoo for adversarial CI/red-team checks; Agent Framework for production multi-agent workflows; DeepEval/Ragas for metrics; Langfuse/Phoenix for live traces and datasets; OpenAI Evals/lm-evaluation-harness for benchmark runners; DSPy for program optimization. AutoGen is maintenance-mode prior art whose README directs new users to Agent Framework.
 - Correction: composing all ten simultaneously would be needless complexity; select only the adjacent capability a deployment actually needs.
+
+## Final live read-only cross-query
+
+At `2026-07-21T00:11Z`, authenticated identity, public sharing, the `875/600/275` source inventory, and the selected processed-source presence were rechecked without modifying the notebook. A final four-lens cross-query covered knowledge/correctness, harsh risk, CLI UX/implementability, and OSS-first composition using the current code snapshot, ten OSS sources, the debate/bias sources, Nielsen heuristics, and WCAG criteria.
+
+- Conversation returned by the CLI: `1ebabb83-484f-405b-8b24-a26cfa5b9afb`. This identifier was reused by NotebookLM despite omitting `--conversation-id`, so this call proves a fresh live query, not fresh-conversation isolation.
+- Returned grounding: `10` actually used source IDs and `37` citation mappings.
+- Retained: the structural-versus-semantic boundary, judge-family correlation risk, absence of visual/accessibility proof, and composition with promptfoo, evaluation frameworks, and observability tooling.
+- Rejected against current source/execution: `LocalRulesBackend` is not a mock; valid empty `evidence_gaps` are supported; expected CLI validation/backend errors are caught and returned as concise exit `2` messages without traceback; static skill labels do not execute NotebookLM.
+- Qualified: proposals for position swapping, cross-family routing, progress UI, durable budgets, and external tracing remain optional future integrations, not current capabilities or release blockers.
 
 ## Direct controls that outrank generated prose
 

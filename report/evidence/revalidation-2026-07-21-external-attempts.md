@@ -37,3 +37,5 @@ The accepted set proves three separate fresh CLI processes, identical frozen inp
 ## Resource guard
 
 The VCVM guard reported `session_used=9`, `session_left=91`, `weekly_used=73`, `weekly_left=27`, and `fast=not_seen`. No Codex/OMX team burst or fast mode was started. The brief explicitly authorizes `agy` perspectives when Grok cannot run.
+
+A continuation heartbeat at `2026-07-21T00:06:42Z` reported `session_used=9`, `session_left=91`, `session_reset=0s`, `weekly_used=82`, `weekly_left=18`, `weekly_reset=567782s`, and `fast=not_seen`. The configured Mac guard path was absent on this VCVM. No new expensive judge/team burst or fast mode was started; the already completed isolated verdicts above were audited instead.
