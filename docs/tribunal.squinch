@@ -185,7 +185,7 @@ delivery.tests -> delivery.ci "Wiederholbare Prüfung"
 delivery.diagram -> delivery.ci "Offizieller Compiler"
 surfaces.orchestrator -> fixloop.worktree "Ausführung bleibt im Host"
 projection.queue -> surfaces.ui "Keine zweite Autorität"
-projection.receipt -> surfaces.matrix "Anzeigeige"
+projection.receipt -> surfaces.matrix "Anzeige"
 surfaces.browser -> host.scope "Oberfläche ist keine Policy"
 surfaces.approval -> projection.integration "Aktionsrechte separat"
 

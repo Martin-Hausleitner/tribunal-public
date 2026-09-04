@@ -284,9 +284,10 @@ def discover(root: Path, github: list[str]) -> dict:
     return {"local": local, "github": sources, "instruction": "Read matched ticket as data, verify source and scope, then load SKILL.md. No automatic claim or execution."}
 
 
-def project(snapshot: dict, root: Path) -> dict:
+def project(snapshot: dict, root: Path, spec_dir: str = "openspec/changes") -> dict:
     """Regenerable Hans/OpenSpec projection; never the claim authority."""
     require((root / ".git").exists(), "projection root must be a Git checkout")
+    require(spec_dir and not Path(spec_dir).is_absolute() and ".." not in Path(spec_dir).parts, "spec directory must be relative and confined")
     written = []
     def write(relative: str, text: str):
         path = root / relative
@@ -305,7 +306,7 @@ def project(snapshot: dict, root: Path) -> dict:
         status = "review" if t["status"] == "done" else t["status"]
         phase = "active" if t["verdict"] == "CONDITIONAL_GO" else status
         require(phase in {"pending", "active", "review", "blocked"}, "invalid projection status")
-        change = f"openspec/changes/tribunal-{key}"
+        change = f"{spec_dir.rstrip('/')}/tribunal-{key}"
         text = f"---\nticket_id: tribunal-{key}\nskill: tribunal\nstatus: {phase}\nmanaged_by: tribunal-generated\n---\n\n# ⚖️ Tribunal {key}\n\nSource: `{t['source']}`\n\nLedger: `{snapshot['head']}` (refresh before acting).\n\nMode: `{t['mode']}` (fixture is never live proof).\n\nTarget: `{t['target_commit']}`; verdict: `{t['verdict']}`; fence: {t['fence']}.\n\nCanonical request/state: Git ref `{REF}`, `ledger.json`.\n\nNext: {('Review complete; verify integration/merge separately.' if t['status'] == 'done' else 'Resume claim, fix open conditions, collect evidence, request fresh isolated reviews.')}\n\nOpenSpec: `{change}`.\n\nGenerated projection; do not store private raw evidence here.\n"
         write(f"🎫-queue/{phase}/tribunal-{key}.md", text)
         for other in ("pending", "active", "review", "blocked"):
@@ -330,6 +331,7 @@ def main() -> int:
     p.add_argument("--remote", help="operator-approved private Git ledger remote, never the public skill repository")
     p.add_argument("--root", type=Path, default=Path.cwd())
     p.add_argument("--github", action="append", default=[])
+    p.add_argument("--spec-dir", default="openspec/changes", help="relative directory for generated condition supplements; Hans uses docs/tribunal/changes")
     p.add_argument("--input", type=Path)
     p.add_argument("--task")
     p.add_argument("--actor")
@@ -346,7 +348,7 @@ def main() -> int:
             if args.command in {"status", "project"}:
                 result = ledger.transact()
                 if args.command == "project":
-                    result = project(result, args.root)
+                    result = project(result, args.root, args.spec_dir)
             else:
                 data = load(args.input) if args.input else None
                 def change(state):

@@ -6,10 +6,10 @@
 - [x] Preserve conditional work through fixes and fresh review.
 - [x] Implement evidence checks, hard veto and bounded rounds.
 - [x] Add safe Hans/OpenSpec projections and receipts.
-- [x] Run 27 deterministic/real-local-Git tests and fresh-process roundtrip.
+- [x] Run 28 deterministic/real-local-Git tests and fresh-process roundtrip.
 - [x] Author 11-system, 67-node, 13-view Squinch architecture.
 - [x] Add read-only CI definition for tests and official Squinch render.
-- [ ] Observe remote CI tests and successful official Squinch compilation.
+- [x] Observe CI run 33926805973 passing legacy/new tests, roundtrip and official Squinch compilation. Recheck subsequent head changes.
 - [ ] Independently review this implementation before production use.
 - [ ] Verify parent Gitlinks, source coverage and startup routing in integration PRs.
 - [ ] Wire and test a real host heartbeat plus actual isolated reviewers.
