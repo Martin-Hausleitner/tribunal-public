@@ -1,0 +1,31 @@
+name: Git Tribunal skill
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Legacy and new deterministic tests
+        run: |
+          python3 -m unittest discover -s tests -v
+          python3 -m unittest discover -s tests_skill -v
+          python3 examples/skill/git_roundtrip.py
+          python3 -m py_compile scripts/tribunal_git.py
+      - name: Check and render official Squinch source
+        run: |
+          mkdir -p build/tribunal
+          npx --yes squinch@0.2.0 check docs/tribunal.squinch
+          npx --yes squinch@0.2.0 render docs/tribunal.squinch -o build/tribunal/architecture.html
+          npx --yes squinch@0.2.0 render docs/tribunal.squinch -o build/tribunal/architecture.svg
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: tribunal-squinch
+          path: build/tribunal/
+          if-no-files-found: error
