@@ -39,7 +39,7 @@ def demo():
         def packet(sha, conditional):
             proof = target / ".proof" / "test.txt"
             proof.parent.mkdir(exist_ok=True)
-            p = subprocess.run([sys.executable, "-c", "from app import answer; assert answer() == 42; print('PASS: answer == 42')"],
+            p = subprocess.run([sys.executable, "-B", "-c", "from app import answer; assert answer() == 42; print('PASS: answer == 42')"],
                                cwd=target, capture_output=True, text=True)
             proof.write_text(f"exit_code={p.returncode}\n{p.stdout}{p.stderr}")
             if conditional:

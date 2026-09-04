@@ -12,19 +12,27 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           persist-credentials: false
-      - name: Legacy and new deterministic tests
-        run: |
-          python3 -m unittest discover -s tests -v
-          python3 -m unittest discover -s tests_skill -v
-          python3 examples/skill/git_roundtrip.py
-          python3 -m py_compile scripts/tribunal_git.py
-      - name: Check and render official Squinch source
+      - name: Source inventory for pinned parent coverage
         run: |
           mkdir -p build/tribunal
+          git ls-tree -r --name-only HEAD > build/tribunal/tracked-files.txt
+          git rev-parse HEAD HEAD^{tree} > build/tribunal/source-revision.txt
+          git archive HEAD -o build/tribunal/source.tar
+      - name: Legacy and new deterministic tests
+        run: |
+          set -o pipefail
+          python3 -m unittest discover -s tests -v 2>&1 | tee build/tribunal/legacy-tests.txt
+          python3 -m unittest discover -s tests_skill -v 2>&1 | tee build/tribunal/skill-tests.txt
+          python3 examples/skill/git_roundtrip.py | tee build/tribunal/roundtrip.json
+          python3 -m py_compile scripts/tribunal_git.py
+      - name: Check and render official Squinch source
+        if: ${{ !cancelled() }}
+        run: |
           npx --yes squinch@0.2.0 check docs/tribunal.squinch
           npx --yes squinch@0.2.0 render docs/tribunal.squinch -o build/tribunal/architecture.html
           npx --yes squinch@0.2.0 render docs/tribunal.squinch -o build/tribunal/architecture.svg
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: ${{ !cancelled() }}
         with:
           name: tribunal-squinch
           path: build/tribunal/
