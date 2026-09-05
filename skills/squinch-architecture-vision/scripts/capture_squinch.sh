@@ -33,32 +33,31 @@ PY
 )"
 
 capture() {
-  local view=$1 width=$2 height=$3 suffix=$4 budget=${5:-5000}
+  local view=$1 width=$2 height=$3 suffix=$4 budget=${5:-6000}
   "$CHROME" --headless=new --disable-gpu --no-sandbox --hide-scrollbars --force-dark-mode \
     --window-size="${width},${height}" --virtual-time-budget="$budget" \
     --screenshot="$OUT/screenshots/${view}-${suffix}.png" \
     "${HTML}#${view}" >/dev/null 2>&1
 }
 
-# Focused detail views: horizontal internals, no auto-context.
+# Focused detail views: 2x2 subsystem grids, no auto-context.
 for view in tribunal hans agent oam; do
-  capture "$view" 1920 1400 desktop 6000
+  capture "$view" 1920 1800 desktop 7000
 done
 
-# Curated cross-system views.
-for view in endtoend visualqa; do
-  capture "$view" 1920 1400 desktop 6000
-done
+# Curated cross-system views need enough height to cover all ranks.
+capture endtoend 1920 2400 desktop 8000
+capture visualqa 1920 1600 desktop 7000
 
 # Primary navigation altitude and responsive viewer chrome.
-capture landscape 1920 1200 desktop 5000
-capture landscape 2560 1440 wide 5000
-capture landscape 1280 800 compact 5000
-capture landscape 430 932 narrow 5000
+capture landscape 1920 1800 desktop 7000
+capture landscape 2560 2200 wide 7000
+capture landscape 1280 1000 compact 7000
+capture landscape 430 932 narrow 7000
 
-# All top-level systems should remain readable; engineeringcore intentionally expands internals.
-capture everything 2560 1600 desktop 7000
-capture engineeringcore 2560 3000 deep 12000
+# All top-level systems remain readable; engineeringcore intentionally expands internals.
+capture everything 2560 2000 desktop 8000
+capture engineeringcore 2560 5600 deep 15000
 
 python3 - <<'PY' "$OUT"
 from pathlib import Path

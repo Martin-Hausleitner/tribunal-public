@@ -97,8 +97,9 @@ def emit(out:Path):
 
     L += ['view ecosystem {','  title "Full Ecosystem — All Systems"','  include *','  context off','  legend auto','  layout {','    direction down','    density compact','    lines orthogonal','    rows [entry hans agent oam tribunal openspec]','    rows [skills browser matrix gitfabric evidence execution]','    rows [observability security integrations lifecycle company research]','  }','}','']
 
-    for sid,label,_,_,_ in SYSTEMS:
-        L += [f'view {sid} {{',f'  title "{label} — Detail"',f'  scope {sid}','  context off','  expand *','  legend auto','  layout {','    direction right','    density compact','    lines orthogonal','  }','}','']
+    for sid,label,_,_,containers in SYSTEMS:
+        cids=[ident(c[0]) for c in containers]
+        L += [f'view {sid} {{',f'  title "{label} — Detail"',f'  scope {sid}','  context off','  expand *','  legend auto','  layout {','    direction down','    density comfortable','    lines orthogonal',f'    rows [{cids[0]} {cids[1]}]',f'    rows [{cids[2]} {cids[3]}]','  }','}','']
 
     curated={
       'endtoend':('End-to-End — Issue → Integration → Knowledge',['entry','agent','openspec','tribunal','evidence','execution','gitfabric','hans','lifecycle'],[['entry','agent','openspec'],['tribunal','evidence','execution'],['gitfabric','hans','lifecycle']]),
