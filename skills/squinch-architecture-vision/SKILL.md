@@ -45,11 +45,15 @@ Native 0.2.0 HTML supports internal view navigation. Put external provenance lin
 
 ## 6. Actual execution and screenshot matrix
 
+Capture screenshots from the HTML itself, not from a mock, image generator or separately redrawn diagram.
+
 Run the native checker and fix errors. Log every remaining warning with its reason. Render standalone HTML in the requested dark palette and an SVG companion. Open the exact generated HTML in a real browser. Capture every view when practical, plus representative wide, standard and narrow viewports. Use isolated/reduced-motion sessions for stable screenshots.
 
 Test all views, deep navigation and return, native presentation steps, console errors, external network requests and artifact digests. Where `file://` is blocked by the host, do not weaken browser policy: use an allowed local HTTP server or exact-byte `set_content` and state which loading path was tested. That is not proof that OS file opening was tested.
 
 ## 7. Mandatory Vision loop
+
+Inspect the screenshots with vision. A generated PNG or green browser test is not proof that anyone inspected its pixels.
 
 Read `references/visual-qa.md`. For each inspected PNG log view, source hash, viewport, concrete defect and severity before changing the source. Examine whole-view hierarchy and readable detail crops. Contact sheets are only overview triage, not full-size text inspection.
 
