@@ -55,9 +55,10 @@ capture landscape 2560 2200 wide 7000
 capture landscape 1280 1000 compact 7000
 capture landscape 430 932 narrow 7000
 
-# All top-level systems remain readable; engineeringcore intentionally expands internals.
+# All top-level systems remain readable. The 3000px engineering capture is a sampled
+# QA surface: taller single-raster Chrome captures are unreliable; the HTML remains canonical.
 capture everything 2560 2000 desktop 8000
-capture engineeringcore 2560 5600 deep 15000
+capture engineeringcore 2560 3000 deep 12000
 
 python3 - <<'PY' "$OUT"
 from pathlib import Path
