@@ -1,0 +1,29 @@
+name: Atlas research workbench
+on:
+  push:
+    branches: ['workbench/squinch-atlas-20260905']
+permissions:
+  contents: read
+jobs:
+  toolchain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Acquire published compiler and upstream examples
+        run: |
+          mkdir -p .workbench/tools .workbench/output
+          npm install --prefix .workbench/tools --ignore-scripts --no-audit --no-fund squinch@0.2.0
+          git -c core.hooksPath=/dev/null clone --depth 1 https://github.com/jquatier/squinch.git .workbench/upstream
+          git -C .workbench/upstream rev-parse HEAD > .workbench/output/upstream-sha.txt
+          git archive HEAD -o .workbench/output/tribunal-source.tar
+          tar -czf .workbench/output/compiler-environment.tar.gz -C .workbench tools
+          tar -czf .workbench/output/upstream-reference.tar.gz -C .workbench/upstream docs examples packages README.md NOTICE LICENSE
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: atlas-research-workbench
+          path: .workbench/output/
+          retention-days: 1
+          if-no-files-found: error
