@@ -1,0 +1,8 @@
+{
+  "source": "ticket:example",
+  "target_commit": "0000000000000000000000000000000000000000",
+  "criteria": ["correctness", "evidence", "scope"],
+  "reviewers": ["facts", "risk", "scope"],
+  "mode": "fixture",
+  "max_rounds": 3
+}

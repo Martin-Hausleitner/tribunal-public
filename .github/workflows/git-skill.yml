@@ -1,0 +1,57 @@
+name: Git Tribunal skill
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Source inventory for pinned parent coverage
+        run: |
+          mkdir -p build/tribunal
+          git ls-tree -r --name-only HEAD > build/tribunal/tracked-files.txt
+          git rev-parse HEAD HEAD^{tree} > build/tribunal/source-revision.txt
+          git archive HEAD -o build/tribunal/source.tar
+      - name: Legacy and deterministic skill tests
+        run: |
+          set -o pipefail
+          python3 -m unittest discover -s tests -v 2>&1 | tee build/tribunal/legacy-tests.txt
+          python3 -m unittest discover -s tests_skill -v 2>&1 | tee build/tribunal/skill-tests.txt
+          python3 examples/skill/git_roundtrip.py | tee build/tribunal/roundtrip.json
+          python3 -m py_compile scripts/tribunal_git.py skills/squinch-architecture-vision/scripts/generate_mega_squinch.py
+      - name: Preserve original Tribunal Squinch render
+        if: ${{ !cancelled() }}
+        run: |
+          npx --yes squinch@0.2.0 check docs/tribunal.squinch
+          npx --yes squinch@0.2.0 render docs/tribunal.squinch -o build/tribunal/architecture.html
+          npx --yes squinch@0.2.0 render docs/tribunal.squinch -o build/tribunal/architecture.svg
+      - name: Generate mega architecture source
+        if: ${{ !cancelled() }}
+        run: |
+          python3 skills/squinch-architecture-vision/scripts/generate_mega_squinch.py -o build/mega/tribunal-mega.squinch
+          test "$(wc -l < build/mega/tribunal-mega.squinch)" -ge 1000
+      - name: Render mega HTML and capture real browser screenshots
+        if: ${{ !cancelled() }}
+        run: |
+          bash skills/squinch-architecture-vision/scripts/capture_squinch.sh build/mega/tribunal-mega.squinch build/mega
+          test -s build/mega/tribunal-architektur.html
+          test -s build/mega/tribunal-architektur.svg
+          test "$(find build/mega/screenshots -type f -name '*.png' | wc -l)" -ge 11
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: ${{ !cancelled() }}
+        with:
+          name: tribunal-squinch
+          path: build/tribunal/
+          if-no-files-found: error
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: ${{ !cancelled() }}
+        with:
+          name: tribunal-architecture-mega
+          path: build/mega/
+          if-no-files-found: error

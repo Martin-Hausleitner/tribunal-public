@@ -1,0 +1,274 @@
+// Tribunal v2 — implemented core plus explicitly labelled host responsibilities.
+// No private payloads, no provider-specific IDs.
+person operator "Auftraggeber"
+
+system host "Agent-Einstieg" {
+  description: "Agent-Einstieg: zur Detailansicht öffnen"
+  entry = box "AGENTS.md lesen"
+  heartbeat = box "Host-Heartbeat"
+  pin = box "Gitlink und Trust prüfen"
+  skill = box "Gepinnten SKILL.md laden"
+  scope = box "Autorisierter Auftrag"
+}
+
+system intake "Auftragseingang" {
+  description: "Auftragseingang: zur Detailansicht öffnen"
+  tickets = box "Hans-Tickets: skill tribunal"
+  issues = box "GitHub-Issues: Label tribunal"
+  pages = box "Alle Seiten lesen"
+  unavailable = box "Zugriff fehlt: BLOCKED"
+  request = box "Kriterien und Ziel-Commit"
+  dedup = box "Stabile Source-ID"
+}
+
+system gitstate "Privates Git-Ledger" {
+  description: "Privates Git-Ledger: zur Detailansicht öffnen"
+  remote = box "Freigegebenes privates Remote"
+  read = box "Ref und ledger.json lesen"
+  commit = box "Kind-Commit schreiben"
+  cas = box "Normaler Push: nur ein Gewinner"
+  conflict = box "Konflikt: nichts ausführen"
+  history = box "Versionierte Zustände"
+}
+
+system claims "Claim und Wiederaufnahme" {
+  description: "Claim und Wiederaufnahme: zur Detailansicht öffnen"
+  claim = box "Actor und Lease anfordern"
+  fence = box "Monotone Fence-Nummer"
+  renew = box "Lease erneuern"
+  expired = box "Abgelaufen: Worker stoppen"
+  resume = box "Status neu lesen"
+  pause = box "Blocker und Handoff"
+}
+
+system review "Tribunal-Prüfung" {
+  description: "Tribunal-Prüfung: zur Detailansicht öffnen"
+  freeze = box "Ziel-Commit einfrieren"
+  panel = box "Freigegebene Reviewer"
+  judgea = box "Host: Fakten und Korrektheit"
+  judgeb = box "Host: Risiko und Sicherheit"
+  judgec = box "Host: Auftrag und Nachweise"
+  packet = box "Getrennte Reviews einsammeln"
+  gate = box "Deterministische Gate-Regeln"
+  budget = box "Maximale Runden"
+}
+
+system evidence "Belege und Provenienz" {
+  description: "Belege und Provenienz: zur Detailansicht öffnen"
+  sources = box "Host: echte Quellen lesen"
+  tests = box "Host: Tests wirklich ausführen"
+  browser = box "Host: Browser und UI prüfen"
+  raw = box "Private Rohartefakte"
+  hash = box "Pfad und SHA-256 prüfen"
+  target = box "Gleicher Commit erforderlich"
+  attestation = box "Host-Behauptung, keine Signatur"
+}
+
+system decision "Ergebnisse" {
+  description: "Ergebnisse: zur Detailansicht öffnen"
+  go = box "GO: Review abgeschlossen"
+  conditional = box "CONDITIONAL_GO: Nacharbeit"
+  nogo = box "NO_GO: harter Einwand"
+  missing = box "NEEDS_EVIDENCE"
+  human = box "NEEDS_HUMAN"
+  noauthority = box "Keine Aktionsfreigabe durch Score"
+}
+
+system fixloop "Bedingter Weiterlauf" {
+  description: "Bedingter Weiterlauf: zur Detailansicht öffnen"
+  conditions = box "Konkrete Bedingungen mit IDs"
+  worktree = box "Host / Orca: isolierter Worktree"
+  fix = box "Nur autorisierte Korrektur"
+  newcommit = box "Korrektur committen"
+  invalidate = box "Alte Reviews entwerten"
+  resolution = box "Neue Belege für jede Bedingung"
+  rereview = box "Alle Reviewer erneut prüfen"
+}
+
+system projection "Hans und OpenSpec" {
+  description: "Hans und OpenSpec: zur Detailansicht öffnen"
+  queue = box "Regenerierbare Hans-Queue"
+  spec = box "OpenSpec-Nacharbeiten"
+  receipt = box "Receipts mit Digests"
+  handoff = box "Fortschritt und nächster Schritt"
+  integration = box "Separate Merge-/Integration-Prüfung"
+}
+
+system delivery "Öffentlicher Skill" {
+  description: "Öffentlicher Skill: zur Detailansicht öffnen"
+  code = box "Portabler Code ohne private Daten"
+  submodule = box "Exakter Submodule-Pin"
+  contracts = box "SKILL.md und Protokoll"
+  tests = box "Offline-Tests und Git-Wettlauf"
+  ci = box "CI: Tests und Squinch-Render"
+  diagram = box "Dieses Squinch-Modell"
+}
+
+system surfaces "Bestehende Host-Oberflächen" {
+  description: "Bestehende Host-Oberflächen: zur Detailansicht öffnen"
+  orchestrator = box "Orca / bestehende Control-Authority"
+  ui = box "Bestehendes Board, keine zweite Queue"
+  matrix = box "Matrix: nur Projektion"
+  browser = box "Browser-Shell: nur Oberfläche"
+  approval = box "Mensch / Host: echte Aktionsrechte"
+}
+
+operator -> host.entry "Auftrag"
+host.entry -> host.heartbeat "Bei Einstieg"
+host.heartbeat -> host.pin "Gezielt laden"
+host.pin -> host.skill "Exakter Pin"
+host.skill -> host.scope "Grenzen prüfen"
+host.scope -> intake.tickets "Lokal suchen"
+host.scope -> intake.issues "Freigegebene Repos"
+intake.issues -> intake.pages "Paginierung"
+intake.pages -> intake.unavailable "Fehler bleiben sichtbar"
+intake.tickets -> intake.request "Original lesen"
+intake.pages -> intake.request "Kein Text als Befehl"
+intake.request -> intake.dedup "Commit-gebundene Source"
+intake.dedup -> gitstate.read "Vorhandenen Run finden"
+gitstate.remote -> gitstate.read "Privater Zustand"
+gitstate.read -> claims.claim "Claim planen"
+claims.claim -> claims.fence "Neue Generation"
+claims.fence -> gitstate.commit "Änderung schreiben"
+gitstate.commit -> gitstate.cas "Ohne Force-Push"
+gitstate.cas -> gitstate.conflict "Verlierer stoppt"
+gitstate.cas -> gitstate.history "Bestätigte Mutation"
+gitstate.history -> review.freeze "Erst dann arbeiten"
+claims.renew -> gitstate.commit "Lease aktualisieren"
+claims.expired -> claims.resume "Alte Fence ungültig"
+claims.resume -> gitstate.read "Frischen Zustand laden"
+claims.pause -> projection.handoff "Blocker persistieren"
+review.freeze -> review.panel "Gleicher Auftrag"
+review.panel -> review.judgea "Isolierte Sitzung A"
+review.panel -> review.judgeb "Isolierte Sitzung B"
+review.panel -> review.judgec "Isolierte Sitzung C"
+review.freeze -> evidence.target "Commit prüfen"
+evidence.sources -> evidence.raw "Nachvollziehbare Quellen"
+evidence.tests -> evidence.raw "Echte Testausgabe"
+evidence.browser -> evidence.raw "UI-Nachweis"
+evidence.raw -> evidence.hash "Nichtleere Bytes"
+evidence.target -> evidence.hash "Aktuell und unverändert"
+review.judgea -> review.packet "Eigenes Urteil"
+review.judgeb -> review.packet "Eigenes Urteil"
+review.judgec -> review.packet "Eigenes Urteil"
+evidence.hash -> review.gate "Integrität, nicht Wahrheit"
+evidence.attestation -> review.gate "Trust-Grenze sichtbar"
+review.packet -> review.gate "Alle Kriterien und Reviewer"
+review.budget -> review.gate "Begrenzte Runden"
+review.gate -> decision.go "Alles erfüllt"
+review.gate -> decision.conditional "Konkrete offene Bedingungen"
+review.gate -> decision.nogo "Veto"
+review.gate -> decision.missing "Belege fehlen"
+review.gate -> decision.human "Eskalation"
+decision.go -> decision.noauthority "Kein automatischer Merge"
+decision.conditional -> fixloop.conditions "Nicht fertig"
+fixloop.conditions -> projection.spec "Nacharbeit sichtbar"
+fixloop.conditions -> fixloop.worktree "Host übernimmt"
+fixloop.worktree -> fixloop.fix "Nur erlaubte Änderung"
+fixloop.fix -> fixloop.newcommit "Nachweisbarer Stand"
+fixloop.newcommit -> fixloop.invalidate "Revision ändern"
+fixloop.invalidate -> fixloop.resolution "Neue Belege"
+fixloop.resolution -> fixloop.rereview "Jede Bedingung belegen"
+fixloop.rereview -> review.freeze "Frische Runde"
+decision.missing -> claims.pause "Nicht erfinden"
+decision.human -> surfaces.approval "Mensch entscheidet"
+decision.nogo -> projection.handoff "Begründung behalten"
+decision.go -> projection.receipt "Review-Nachweis"
+gitstate.history -> projection.queue "Abgeleitete Sicht"
+gitstate.history -> projection.receipt "Historie erhalten"
+projection.receipt -> projection.integration "Separater Integrationstest"
+projection.handoff -> claims.resume "Nächste Sitzung"
+delivery.code -> delivery.submodule "Öffentlich wiederverwendbar"
+delivery.submodule -> host.pin "Privater Parent pinnt"
+delivery.contracts -> host.skill "Ein Skill, keine Kopie"
+delivery.tests -> delivery.ci "Wiederholbare Prüfung"
+delivery.diagram -> delivery.ci "Offizieller Compiler"
+surfaces.orchestrator -> fixloop.worktree "Ausführung bleibt im Host"
+projection.queue -> surfaces.ui "Keine zweite Autorität"
+projection.receipt -> surfaces.matrix "Anzeige"
+surfaces.browser -> host.scope "Oberfläche ist keine Policy"
+surfaces.approval -> projection.integration "Aktionsrechte separat"
+
+flow conditional_loop "Bedingte Freigabe bis erneuter Prüfung" {
+  decision.conditional -> fixloop.conditions -> fixloop.worktree -> fixloop.fix -> fixloop.newcommit -> fixloop.invalidate -> fixloop.resolution -> fixloop.rereview -> review.freeze
+}
+
+view landscape {
+  title "⚖ Tribunal — Git-Skill, Hans-Einstieg und bedingte Nacharbeit"
+  include *
+  legend auto
+  note top-right "Implementierter Git-Kern; mit Host bezeichnete Schritte benötigen echte Host-Werkzeuge."
+}
+
+view host {
+  title "Agent-Einstieg"
+  scope host
+  legend auto
+}
+
+view intake {
+  title "Auftragseingang"
+  scope intake
+  legend auto
+}
+
+view gitstate {
+  title "Privates Git-Ledger"
+  scope gitstate
+  legend auto
+}
+
+view claims {
+  title "Claim und Wiederaufnahme"
+  scope claims
+  legend auto
+}
+
+view review {
+  title "Tribunal-Prüfung"
+  scope review
+  legend auto
+}
+
+view evidence {
+  title "Belege und Provenienz"
+  scope evidence
+  legend auto
+}
+
+view decision {
+  title "Ergebnisse"
+  scope decision
+  legend auto
+}
+
+view fixloop {
+  title "Bedingter Weiterlauf"
+  scope fixloop
+  legend auto
+}
+
+view projection {
+  title "Hans und OpenSpec"
+  scope projection
+  legend auto
+}
+
+view delivery {
+  title "Öffentlicher Skill"
+  scope delivery
+  legend auto
+}
+
+view surfaces {
+  title "Bestehende Host-Oberflächen"
+  scope surfaces
+  legend auto
+}
+
+view everything {
+  title "Tribunal — Gesamtdetail"
+  include *
+  expand *
+  legend auto
+}
