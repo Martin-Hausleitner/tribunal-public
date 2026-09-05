@@ -1,87 +1,125 @@
 ---
 name: squinch-architecture-vision
-description: Build, render and visually validate very large interactive Squinch architecture diagrams as self-contained HTML. Use when the user asks for tribunal-architektur.html, a huge Squinch map, click-to-zoom architecture, Hans/Agent-Concept/OAM/Tribunal system maps, screenshot-based diagram QA, better routing, more colors, or an iterative visual architecture pass.
+description: Build, render and visually validate very large interactive Squinch architecture diagrams as self-contained HTML. Use for tribunal-architektur.html, Hans/Agent-Concept/OAM/Tribunal mega maps, architecture deep-research, branch/variant maps, brand/icon-rich dark-mode diagrams, screenshot-based QA, routing repair, or iterative visual architecture work.
 license: MIT
-compatibility: Squinch CLI 0.2.x, Git, a browser capable of headless screenshots, and a host with image/vision inspection for the visual QA loop.
+compatibility: Squinch CLI 0.2.x, Git, Chromium/Chrome, and a host with image/vision inspection.
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
   canonical_output: "tribunal-architektur.html"
+  render_truth: "squinch-source"
 ---
 
 # Squinch Architecture Vision
 
-Build the diagram as **Squinch source first** and deliver a **self-contained interactive HTML**. PNG screenshots are QA evidence, never the canonical output.
+Build **Squinch source first** and deliver a **self-contained interactive HTML**. PNG screenshots are QA evidence, never the canonical output.
+
+## Mandatory preflight — official upstream first
+
+Before editing a large diagram, inspect the current official Squinch release, `CHANGELOG.md`, upstream `SKILL.md`, `docs/SPEC.md`, and the Lookbook cases relevant to the requested visual problem. Never rely only on an older copied grammar note.
+
+For Squinch 0.2.x, explicitly exploit the features that fit the model: dark/light paired themes, semantic zoom, `scope`, `expand`, `only`, `context off`, flows, zones, `rows` + `cols`, `route`, `channel`, `glyph`, `domain`, `preview`, titleblocks, notes, tag lenses and the five icon packs. Batch unknown icon lookups with `squinch icons search "term, term, ..."` instead of guessing ids.
+
+Read `references/brand-color-layout.md` before any visual polish pass.
 
 ## Non-negotiable output contract
 
-1. Keep a canonical `.squinch` source in Git or generate it deterministically from a versioned semantic blueprint.
-2. Run the real Squinch checker before claiming renderability.
-3. Render one self-contained HTML carrying all declared views and the viewer.
-4. Render SVG as a deterministic inspection/export companion.
-5. Capture screenshots from the HTML itself, not from a mock or a separately redrawn image.
-6. Inspect the screenshots with vision and write concrete findings.
-7. Fix source/layout/routing problems and rerender. Do not stop after the first visually valid compile.
-8. Final delivery includes HTML, source, QA screenshots, visual-QA notes, metrics, commit/PR and known limitations.
+1. Keep canonical `.squinch` source in Git or generate it deterministically from a versioned semantic blueprint.
+2. Run the real Squinch checker before claiming renderability. Warnings are defects unless explicitly justified.
+3. Render one self-contained HTML carrying all declared views and the viewer; start in dark mode when that is the user preference.
+4. Render SVG as deterministic inspection/export companion; optionally render a paired light-theme landscape for contrast checks.
+5. Capture screenshots from the HTML itself, not from a mock, image generator or separately redrawn diagram.
+6. Inspect screenshots with actual vision and write concrete findings.
+7. Fix source/layout/routing problems and rerender. Never stop after the first visually valid compile.
+8. Final delivery includes HTML, source/blueprint, QA screenshots, visual-QA notes, metrics, source map, commit/PR and known limitations.
 
 ## Workflow
 
-### 1. Reconcile before drawing
+### 1. Reconcile current truth, variants and research
 
-Read the current branch/PR and all relevant architecture sources. For the Hans ecosystem, inspect only the smallest relevant slices of Hans, Agent-Concept, Omni Audio Matrix, Tribunal, OpenSpec, Matrix/browser surfaces and the current Squinch skill/spec. Preserve concurrent work; never flatten active branches into one speculative truth.
+Read current default-branch heads first, then recent commits, open PRs and relevant branches. Preserve concurrent work; never flatten every active branch into one speculative truth.
 
-Classify every input as current fact, planned target state, historical/legacy reference, unresolved assumption, or external inspiration. Make current/target/host-responsibility boundaries visible in labels or notes.
+Classify every input as `CURRENT`, `TARGET`, `VARIANT`, `RESEARCH`, `LEGACY`, `HOLD`, `EXTERNAL` or `ASSUMPTION`. Encode that classification in tags, views and source receipts. A branch can be visible without being treated as merged.
+
+For private hosts, keep branch names, internal source links and private architecture content in a private repository. This public skill may contain reusable mechanics and synthetic reference models only.
 
 ### 2. Model semantics before cosmetics
 
-Prefer nested systems/containers over a giant flat graph. Use stable ids as the API. Use top-level systems for semantic zoom and scoped views for internals. Create cross-cutting curated views rather than forcing one unreadable universal canvas to do every job.
+Prefer nested systems/containers over a giant flat graph. Stable ids are the API. Top-level systems define semantic altitude; scoped views open internals. Cross-cutting curated views tell stories without forcing one canvas to do every job.
 
-Use Squinch's native color vocabulary only: `red`, `amber`, `green`, `teal`, `blue`, `violet`, `pink`, `gray`, `accent`. Color is emphasis, never the only meaning.
+Use source ids in descriptions or companion `SOURCE-MAP.md` rather than inventing arbitrary external-link syntax. Native Squinch links are internal view/zoom links; do not hand-patch generated HTML to add unsupported behavior.
 
-### 3. Scale deliberately
+### 3. Color deliberately, not decoratively
 
-A useful large map commonly has 12–30 top-level systems, 50–150 containers, 150–500 leaves, 150–600 meaningful edges and 15–40 declared views. If more detail is needed, split model files inside one Squinch project directory.
+Use only Squinch's adaptive color vocabulary: `red`, `amber`, `green`, `teal`, `blue`, `violet`, `pink`, `gray`, `accent`.
 
-Do not make a 100k-line file solely to satisfy a size number. Semantic zoom is the scalability mechanism.
+Use element colors for stable domain identity and **tag color lenses** for truth/status views. Recommended truth lens:
 
-### 4. Route for legibility
+- `#current` → green
+- `#target` / `#planned` → blue
+- `#variant` → violet
+- `#research` / `#idea` → teal
+- `#conditional` → amber
+- `#hold` / `#blocked` → red
+- `#projection` / `#legacy` → gray
+- `#human` / `#review` → pink
+- `#authoritative` → accent
 
-Default to orthogonal lines. Use `rows`, `cols`, `place`, `align`, `route` and `channel` only where they materially improve a view. Avoid excessive manual hints that make edits brittle.
+Color must never be the only carrier of meaning.
 
-Create at minimum landscape, one scoped view per major system, end-to-end delivery flow, control plane, evidence/provenance, security/authority, audio/OAM, Hans knowledge flow, visual architecture QA, enterprise/department lens and a fully expanded engineering view.
+### 4. Use real brands where the installed pack actually has them
 
-### 5. Render and capture
+Prefer verified `logos/*` marks for products such as GitHub, GitLab, Git, GitHub Actions, React, Docker, Kubernetes, PostgreSQL, Redis, Grafana, OpenTelemetry, Discord, Zoom, Google and Apple. Use `badge:` when a generic capability plus vendor mark communicates better than a brand-only node.
 
-Use `scripts/capture_squinch.sh` or an equivalent host-specific command. Required artifacts are `tribunal-architektur.html`, `tribunal-architektur.svg`, primary-view screenshots, one wide engineering screenshot and one narrow viewer screenshot.
+If a requested brand is absent from the installed pack, use a suitable `sys/*` icon or `box` and keep the product name as text. Never fabricate an icon id, vendor SVG or trademark asset.
 
-Never claim screenshots were produced if the browser command failed.
+### 5. Scale deliberately
 
-### 6. Vision QA loop
+For a true ecosystem mega-map, 25–40 top-level systems, 120–220 containers, 500–1,000 leaves, hundreds of meaningful relations and 30–70 curated views are acceptable when evidence supports them. If rendering cost becomes excessive, move domain data into a Squinch project directory and keep cross-system story views curated.
 
-Read `references/visual-qa.md`. Inspect every required screenshot with actual image understanding. Record findings using severity P0/P1/P2/P3 and exact view names.
+Do not create 100k meaningless lines for a vanity metric. Semantic zoom, source maps and branch/variant lenses are the scaling mechanisms.
 
-At minimum inspect clipped or ellipsized critical labels, node/card overlap, edge/label collisions, excessive crossings, unreadable hubs, giant empty voids, misleading hierarchy, color imbalance, context cards that dominate scope, legends/notes covering content, missing views and responsive viewer problems.
+### 6. Route for legibility
 
-P0/P1 block delivery. P2 requires a fix or explicit rationale. After changes, rerender the affected view and visually compare again.
+Start with auto-layout. Default to orthogonal lines. Add `rows`, `cols`, `place`, `align`, `route` and `channel` only after a screenshot proves a concrete routing problem.
 
-### 7. Truthfulness gates
+Use `context off` for focused inspection views when auto-context overwhelms the scope. Use `rows` + `cols` for real grids. Use `channel` for many-to-one buses. Prefer separate views over deleting truthful relations.
 
-A successful `squinch check` proves syntax/semantic validity, not architecture truth. A screenshot proves rendering, not factual correctness. A beautiful view may still be wrong.
+### 7. Mandatory architecture lenses
 
-Keep source/architecture evidence, compile/render evidence and visual-QA evidence as separate receipts. Never use an AI-generated poster as evidence that the Squinch HTML is correct.
+At minimum create: calm landscape, current-vs-target truth lens, one scoped view per major system, end-to-end delivery, control/authority, durable workflow/PR, Git/merge-conflict, MCP/A2A/platform interop, IDR/deep research, evidence/provenance, security/privacy, secrets/access, OAM daily capture, OAM ASR/speaker intelligence, OAM revision/review/archive, Matrix/RTC realtime, Hans knowledge flow, branch/variant observatory, recent-change observatory, company/departments, device/host fabric, visual architecture QA, and an exhaustive engineering lens.
 
-### 8. Git delivery
+### 8. Render and capture
 
-Commit the semantic blueprint/source, skill/support files and QA notes. Prefer CI-generated HTML/screenshots as build artifacts when generated output should not live in source control. If the user asks for a downloadable HTML, download the verified CI artifact and hand off that exact file.
+Use `scripts/capture_squinch.sh` or an equivalent host command. Produce `tribunal-architektur.html`, `tribunal-architektur.svg`, screenshot matrix, artifact manifest and source map. Never claim a screenshot exists if Chromium failed.
 
-When a parent such as Hans pins this skill as a submodule, update the parent Gitlink only after the child commit is final and verified. Keep the parent coverage/pin ledger consistent.
+Avoid one unbounded gigantic raster. Extremely tall Chromium screenshots can return blank output. Use scoped views and several reliable screenshots instead; the self-contained HTML remains the full canonical artifact.
+
+### 9. Vision QA loop
+
+Read `references/visual-qa.md`. Inspect every required screenshot with vision. Record P0/P1/P2/P3 findings against exact view/source ids.
+
+Inspect clipped labels, overlap, edge-label collision, crossings, routing through cards, tiny auto-fit scale, giant gaps, weak color separation, misleading hierarchy, overdominant context cards, viewer/tab overflow, dark-mode contrast, excessive brand noise, false CURRENT/TARGET cues and missing navigation paths.
+
+P0/P1 block delivery. P2 requires a fix or explicit rationale. After source changes, rerender and recapture affected views.
+
+### 10. Truthfulness and independent review
+
+A clean compile proves syntax/layout constraints, not architecture truth. A screenshot proves rendering, not factual correctness. Keep source evidence, render evidence and visual-QA evidence separate.
+
+Where the host can run real independent reviewers, use separate architecture, evidence, security, visual-legibility and owner-fidelity reviews. If no subagent/reviewer runtime exists, do not claim one; perform clearly separated domain passes and leave the independent-review gate explicit.
+
+### 11. Git delivery
+
+Public reusable mechanics live here. Private mega-models live in the owning private architecture repository and may pin this skill by exact Gitlink. Update parent pins only after the child commit is final and verified. Keep coverage/pin ledgers consistent.
 
 ## Reference files
 
+- `references/brand-color-layout.md` — official feature/brand/color policy and lookbook patterns.
 - `references/visual-qa.md` — screenshot matrix, scoring and iteration rules.
-- `prompts/mega-diagram.md` — long-running master prompt for exhaustive architecture work.
-- `scripts/generate_mega_squinch.py` — deterministic reference mega-model generator.
+- `prompts/mega-diagram.md` — long-running exhaustive architecture prompt.
+- `scripts/generate_mega_squinch.py` — synthetic public reference generator.
 - `scripts/capture_squinch.sh` — real compiler + browser capture pipeline.
 
 ## Done means
 
-The user can open a single HTML file, switch views/themes, click into systems, understand the system at multiple altitudes, and trace important end-to-end paths. The final screenshots have been visually inspected after the last source change, not before it.
+The user can open one HTML file, start in a readable dark landscape, switch views/themes, click into systems, trace end-to-end flows, inspect CURRENT/TARGET/VARIANT differences, and reach every dense subsystem through semantic zoom. The final screenshots were visually inspected **after the final source change**.
