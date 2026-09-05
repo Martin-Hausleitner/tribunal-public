@@ -43,7 +43,7 @@ SYSTEMS = [
 ("Discovery","teal",["Web Research","Repository Research","Internal Corpus"]),("Analysis","violet",["Comparison Matrix","Benchmark","Adversarial Research"]),("Visual Validation","pink",["Render","Vision Inspect","Iterate"]),("Promotion","green",["Decision Record","Promote to Hans","Source Links"])]),
 ]
 
-ICONS={"blue":"sys/network","green":"sys/circle-check","violet":"sys/waypoints","amber":"sys/zap","pink":"sys/eye","teal":"sys/activity","red":"sys/shield-alert","gray":"sys/history","accent":"sys/sparkles"}
+ICONS={"blue":"sys/network","green":"sys/check-check","violet":"sys/waypoints","amber":"sys/zap","pink":"sys/eye","teal":"sys/activity","red":"sys/shield-alert","gray":"sys/history","accent":"sys/sparkles"}
 
 def ident(text:str)->str:
     s=''.join(ch.lower() if ch.isalnum() else '_' for ch in text)
@@ -53,7 +53,7 @@ def ident(text:str)->str:
     return s
 
 def emit(out:Path):
-    L=["// Hans + Agent-Concept + OAM + Tribunal mega architecture","// Final output: self-contained interactive Squinch HTML; screenshots are QA only.","theme dark","",'person operator "Martin / Operator" {','  color: accent','  description: "Human owner and final authority"','}','person user "User / Team" {','  color: blue','  description: "People using product and workflow surfaces"','}',""]
+    L=["// Hans + Agent-Concept + OAM + Tribunal mega architecture","// Final artifact is self-contained interactive Squinch HTML. Screenshots are QA only.","theme dark","",'person operator "Martin / Operator"','person user "User / Team"',""]
     for sid,label,color,icon,containers in SYSTEMS:
         L += [f'system {sid} "{label}" {{',f'  color: {color}',f'  icon: {icon}',f'  description: "{label} — current/target architecture lens"','  preview: auto']
         paths=[]
